@@ -14,16 +14,22 @@
   ],
   "scripts": {
     "prepare": "husky install",
+    "lerna:build": "lerna run build",
     "lerna:publish": "lerna publish --no-private",
     "lint:check": "eslint --ext .js,.jsx,.mjs,.ts,.tsx --ignore-path .gitignore ./",
     "lint:fix": "bun run lint:check --fix",
-    "ts:check": "tsc --noEmit"
+    "ts:check": "tsc --noEmit",
+    "test": "jest",
+    "test:coverage": "jest --collectCoverage"
   },
   "dependencies": {},
   "devDependencies": {
     "@aliexme/eslint-config": "workspace:*",
+    "@aliexme/js-utils": "workspace:*",
     "@aliexme/prettier-config": "workspace:*",
+    "@aliexme/ts-types": "workspace:*",
     "@types/eslint": "8.44.3",
+    "@types/jest": "29.5.5",
     "@typescript-eslint/eslint-plugin": "6.7.3",
     "@typescript-eslint/parser": "6.7.3",
     "eslint": "8.50.0",
@@ -34,9 +40,11 @@
     "eslint-plugin-react-hooks": "4.6.0",
     "eslint-plugin-react-native": "4.1.0",
     "husky": "8.0.3",
+    "jest": "29.7.0",
     "lerna": "7.3.0",
     "lint-staged": "14.0.1",
     "prettier": "3.0.3",
+    "ts-jest": "29.1.1",
     "typescript": "5.2.2"
   }
 }

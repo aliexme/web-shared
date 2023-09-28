@@ -11,11 +11,11 @@
     "directory": "packages/ts-types"
   },
   "license": "MIT",
-  "main": "index.d.ts",
-  "typings": "index.d.ts",
   "files": [
     "index.d.ts"
   ],
+  "main": "index.d.ts",
+  "typings": "index.d.ts",
   "publishConfig": {
     "access": "public"
   },

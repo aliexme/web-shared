@@ -1,0 +1,25 @@
+{
+  "name": "@aliexme/js-utils",
+  "version": "0.6.1",
+  "description": "Common JavaScript utilities",
+  "private": false,
+  "author": "Alexander Smirnov <al.smirnov996@gmail.com>",
+  "homepage": "https://github.com/aliexme/web-shared/tree/main/packages/js-utils",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aliexme/web-shared",
+    "directory": "packages/js-utils"
+  },
+  "license": "MIT",
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/index.js",
+  "typings": "./dist/index.d.ts",
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "tsc -p ./tsconfig.build.json"
+  }
+}
