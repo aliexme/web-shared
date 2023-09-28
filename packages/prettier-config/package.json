@@ -1,6 +1,6 @@
 {
   "name": "@aliexme/prettier-config",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Shared Prettier configuration",
   "private": false,
   "author": "Alexander Smirnov <al.smirnov996@gmail.com>",
