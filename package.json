@@ -1,0 +1,41 @@
+{
+  "name": "@aliexme/web-shared",
+  "description": "A set of packages for web development",
+  "private": true,
+  "author": "Alexander Smirnov <al.smirnov996@gmail.com>",
+  "homepage": "https://github.com/aliexme/web-shared",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aliexme/web-shared"
+  },
+  "license": "MIT",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "prepare": "husky install",
+    "lerna:publish": "lerna publish",
+    "lint:check": "eslint --ext .js,.jsx,.mjs,.ts,.tsx --ignore-path .gitignore --cache ./",
+    "lint:fix": "bun run lint:check --fix",
+    "ts:check": "tsc --noEmit"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@aliexme/eslint-config": "workspace:*",
+    "@types/eslint": "8.44.3",
+    "@typescript-eslint/eslint-plugin": "6.7.3",
+    "@typescript-eslint/parser": "6.7.3",
+    "eslint": "8.50.0",
+    "eslint-config-prettier": "9.0.0",
+    "eslint-plugin-import": "2.28.1",
+    "eslint-plugin-prettier": "5.0.0",
+    "eslint-plugin-react": "7.33.2",
+    "eslint-plugin-react-hooks": "4.6.0",
+    "eslint-plugin-react-native": "4.1.0",
+    "husky": "8.0.3",
+    "lerna": "7.3.0",
+    "lint-staged": "14.0.1",
+    "prettier": "3.0.3",
+    "typescript": "5.2.2"
+  }
+}
