@@ -15,13 +15,14 @@
   "scripts": {
     "prepare": "husky install",
     "lerna:publish": "lerna publish",
-    "lint:check": "eslint --ext .js,.jsx,.mjs,.ts,.tsx --ignore-path .gitignore --cache ./",
+    "lint:check": "eslint --ext .js,.jsx,.mjs,.ts,.tsx --ignore-path .gitignore ./",
     "lint:fix": "bun run lint:check --fix",
     "ts:check": "tsc --noEmit"
   },
   "dependencies": {},
   "devDependencies": {
     "@aliexme/eslint-config": "workspace:*",
+    "@aliexme/prettier-config": "workspace:*",
     "@types/eslint": "8.44.3",
     "@typescript-eslint/eslint-plugin": "6.7.3",
     "@typescript-eslint/parser": "6.7.3",

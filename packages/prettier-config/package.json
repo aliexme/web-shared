@@ -1,0 +1,31 @@
+{
+  "name": "@aliexme/prettier-config",
+  "version": "0.0.0",
+  "description": "Shared Prettier configuration",
+  "private": false,
+  "author": "Alexander Smirnov <al.smirnov996@gmail.com>",
+  "homepage": "https://github.com/aliexme/web-shared/tree/main/packages/prettier-config",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aliexme/web-shared",
+    "directory": "packages/prettier-config"
+  },
+  "license": "MIT",
+  "keywords": [
+    "prettier",
+    "prettier-config"
+  ],
+  "files": [
+    "./index.js"
+  ],
+  "main": "./index.js",
+  "exports": {
+    ".": "./index.js"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "peerDependencies": {
+    "prettier": "^3.0.3"
+  }
+}
