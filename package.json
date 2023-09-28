@@ -14,7 +14,7 @@
   ],
   "scripts": {
     "prepare": "husky install",
-    "lerna:publish": "lerna publish",
+    "lerna:publish": "lerna publish --no-private",
     "lint:check": "eslint --ext .js,.jsx,.mjs,.ts,.tsx --ignore-path .gitignore ./",
     "lint:fix": "bun run lint:check --fix",
     "ts:check": "tsc --noEmit"

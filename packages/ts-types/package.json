@@ -1,0 +1,25 @@
+{
+  "name": "@aliexme/ts-types",
+  "version": "0.2.3",
+  "description": "Common TypeScript utility types",
+  "private": false,
+  "author": "Alexander Smirnov <al.smirnov996@gmail.com>",
+  "homepage": "https://github.com/aliexme/web-shared/tree/main/packages/ts-types",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aliexme/web-shared",
+    "directory": "packages/ts-types"
+  },
+  "license": "MIT",
+  "main": "index.d.ts",
+  "typings": "index.d.ts",
+  "files": [
+    "index.d.ts"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "peerDependencies": {
+    "typescript": "^5.2.2"
+  }
+}
