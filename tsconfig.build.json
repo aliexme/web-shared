@@ -1,0 +1,10 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "declaration": true,
+    "sourceMap": true,
+    "incremental": false,
+    "noEmit": false
+  }
+}
