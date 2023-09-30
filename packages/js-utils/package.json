@@ -1,6 +1,6 @@
 {
   "name": "@aliexme/js-utils",
-  "version": "0.7.0",
+  "version": "0.7.1",
   "description": "Common JavaScript utilities",
   "private": false,
   "author": "Alexander Smirnov <al.smirnov996@gmail.com>",
