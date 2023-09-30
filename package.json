@@ -18,6 +18,8 @@
     "lerna:publish": "lerna publish --no-private",
     "lint:check": "eslint --ext .js,.jsx,.mjs,.ts,.tsx --ignore-path .gitignore ./",
     "lint:fix": "bun run lint:check --fix",
+    "stylelint:check": "stylelint \"**/*.css\"",
+    "stylelint:fix": "bun run lint:styles:check --fix",
     "ts:check": "tsc --noEmit",
     "test": "jest",
     "test:coverage": "jest --collectCoverage"
@@ -28,6 +30,7 @@
     "@aliexme/js-utils": "workspace:*",
     "@aliexme/prettier-config": "workspace:*",
     "@aliexme/react-utils": "workspace:*",
+    "@aliexme/stylelint-config": "workspace:*",
     "@aliexme/ts-types": "workspace:*",
     "@types/eslint": "8.44.3",
     "@types/jest": "29.5.5",
@@ -45,6 +48,8 @@
     "lerna": "7.3.0",
     "lint-staged": "14.0.1",
     "prettier": "3.0.3",
+    "stylelint": "15.10.3",
+    "stylelint-config-standard": "34.0.0",
     "ts-jest": "29.1.1",
     "typescript": "5.2.2"
   }

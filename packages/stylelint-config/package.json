@@ -1,0 +1,33 @@
+{
+  "name": "@aliexme/stylelint-config",
+  "version": "0.0.0",
+  "description": "A set of rules for Stylelint",
+  "private": false,
+  "author": "Alexander Smirnov <al.smirnov996@gmail.com>",
+  "homepage": "https://github.com/aliexme/web-shared/tree/main/packages/stylelint-config",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aliexme/web-shared",
+    "directory": "packages/stylelint-config"
+  },
+  "license": "MIT",
+  "keywords": [
+    "stylelint",
+    "stylelint-config"
+  ],
+  "files": [
+    "./index.js",
+    "./rules/**"
+  ],
+  "exports": {
+    ".": "./index.js",
+    "./base": "./rules/base.js"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "peerDependencies": {
+    "stylelint": "^15.10.3",
+    "stylelint-config-standard": "^34.0.0"
+  }
+}
