@@ -19,3 +19,22 @@ Extend your Stylelint config file:
   ],
 }
 ```
+
+### Prettier
+
+Install additional packages:
+
+```
+npm i --save-dev prettier stylelint-prettier
+```
+
+And add the following lines to your Stylelint config file:
+
+```
+{
+  "extends": [
+    "@aliexme/stylelint-config",
+    "@aliexme/stylelint-config/prettier",
+  ],
+}
+```

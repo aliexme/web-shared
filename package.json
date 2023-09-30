@@ -18,8 +18,8 @@
     "lerna:publish": "lerna publish --no-private",
     "lint:check": "eslint --ext .js,.jsx,.mjs,.ts,.tsx --ignore-path .gitignore ./",
     "lint:fix": "bun run lint:check --fix",
-    "stylelint:check": "stylelint \"**/*.css\"",
-    "stylelint:fix": "bun run lint:styles:check --fix",
+    "stylelint:check": "stylelint '**/*.css'",
+    "stylelint:fix": "bun run stylelint:check --fix",
     "ts:check": "tsc --noEmit",
     "test": "jest",
     "test:coverage": "jest --collectCoverage"
@@ -50,6 +50,7 @@
     "prettier": "3.0.3",
     "stylelint": "15.10.3",
     "stylelint-config-standard": "34.0.0",
+    "stylelint-prettier": "4.0.2",
     "ts-jest": "29.1.1",
     "typescript": "5.2.2"
   }

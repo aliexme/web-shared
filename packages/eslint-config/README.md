@@ -20,7 +20,7 @@ Extend your ESLint config file:
 }
 ```
 
-## Typescript
+### Typescript
 
 To check ts-files, install additional packages:
 
@@ -39,7 +39,7 @@ And add the following lines to your ESLint config file:
 }
 ```
 
-## React
+### React
 
 Install additional packages:
 
@@ -59,7 +59,7 @@ And add the following lines to your ESLint config file:
 }
 ```
 
-## React Native
+### React Native
 
 Install additional packages:
 
@@ -78,7 +78,7 @@ And add the following lines to your ESLint config file:
 }
 ```
 
-## Prettier
+### Prettier
 
 Install additional packages:
 
