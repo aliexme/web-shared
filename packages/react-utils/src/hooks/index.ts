@@ -1,4 +1,5 @@
-export * from './useValueRef'
-export * from './usePrevious'
+export * from './useIsomorphicLayoutEffect'
 export * from './useDidMount'
 export * from './useWillUnmount'
+export * from './useValueRef'
+export * from './usePrevious'
