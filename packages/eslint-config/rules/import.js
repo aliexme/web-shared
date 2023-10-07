@@ -17,6 +17,13 @@ module.exports = {
       'error',
       {
         groups: [['builtin', 'external'], 'internal', ['parent', 'sibling'], 'index', 'object'],
+        pathGroups: [
+          {
+            pattern: './{styles,*.styles,*.css,*.scss}',
+            group: 'internal',
+            position: 'before',
+          },
+        ],
         'newlines-between': 'always',
         warnOnUnassignedImports: true,
       },
