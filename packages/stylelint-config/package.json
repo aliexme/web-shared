@@ -21,6 +21,7 @@
   ],
   "exports": {
     ".": "./index.js",
+    "./common": "./rules/common.js",
     "./base": "./rules/base.js",
     "./scss": "./rules/scss.js",
     "./prettier": "./rules/prettier.js"
