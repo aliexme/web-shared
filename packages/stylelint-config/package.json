@@ -22,6 +22,7 @@
   "exports": {
     ".": "./index.js",
     "./base": "./rules/base.js",
+    "./scss": "./rules/scss.js",
     "./prettier": "./rules/prettier.js"
   },
   "publishConfig": {
@@ -30,9 +31,13 @@
   "peerDependencies": {
     "stylelint": "^15.10.3",
     "stylelint-config-standard": "^34.0.0",
-    "stylelint-prettier": "4.0.2"
+    "stylelint-config-standard-scss": "^11.1.0",
+    "stylelint-prettier": "^4.0.2"
   },
   "peerDependenciesMeta": {
+    "stylelint-config-standard-scss": {
+      "optional": true
+    },
     "stylelint-prettier": {
       "optional": true
     }

@@ -20,6 +20,25 @@ Extend your Stylelint config file:
 }
 ```
 
+### SCSS
+
+Install additional packages:
+
+```
+npm i --save-dev stylelint-config-standard-scss
+```
+
+And add the following lines to your Stylelint config file:
+
+```
+{
+  "extends": [
+    "@aliexme/stylelint-config",
+    "@aliexme/stylelint-config/scss",
+  ],
+}
+```
+
 ### Prettier
 
 Install additional packages:
