@@ -17,12 +17,13 @@
     "lerna:build": "lerna run build",
     "lerna:publish": "lerna publish --no-private",
     "ts:check": "tsc --noEmit",
-    "lint:check": "eslint --ext .js,.jsx,.mjs,.ts,.tsx --ignore-path .gitignore ./",
-    "lint:fix": "bun run lint:check --fix",
+    "eslint:check": "eslint --ext .js,.jsx,.cjs,.mjs,.ts,.tsx --ignore-path .gitignore ./",
+    "eslint:fix": "bun run eslint:check --fix",
     "stylelint:check": "stylelint '**/*.{css,scss}' --allow-empty-input",
     "stylelint:fix": "bun run stylelint:check --fix",
     "test": "jest",
-    "test:coverage": "jest --collectCoverage"
+    "test:coverage": "jest --collectCoverage",
+    "check:all": "bun run ts:check && bun run eslint:check && bun run stylelint:check && bun run test"
   },
   "dependencies": {},
   "devDependencies": {
