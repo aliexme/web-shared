@@ -1,0 +1,14 @@
+pre-commit:
+  parallel: true
+  commands:
+    typescript:
+      glob: '*.{ts,tsx,vue}'
+      run: bun run ts:check
+    eslint:
+      glob: '*.{js,jsx,cjs,mjs,ts,tsx,vue}'
+      run: bun run eslint --fix {staged_files}
+      stage_fixed: true
+    stylelint:
+      glob: '*.{css,scss}'
+      run: bun run stylelint --fix {staged_files}
+      stage_fixed: true

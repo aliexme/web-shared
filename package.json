@@ -13,7 +13,6 @@
     "packages/*"
   ],
   "scripts": {
-    "prepare": "husky install",
     "lerna:build": "lerna run build",
     "lerna:publish": "lerna publish --no-private",
     "ts:check": "tsc --noEmit",
@@ -38,7 +37,7 @@
     "@types/jest": "29.5.5",
     "@typescript-eslint/eslint-plugin": "6.7.3",
     "@typescript-eslint/parser": "6.7.3",
-    "concurrently": "^8.2.2",
+    "concurrently": "8.2.2",
     "eslint": "8.50.0",
     "eslint-config-prettier": "9.0.0",
     "eslint-plugin-import": "2.28.1",
@@ -46,10 +45,9 @@
     "eslint-plugin-react": "7.33.2",
     "eslint-plugin-react-hooks": "4.6.0",
     "eslint-plugin-react-native": "4.1.0",
-    "husky": "8.0.3",
     "jest": "29.7.0",
+    "lefthook": "1.6.16",
     "lerna": "7.3.0",
-    "lint-staged": "14.0.1",
     "prettier": "3.0.3",
     "stylelint": "15.10.3",
     "stylelint-config-standard": "34.0.0",
