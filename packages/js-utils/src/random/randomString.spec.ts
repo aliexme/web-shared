@@ -1,13 +1,6 @@
+import seedrandom from 'seedrandom'
+
 import { randomString } from './randomString'
-
-const mockMathRandom = (seed: number = 1) => {
-  const mock = jest.spyOn(Math, 'random')
-
-  for (let i = 0; i < 100; i++) {
-    const value = ((i * seed) % 10) / 10
-    mock.mockReturnValueOnce(value)
-  }
-}
 
 describe('randomString', () => {
   afterEach(() => {
@@ -15,16 +8,16 @@ describe('randomString', () => {
   })
 
   it('should return random string', () => {
-    mockMathRandom()
+    jest.spyOn(Math, 'random').mockImplementation(seedrandom(''))
 
     const result = randomString()
-    expect(result).toBe('chN7*chN7*chN7*c')
+    expect(result).toBe('h^q@.s99Ruu$.0Ch')
   })
 
   it('should return random string of given length', () => {
-    mockMathRandom()
+    jest.spyOn(Math, 'random').mockImplementation(seedrandom(''))
 
-    const result = randomString({ length: 3 })
-    expect(result).toBe('chN')
+    const result = randomString({ length: 5 })
+    expect(result).toBe('h^q@.')
   })
 })
