@@ -9,6 +9,7 @@
     "url": "https://github.com/aliexme/web-shared"
   },
   "license": "MIT",
+  "type": "module",
   "workspaces": [
     "packages/*"
   ],

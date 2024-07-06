@@ -1,4 +1,4 @@
-const prettierConfig = require('@aliexme/prettier-config')
+import prettierConfig from '@aliexme/prettier-config'
 
 /** @type {import('prettier').Config} */
-module.exports = prettierConfig
+export default prettierConfig

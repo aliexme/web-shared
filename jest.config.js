@@ -1,5 +1,5 @@
-/** @type {import('ts-jest/dist/types').JestConfigWithTsJest} */
-module.exports = {
+/** @type {import('ts-jest').JestConfigWithTsJest} */
+export default {
   verbose: true,
   projects: [
     {
