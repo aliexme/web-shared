@@ -20,6 +20,7 @@
     "skipLibCheck": true,
     "noEmit": true,
     "paths": {
+      "@aliexme/eslint-config": ["./packages/eslint-config/src"],
       "@aliexme/js-utils": ["./packages/js-utils/src"],
       "@aliexme/react-utils": ["./packages/react-utils/src"]
     }

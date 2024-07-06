@@ -4,95 +4,75 @@ Rule set for ESLint
 
 ## Installation
 
-```
-npm i --save-dev eslint @aliexme/eslint-config eslint-plugin-import
+```sh
+npm i --save-dev eslint @aliexme/eslint-config
 ```
 
 ## Usage
 
 Extend your ESLint config file:
 
-```
-{
-  "extends": [
-    "@aliexme/eslint-config",
-  ],
-}
-```
+```js
+import eslintConfigRecommended from '@aliexme/eslint-config'
 
-### Typescript
-
-To check ts-files, install additional packages:
-
-```
-npm i --save-dev @typescript-eslint/parser @typescript-eslint/eslint-plugin
-```
-
-And add the following lines to your ESLint config file:
-
-```
-{
-  "extends": [
-    "@aliexme/eslint-config",
-    "@aliexme/eslint-config/typescript",
-  ],
-}
+export default [
+  ...eslintConfigRecommended, // <--
+]
 ```
 
 ### React
 
 Install additional packages:
 
-```
+```sh
 npm i --save-dev eslint-plugin-react eslint-plugin-react-hooks
 ```
 
 And add the following lines to your ESLint config file:
 
-```
-{
-  "extends": [
-    "@aliexme/eslint-config",
-    "@aliexme/eslint-config/react",
-    "plugin:react-hooks/recommended",
-  ],
-}
+```js
+import eslintConfigReact from '@aliexme/eslint-config/react'
+
+export default [
+  ...eslintConfigRecommended,
+  ...eslintConfigReact, // <--
+]
 ```
 
 ### React Native
 
 Install additional packages:
 
-```
+```sh
 npm i --save-dev eslint-plugin-react-native
 ```
 
 And add the following lines to your ESLint config file:
 
-```
-{
-  "extends": [
-    "@aliexme/eslint-config",
-    "@aliexme/eslint-config/react-native",
-  ],
-}
+```js
+import eslintConfigReactNative from '@aliexme/eslint-config/react-native'
+
+export default [
+  ...eslintConfigRecommended,
+  ...eslintConfigReactNative, // <--
+]
 ```
 
 ### Prettier
 
 Install additional packages:
 
-```
+```sh
 npm i --save-dev prettier eslint-plugin-prettier eslint-config-prettier
 ```
 
 And add the following lines to your ESLint config file:
 
-```
-{
-  "extends": [
-    "@aliexme/eslint-config",
-    "@aliexme/eslint-config/prettier",
-  ],
-}
+```js
+import eslintConfigPrettier from '@aliexme/eslint-config/prettier'
+
+export default [
+  ...eslintConfigRecommended,
+  ...eslintConfigPrettier, // <--
+]
 ```

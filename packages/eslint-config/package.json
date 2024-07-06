@@ -1,7 +1,7 @@
 {
   "name": "@aliexme/eslint-config",
   "version": "0.4.3",
-  "description": "Rule set for ESLint",
+  "description": "Set of configs for ESLint",
   "private": false,
   "author": "Alexander Smirnov <al.smirnov996@gmail.com>",
   "homepage": "https://github.com/aliexme/web-shared/tree/main/packages/eslint-config",
@@ -15,41 +15,44 @@
     "eslint",
     "eslintconfig"
   ],
+  "type": "module",
   "files": [
-    "./index.js",
-    "./rules/**"
+    "dist"
   ],
   "exports": {
-    ".": "./index.js",
-    "./base": "./rules/base.js",
-    "./import": "./rules/import.js",
-    "./typescript": "./rules/typescript.js",
-    "./react": "./rules/react.js",
-    "./react-native": "./rules/react-native.js",
-    "./prettier": "./rules/prettier.js"
+    ".": "./dist/index.js",
+    "./base": "./dist/configs/base.js",
+    "./typescript": "./dist/configs/typescript.js",
+    "./import": "./dist/configs/import.js",
+    "./react": "./dist/configs/react.js",
+    "./react-native": "./dist/configs/react-native.js",
+    "./prettier": "./dist/configs/prettier.js",
+    "./recommended": "./dist/configs/recommended.js"
   },
   "publishConfig": {
     "access": "public"
   },
+  "scripts": {
+    "build": "tsc -p ./tsconfig.build.json"
+  },
+  "dependencies": {
+    "@eslint/compat": "1.1.0",
+    "@eslint/eslintrc": "3.1.0",
+    "@eslint/js": "9.6.0",
+    "eslint-plugin-import": "2.29.1",
+    "globals": "15.8.0",
+    "typescript-eslint": "7.15.0"
+  },
   "peerDependencies": {
-    "@typescript-eslint/eslint-plugin": "^6.7.3",
-    "@typescript-eslint/parser": "^6.7.3",
-    "eslint": "^8.50.0",
+    "eslint": "^9.0.0",
     "eslint-config-prettier": "^9.0.0",
-    "eslint-plugin-import": "^2.28.1",
     "eslint-plugin-prettier": "^5.0.0",
-    "eslint-plugin-react": "^7.33.2",
-    "eslint-plugin-react-hooks": "^4.6.0",
-    "eslint-plugin-react-native": "^4.1.0",
-    "prettier": "^3.0.3"
+    "eslint-plugin-react": "^7.0.0",
+    "eslint-plugin-react-hooks": "^4.0.0",
+    "eslint-plugin-react-native": "^4.0.0",
+    "prettier": "^3.0.0"
   },
   "peerDependenciesMeta": {
-    "@typescript-eslint/eslint-plugin": {
-      "optional": true
-    },
-    "@typescript-eslint/parser": {
-      "optional": true
-    },
     "eslint-config-prettier": {
       "optional": true
     },

@@ -4,7 +4,7 @@ A set of rules for Stylelint
 
 ## Installation
 
-```
+```sh
 npm i --save-dev stylelint @aliexme/stylelint-config
 ```
 
@@ -12,7 +12,7 @@ npm i --save-dev stylelint @aliexme/stylelint-config
 
 Extend your Stylelint config file:
 
-```
+```json
 {
   "extends": [
     "@aliexme/stylelint-config",
@@ -24,13 +24,13 @@ Extend your Stylelint config file:
 
 Install additional packages:
 
-```
+```sh
 npm i --save-dev stylelint-config-standard-scss
 ```
 
 And add the following lines to your Stylelint config file:
 
-```
+```json
 {
   "extends": [
     "@aliexme/stylelint-config",
@@ -43,13 +43,13 @@ And add the following lines to your Stylelint config file:
 
 Install additional packages:
 
-```
+```sh
 npm i --save-dev prettier stylelint-prettier
 ```
 
 And add the following lines to your Stylelint config file:
 
-```
+```json
 {
   "extends": [
     "@aliexme/stylelint-config",
