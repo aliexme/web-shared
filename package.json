@@ -52,9 +52,8 @@
     "lerna": "7.3.0",
     "prettier": "3.3.2",
     "seedrandom": "3.0.5",
-    "stylelint": "15.10.3",
-    "stylelint-config-standard": "34.0.0",
-    "stylelint-config-standard-scss": "11.1.0",
+    "stylelint": "16.6.1",
+    "stylelint-config-standard-scss": "13.1.0",
     "stylelint-prettier": "5.0.0",
     "ts-jest": "29.1.5",
     "typescript": "5.5.3"

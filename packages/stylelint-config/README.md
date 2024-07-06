@@ -5,7 +5,7 @@ A set of rules for Stylelint
 ## Installation
 
 ```
-npm i --save-dev stylelint @aliexme/stylelint-config stylelint-config-standard
+npm i --save-dev stylelint @aliexme/stylelint-config
 ```
 
 ## Usage
