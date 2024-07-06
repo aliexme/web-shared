@@ -21,9 +21,9 @@
     "stylelint:check": "stylelint '**/*.{css,scss}' --allow-empty-input",
     "stylelint:fix": "bun run stylelint:check --fix",
     "lint:check": "concurrently \"bun:ts:check\" \"bun:eslint:check\" \"bun:stylelint:check\"",
-    "test": "jest",
-    "test:coverage": "jest --collectCoverage",
-    "check:all": "bun run lint:check && bun run test"
+    "jest": "jest",
+    "jest:coverage": "jest --collectCoverage",
+    "check:all": "bun run lint:check && bun run jest"
   },
   "dependencies": {},
   "devDependencies": {
@@ -34,7 +34,7 @@
     "@aliexme/stylelint-config": "workspace:*",
     "@aliexme/ts-types": "workspace:*",
     "@types/eslint": "8.44.3",
-    "@types/jest": "29.5.5",
+    "@types/jest": "29.5.12",
     "@types/seedrandom": "3.0.8",
     "@typescript-eslint/eslint-plugin": "6.7.3",
     "@typescript-eslint/parser": "6.7.3",
@@ -55,7 +55,7 @@
     "stylelint-config-standard": "34.0.0",
     "stylelint-config-standard-scss": "11.1.0",
     "stylelint-prettier": "4.0.2",
-    "ts-jest": "29.1.1",
+    "ts-jest": "29.1.5",
     "typescript": "5.2.2"
   }
 }
