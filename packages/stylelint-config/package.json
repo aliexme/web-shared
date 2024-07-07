@@ -17,14 +17,15 @@
   ],
   "files": [
     "./index.js",
-    "./rules/**"
+    "./configs/**"
   ],
   "exports": {
     ".": "./index.js",
-    "./common": "./rules/common.js",
-    "./base": "./rules/base.js",
-    "./scss": "./rules/scss.js",
-    "./prettier": "./rules/prettier.js"
+    "./common": "./configs/common.js",
+    "./base": "./configs/base.js",
+    "./scss": "./configs/scss.js",
+    "./prettier": "./configs/prettier.js",
+    "./recommended": "./configs/recommended.js"
   },
   "publishConfig": {
     "access": "public"
