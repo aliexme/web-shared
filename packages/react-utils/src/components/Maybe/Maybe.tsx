@@ -1,4 +1,4 @@
-import { type PropsWithChildren, type FC, type ReactElement, Fragment, cloneElement } from 'react'
+import { cloneElement, type FC, Fragment, type PropsWithChildren, type ReactElement } from 'react'
 
 export type MaybeProps = PropsWithChildren<{
   when: boolean

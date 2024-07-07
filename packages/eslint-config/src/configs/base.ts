@@ -122,6 +122,13 @@ export default [
           message: 'Use Number.isFinite instead.',
         },
       ],
+      'sort-imports': [
+        'error',
+        {
+          ignoreCase: true,
+          ignoreDeclarationSort: true,
+        },
+      ],
       'no-console': 'warn',
     },
   },
