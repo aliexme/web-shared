@@ -3,6 +3,12 @@ import tseslint from 'typescript-eslint'
 
 export default tseslint.config(...tseslint.configs.strict, ...tseslint.configs.stylistic, {
   name: '@aliexme/eslint-config/typescript',
+  languageOptions: {
+    parserOptions: {
+      parser: tseslint.parser,
+      projectService: true,
+    },
+  },
   rules: {
     '@typescript-eslint/naming-convention': [
       'error',

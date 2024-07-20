@@ -5,6 +5,7 @@ import { includeIgnoreFile } from '@eslint/compat'
 import eslintConfigRecommended from '@aliexme/eslint-config'
 import eslintConfigReact from '@aliexme/eslint-config/react'
 import eslintConfigReactNative from '@aliexme/eslint-config/react-native'
+import eslintConfigVue from '@aliexme/eslint-config/vue'
 import eslintConfigPrettier from '@aliexme/eslint-config/prettier'
 
 const __filename = fileURLToPath(import.meta.url)
@@ -17,5 +18,6 @@ export default [
   ...eslintConfigRecommended,
   ...eslintConfigReact,
   ...eslintConfigReactNative,
+  ...eslintConfigVue,
   ...eslintConfigPrettier,
 ]

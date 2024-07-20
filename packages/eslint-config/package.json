@@ -26,6 +26,7 @@
     "./import": "./dist/configs/import.js",
     "./react": "./dist/configs/react.js",
     "./react-native": "./dist/configs/react-native.js",
+    "./vue": "./dist/configs/vue.js",
     "./prettier": "./dist/configs/prettier.js",
     "./recommended": "./dist/configs/recommended.js"
   },
@@ -50,6 +51,7 @@
     "eslint-plugin-react": "^7.0.0",
     "eslint-plugin-react-hooks": "^4.0.0",
     "eslint-plugin-react-native": "^4.0.0",
+    "eslint-plugin-vue": "^9.0.0",
     "prettier": "^3.0.0"
   },
   "peerDependenciesMeta": {
@@ -66,6 +68,9 @@
       "optional": true
     },
     "eslint-plugin-react-native": {
+      "optional": true
+    },
+    "eslint-plugin-vue": {
       "optional": true
     },
     "prettier": {

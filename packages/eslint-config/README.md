@@ -58,6 +58,25 @@ export default [
 ]
 ```
 
+### Vue
+
+Install additional packages:
+
+```sh
+npm i --save-dev eslint-plugin-vue
+```
+
+And add the following lines to your ESLint config file:
+
+```js
+import eslintConfigVue from '@aliexme/eslint-config/vue'
+
+export default [
+  ...eslintConfigRecommended,
+  ...eslintConfigVue, // <--
+]
+```
+
 ### Prettier
 
 Install additional packages:

@@ -34,6 +34,12 @@ export default [
               position: 'after',
             },
             {
+              // Nuxt imports
+              pattern: '#{app,components,imports}',
+              group: 'external',
+              position: 'after',
+            },
+            {
               pattern: './{styles,*.styles,*.css,*.scss}',
               group: 'internal',
               position: 'before',
