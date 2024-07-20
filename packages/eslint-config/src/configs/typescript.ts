@@ -22,7 +22,7 @@ export default tseslint.config(...tseslint.configs.strict, ...tseslint.configs.s
       'error',
       {
         multiline: { delimiter: 'none' },
-        singleline: { delimiter: 'comma' },
+        singleline: { delimiter: 'semi' },
       },
     ],
     '@typescript-eslint/no-empty-interface': [

@@ -20,7 +20,7 @@ export default [
       'jsx-quotes': ['error', 'prefer-single'],
       'quote-props': ['error', 'as-needed'],
       semi: ['error', 'never'],
-      indent: ['error', 2, { SwitchCase: 1 }],
+      indent: ['error', 2, { SwitchCase: 1, offsetTernaryExpressions: true }],
       'max-len': ['error', 120],
       'no-multiple-empty-lines': ['error', { max: 1, maxEOF: 0, maxBOF: 0 }],
       'comma-dangle': ['error', 'always-multiline'],

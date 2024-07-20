@@ -1,6 +1,8 @@
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { includeIgnoreFile } from '@eslint/compat'
+// @ts-expect-error Could not find a declaration file for module '@stylistic/eslint-plugin-migrate'
+import stylisticMigratePlugin from '@stylistic/eslint-plugin-migrate'
 
 import eslintConfigRecommended from '@aliexme/eslint-config'
 import eslintConfigReact from '@aliexme/eslint-config/react'
@@ -20,4 +22,12 @@ export default [
   ...eslintConfigReactNative,
   ...eslintConfigVue,
   ...eslintConfigPrettier,
+  {
+    plugins: {
+      '@stylistic/migrate': stylisticMigratePlugin,
+    },
+    rules: {
+      '@stylistic/migrate/migrate': 'off',
+    },
+  },
 ]

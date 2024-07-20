@@ -23,6 +23,7 @@
     ".": "./dist/index.js",
     "./base": "./dist/configs/base.js",
     "./typescript": "./dist/configs/typescript.js",
+    "./stylistic": "./dist/configs/stylistic.js",
     "./import": "./dist/configs/import.js",
     "./react": "./dist/configs/react.js",
     "./react-native": "./dist/configs/react-native.js",
@@ -40,6 +41,7 @@
     "@eslint/compat": "1.1.0",
     "@eslint/eslintrc": "3.1.0",
     "@eslint/js": "9.6.0",
+    "@stylistic/eslint-plugin": "2.3.0",
     "eslint-plugin-import": "2.29.1",
     "globals": "15.8.0",
     "typescript-eslint": "7.15.0"
