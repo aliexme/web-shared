@@ -31,6 +31,7 @@ export default [
       '@stylistic/key-spacing': 'off',
       '@stylistic/keyword-spacing': 'off',
       '@stylistic/lines-around-comment': 'off',
+      '@stylistic/max-len': 'off',
       '@stylistic/member-delimiter-style': 'off',
       '@stylistic/no-extra-parens': 'off',
       '@stylistic/no-extra-semi': 'off',
