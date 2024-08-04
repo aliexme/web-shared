@@ -1291,7 +1291,7 @@
     "@types/eslint" "^8.56.10"
     "@stylistic/eslint-plugin-js" "^2.3.0"
 
-"@stylistic/eslint-plugin-migrate@^2.3.0":
+"@stylistic/eslint-plugin-migrate@2.3.0":
   version "2.3.0"
   resolved "https://registry.npmjs.org/@stylistic/eslint-plugin-migrate/-/eslint-plugin-migrate-2.3.0.tgz"
   integrity sha512-3XQo8y1nrfXFCA3B+4YbjUeuXGhKdq3d/O3Hg1z84doan9D9su+Brd2eO2Uk2aVsy9TuRup3uHCv22DWcFKUnw==

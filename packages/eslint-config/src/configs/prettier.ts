@@ -36,6 +36,7 @@ export default [
       '@stylistic/no-extra-parens': 'off',
       '@stylistic/no-extra-semi': 'off',
       '@stylistic/object-curly-spacing': 'off',
+      '@stylistic/operator-linebreak': 'off',
       '@stylistic/quotes': 'off',
       '@stylistic/semi': 'off',
       '@stylistic/space-before-blocks': 'off',
