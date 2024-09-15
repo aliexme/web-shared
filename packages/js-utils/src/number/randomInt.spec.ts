@@ -17,7 +17,7 @@ describe('randomInt', () => {
   it('should return random number in [from,to] range', () => {
     jest.spyOn(Math, 'random').mockImplementation(seedrandom(''))
 
-    const result = randomInt({ from: 10, to: 20 })
+    const result = randomInt(10, 20)
     expect(result).toBe(12)
   })
 })
