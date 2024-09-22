@@ -12,6 +12,8 @@ export default [
     },
     rules: {
       'vue/no-undef-components': 'error',
+      'vue/prop-name-casing': 'off',
+      'vue/no-reserved-props': 'off',
     },
   },
 ] satisfies Linter.Config[]

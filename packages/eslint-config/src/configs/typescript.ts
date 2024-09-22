@@ -25,10 +25,10 @@ export default tseslint.config(...tseslint.configs.strict, ...tseslint.configs.s
         singleline: { delimiter: 'semi' },
       },
     ],
-    '@typescript-eslint/no-empty-interface': [
+    '@typescript-eslint/no-empty-object-type': [
       'error',
       {
-        allowSingleExtends: true,
+        allowInterfaces: 'with-single-extends',
       },
     ],
     '@typescript-eslint/consistent-type-imports': [
