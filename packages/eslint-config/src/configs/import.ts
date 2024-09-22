@@ -58,4 +58,4 @@ export default [
       'import/namespace': 'off',
     },
   },
-] satisfies Linter.FlatConfig[]
+] satisfies Linter.Config[]

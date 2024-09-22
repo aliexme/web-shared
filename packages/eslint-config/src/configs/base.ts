@@ -132,4 +132,4 @@ export default [
       'no-console': 'warn',
     },
   },
-] satisfies Linter.FlatConfig[]
+] satisfies Linter.Config[]

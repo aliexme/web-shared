@@ -15,4 +15,4 @@ export default [
       'react-native/no-single-element-style-arrays': 'error',
     },
   },
-] satisfies Linter.FlatConfig[]
+] satisfies Linter.Config[]

@@ -65,4 +65,4 @@ export default [
       ],
     },
   },
-] satisfies Linter.FlatConfig[]
+] satisfies Linter.Config[]

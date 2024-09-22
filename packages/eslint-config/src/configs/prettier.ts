@@ -45,4 +45,4 @@ export default [
       '@stylistic/type-annotation-spacing': 'off',
     },
   },
-] satisfies Linter.FlatConfig[]
+] satisfies Linter.Config[]

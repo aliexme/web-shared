@@ -48,4 +48,4 @@ export default [
       ...eslintPluginReactHooks.configs.recommended.rules,
     },
   },
-] satisfies Linter.FlatConfig[]
+] satisfies Linter.Config[]

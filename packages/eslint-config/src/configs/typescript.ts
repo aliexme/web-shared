@@ -37,4 +37,4 @@ export default tseslint.config(...tseslint.configs.strict, ...tseslint.configs.s
     ],
     '@typescript-eslint/type-annotation-spacing': 'error',
   },
-}) as Linter.FlatConfig[]
+}) as Linter.Config[]

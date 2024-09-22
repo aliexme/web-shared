@@ -10,4 +10,4 @@ export default [
   ...typescriptConfigArray,
   ...stylisticConfigArray,
   ...importConfigArray,
-] satisfies Linter.FlatConfig[]
+] satisfies Linter.Config[]

@@ -14,4 +14,4 @@ export default [
       'vue/no-undef-components': 'error',
     },
   },
-] satisfies Linter.FlatConfig[]
+] satisfies Linter.Config[]
