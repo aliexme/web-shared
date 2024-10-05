@@ -7,15 +7,15 @@ export interface DebouncedFunc<T extends (...args: unknown[]) => unknown> {
 
 export interface DebounceOptions {
   maxWait?: number
-  leading?: boolean
+  withLeading?: boolean
 }
 
 export const debounce = <T extends (...args: unknown[]) => unknown>(
   func: T,
-  wait: number,
+  delay: number,
   options: DebounceOptions = {},
 ): DebouncedFunc<T> => {
-  const { maxWait, leading } = options
+  const { maxWait, withLeading = false } = options
 
   let timerId: ReturnType<typeof setTimeout> | null = null
   let firstCallTime: number | null = null
@@ -41,12 +41,12 @@ export const debounce = <T extends (...args: unknown[]) => unknown>(
 
     const now = Date.now()
     const timeSinceFirstCall = firstCallTime ? now - firstCallTime : 0
-    const remainingWait = maxWait ? clamp(maxWait - timeSinceFirstCall, 0, wait) : wait
+    const remainingWait = maxWait ? clamp(maxWait - timeSinceFirstCall, 0, delay) : delay
 
     if (!firstCallTime) {
       firstCallTime = now
 
-      if (leading) {
+      if (withLeading) {
         func(...args)
         timerId = setTimeout(resetFirstCall, remainingWait)
         return

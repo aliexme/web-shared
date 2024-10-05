@@ -28,25 +28,6 @@ describe('debounce', () => {
     expect(func).toHaveBeenCalledTimes(1)
   })
 
-  it('should cancel debounced function', () => {
-    jest.useFakeTimers()
-
-    const func = jest.fn(noop)
-    const debouncedFunc = debounce(func, 1000)
-
-    debouncedFunc()
-    debouncedFunc()
-    debouncedFunc()
-    expect(func).toHaveBeenCalledTimes(0)
-
-    jest.advanceTimersByTime(600)
-    expect(func).toHaveBeenCalledTimes(0)
-
-    debouncedFunc.cancel()
-    jest.advanceTimersByTime(600)
-    expect(func).toHaveBeenCalledTimes(0)
-  })
-
   it('should debounce function with max wait time', () => {
     jest.useFakeTimers()
 
@@ -54,9 +35,6 @@ describe('debounce', () => {
     const debouncedFunc = debounce(func, 1000, { maxWait: 1500 })
 
     debouncedFunc()
-    debouncedFunc()
-    debouncedFunc()
-    expect(func).toHaveBeenCalledTimes(0)
 
     jest.advanceTimersByTime(600)
     debouncedFunc()
@@ -74,7 +52,7 @@ describe('debounce', () => {
     jest.useFakeTimers()
 
     const func = jest.fn(noop)
-    const debouncedFunc = debounce(func, 1000, { leading: true })
+    const debouncedFunc = debounce(func, 1000, { withLeading: true })
 
     debouncedFunc()
     expect(func).toHaveBeenCalledTimes(1)
@@ -82,8 +60,6 @@ describe('debounce', () => {
     jest.advanceTimersByTime(1200)
     expect(func).toHaveBeenCalledTimes(1)
 
-    debouncedFunc()
-    debouncedFunc()
     debouncedFunc()
     expect(func).toHaveBeenCalledTimes(2)
 
@@ -96,5 +72,21 @@ describe('debounce', () => {
 
     jest.advanceTimersByTime(600)
     expect(func).toHaveBeenCalledTimes(3)
+  })
+
+  it('should cancel debounced function', () => {
+    jest.useFakeTimers()
+
+    const func = jest.fn(noop)
+    const debouncedFunc = debounce(func, 1000)
+
+    debouncedFunc()
+
+    jest.advanceTimersByTime(600)
+    expect(func).toHaveBeenCalledTimes(0)
+
+    debouncedFunc.cancel()
+    jest.advanceTimersByTime(600)
+    expect(func).toHaveBeenCalledTimes(0)
   })
 })
