@@ -3,12 +3,12 @@ pre-commit:
   commands:
     typescript:
       glob: '*.{ts,tsx,vue}'
-      run: bun run ts:check
+      run: pnpm run ts:check
     eslint:
       glob: '*.{js,jsx,cjs,mjs,ts,tsx,vue}'
-      run: bun run eslint --fix {staged_files}
+      run: pnpm run eslint:check --fix {staged_files}
       stage_fixed: true
     stylelint:
       glob: '*.{css,scss}'
-      run: bun run stylelint --fix {staged_files}
+      run: pnpm run stylelint:check --fix {staged_files}
       stage_fixed: true

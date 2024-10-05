@@ -16,5 +16,11 @@ export default defineConfig({
       },
     },
   },
-  plugins: [dts()],
+  plugins: [
+    dts({
+      tsconfigPath: './tsconfig.build.json',
+      entryRoot: './src',
+      insertTypesEntry: true,
+    }),
+  ],
 })
