@@ -1,3 +1,3 @@
-export const noop = () => {
+export const noop = (): void => {
   /* noop */
 }
