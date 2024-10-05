@@ -11,6 +11,7 @@
     "directory": "packages/js-utils"
   },
   "license": "MIT",
+  "type": "module",
   "files": [
     "dist"
   ],
@@ -21,6 +22,7 @@
     "access": "public"
   },
   "scripts": {
-    "build": "tsc -p ./tsconfig.build.json"
+    "build": "vite build",
+    "ts:check": "tsc --noEmit"
   }
 }

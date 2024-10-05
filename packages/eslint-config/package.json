@@ -35,7 +35,8 @@
     "access": "public"
   },
   "scripts": {
-    "build": "tsc -p ./tsconfig.build.json"
+    "build": "tsc -p ./tsconfig.build.json",
+    "ts:check": "tsc --noEmit"
   },
   "dependencies": {
     "@eslint/compat": "^1.1.1",

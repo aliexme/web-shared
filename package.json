@@ -16,7 +16,7 @@
   "scripts": {
     "lerna:build": "lerna run build",
     "lerna:publish": "lerna publish --no-private",
-    "ts:check": "tsc --noEmit",
+    "ts:check": "lerna run ts:check",
     "eslint:check": "eslint ./",
     "eslint:fix": "bun run eslint:check --fix",
     "stylelint:check": "stylelint '**/*.{css,scss}' --allow-empty-input",
@@ -57,6 +57,8 @@
     "stylelint-config-standard-scss": "13.1.0",
     "stylelint-prettier": "5.0.2",
     "ts-jest": "29.2.5",
-    "typescript": "5.6.2"
+    "typescript": "5.6.2",
+    "vite": "5.4.8",
+    "vite-plugin-dts": "4.2.3"
   }
 }

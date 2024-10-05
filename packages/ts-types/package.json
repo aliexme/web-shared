@@ -19,6 +19,9 @@
   "publishConfig": {
     "access": "public"
   },
+  "scripts": {
+    "ts:check": "tsc --noEmit"
+  },
   "peerDependencies": {
     "typescript": "^5.0.0"
   }
