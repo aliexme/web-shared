@@ -1,18 +1,18 @@
 import { useEffect, useState } from 'react'
-import debounce from 'lodash/debounce'
 
-interface WindowSize {
+import { throttle } from '@aliexme/js-utils'
+
+export interface WindowSize {
   width: number
   height: number
 }
 
-export const useWindowSize = (
-  options: {
-    debounceWait?: number
-    debounceMaxWait?: number
-  } = {},
-) => {
-  const { debounceWait = 0, debounceMaxWait = 1000 } = options
+export interface UseWindowSizeOptions {
+  throttleDelay?: number
+}
+
+export const useWindowSize = (options: UseWindowSizeOptions = {}) => {
+  const { throttleDelay = 100 } = options
 
   const [windowSize, setWindowSize] = useState<WindowSize>({
     width: typeof window !== 'undefined' ? window.innerWidth : 0,
@@ -24,7 +24,7 @@ export const useWindowSize = (
       return
     }
 
-    const handleWindowResize = debounce(
+    const handleWindowResize = throttle(
       () => {
         setWindowSize((prevWindowSize) =>
           prevWindowSize.width === window.innerWidth && prevWindowSize.height === window.innerHeight
@@ -35,8 +35,8 @@ export const useWindowSize = (
               },
         )
       },
-      debounceWait,
-      { maxWait: debounceMaxWait },
+      throttleDelay,
+      { withTrailing: true },
     )
 
     window.addEventListener('resize', handleWindowResize)
@@ -44,7 +44,7 @@ export const useWindowSize = (
     return () => {
       window.removeEventListener('resize', handleWindowResize)
     }
-  }, [debounceWait, debounceMaxWait])
+  }, [throttleDelay])
 
   return windowSize
 }

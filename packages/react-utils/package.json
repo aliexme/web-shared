@@ -11,27 +11,28 @@
     "directory": "packages/react-utils"
   },
   "license": "MIT",
+  "type": "module",
   "files": [
     "dist"
   ],
   "main": "./dist/index.js",
   "typings": "./dist/index.d.ts",
+  "sideEffects": false,
   "publishConfig": {
     "access": "public"
   },
   "scripts": {
-    "build": "tsc -p ./tsconfig.build.json",
+    "build": "vite build",
     "ts:check": "tsc --noEmit"
   },
   "dependencies": {
-    "lodash": "4.17.21"
+    "@aliexme/js-utils": "^2.1.0"
   },
   "devDependencies": {
-    "@types/lodash": "4.14.199",
-    "@types/react": "18.2.23",
-    "react": "18.2.0"
+    "@types/react": "18.3.11",
+    "react": "18.3.1"
   },
   "peerDependencies": {
-    "react": ">=18.2.0"
+    "react": "^18.0.0"
   }
 }
