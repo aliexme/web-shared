@@ -1,6 +1,6 @@
-import type { Linter } from 'eslint'
 import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended'
 
+/** @type {import('eslint').Linter.Config[]} */
 export default [
   eslintPluginPrettierRecommended,
   {
@@ -45,4 +45,4 @@ export default [
       '@stylistic/type-annotation-spacing': 'off',
     },
   },
-] satisfies Linter.Config[]
+]

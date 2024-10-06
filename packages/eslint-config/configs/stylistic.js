@@ -1,6 +1,6 @@
-import type { Linter } from 'eslint'
 import stylistic from '@stylistic/eslint-plugin'
 
+/** @type {import('eslint').Linter.Config[]} */
 export default [
   stylistic.configs.customize({
     flat: true,
@@ -65,4 +65,4 @@ export default [
       ],
     },
   },
-] satisfies Linter.Config[]
+]

@@ -1,8 +1,8 @@
-import type { Linter } from 'eslint'
 import { fixupPluginRules } from '@eslint/compat'
 // @ts-expect-error Could not find a declaration file for module 'eslint-plugin-react-native'
 import eslintPluginReactNative from 'eslint-plugin-react-native'
 
+/** @type {import('eslint').Linter.Config[]} */
 export default [
   {
     plugins: {
@@ -15,4 +15,4 @@ export default [
       'react-native/no-single-element-style-arrays': 'error',
     },
   },
-] satisfies Linter.Config[]
+]

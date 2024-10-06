@@ -1,14 +1,14 @@
-import type { Linter } from 'eslint'
+import { FlatCompat } from '@eslint/eslintrc'
 import { fixupPluginRules } from '@eslint/compat'
 // @ts-expect-error Could not find a declaration file for module 'eslint-plugin-import'
 import eslintPluginImport from 'eslint-plugin-import'
 
-import { compat } from '../utils/compat.js'
+const compat = new FlatCompat()
 
+/** @type {import('eslint').Linter.Config[]} */
 export default [
   ...compat.extends('plugin:import/typescript'),
   {
-    name: '@aliexme/eslint-config/import',
     plugins: {
       import: fixupPluginRules(eslintPluginImport),
     },
@@ -58,4 +58,4 @@ export default [
       'import/namespace': 'off',
     },
   },
-] satisfies Linter.Config[]
+]

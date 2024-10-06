@@ -1,7 +1,7 @@
-import type { Linter } from 'eslint'
 // @ts-expect-error Could not find a declaration file for module 'eslint-plugin-vue'
 import eslintPluginVue from 'eslint-plugin-vue'
 
+/** @type {import('eslint').Linter.Config[]} */
 export default [
   ...eslintPluginVue.configs['flat/recommended'],
   {
@@ -16,4 +16,4 @@ export default [
       'vue/no-reserved-props': 'off',
     },
   },
-] satisfies Linter.Config[]
+]

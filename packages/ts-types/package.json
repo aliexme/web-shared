@@ -15,7 +15,7 @@
     "index.d.ts"
   ],
   "main": "index.d.ts",
-  "typings": "index.d.ts",
+  "types": "index.d.ts",
   "publishConfig": {
     "access": "public"
   },

@@ -17,35 +17,33 @@
   ],
   "type": "module",
   "files": [
-    "dist"
+    "index.js",
+    "configs"
   ],
   "exports": {
-    ".": "./dist/index.js",
-    "./base": "./dist/configs/base.js",
-    "./typescript": "./dist/configs/typescript.js",
-    "./stylistic": "./dist/configs/stylistic.js",
-    "./import": "./dist/configs/import.js",
-    "./react": "./dist/configs/react.js",
-    "./react-native": "./dist/configs/react-native.js",
-    "./vue": "./dist/configs/vue.js",
-    "./prettier": "./dist/configs/prettier.js",
-    "./recommended": "./dist/configs/recommended.js"
+    ".": "./index.js",
+    "./base": "./configs/base.js",
+    "./typescript": "./configs/typescript.js",
+    "./stylistic": "./configs/stylistic.js",
+    "./import": "./configs/import.js",
+    "./react": "./configs/react.js",
+    "./react-native": "./configs/react-native.js",
+    "./vue": "./configs/vue.js",
+    "./prettier": "./configs/prettier.js",
+    "./recommended": "./configs/recommended.js"
   },
+  "sideEffects": false,
   "publishConfig": {
     "access": "public"
   },
-  "scripts": {
-    "build": "tsc -p ./tsconfig.build.json",
-    "ts:check": "tsc --noEmit"
-  },
   "dependencies": {
-    "@eslint/compat": "^1.1.1",
+    "@eslint/compat": "^1.2.0",
     "@eslint/eslintrc": "^3.1.0",
-    "@eslint/js": "^9.11.1",
-    "@stylistic/eslint-plugin": "^2.8.0",
-    "eslint-plugin-import": "^2.30.0",
-    "globals": "^15.9.0",
-    "typescript-eslint": "^8.7.0"
+    "@eslint/js": "^9.12.0",
+    "@stylistic/eslint-plugin": "^2.9.0",
+    "eslint-plugin-import": "^2.31.0",
+    "globals": "^15.10.0",
+    "typescript-eslint": "^8.8.0"
   },
   "peerDependencies": {
     "eslint": "^9.0.0",

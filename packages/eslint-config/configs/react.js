@@ -1,4 +1,3 @@
-import type { Linter } from 'eslint'
 import { fixupPluginRules } from '@eslint/compat'
 // @ts-expect-error Could not find a declaration file for module 'eslint-plugin-react/configs/recommended.js'
 import eslintPluginReactRecommended from 'eslint-plugin-react/configs/recommended.js'
@@ -7,6 +6,7 @@ import eslintPluginReactJsxRuntime from 'eslint-plugin-react/configs/jsx-runtime
 // @ts-expect-error Could not find a declaration file for module 'eslint-plugin-react-hooks'
 import eslintPluginReactHooks from 'eslint-plugin-react-hooks'
 
+/** @type {import('eslint').Linter.Config[]} */
 export default [
   eslintPluginReactRecommended,
   eslintPluginReactJsxRuntime,
@@ -48,4 +48,4 @@ export default [
       ...eslintPluginReactHooks.configs.recommended.rules,
     },
   },
-] satisfies Linter.Config[]
+]
