@@ -1,11 +1,16 @@
-export const arraysIntersection = <T>(array1: T[], array2: T[], ...arrays: T[][]): T[] => {
-  if (array1.length === 0 || array2.length === 0 || arrays.some((array) => array.length === 0)) return []
+export function arraysIntersection<T>(array1: T[], array2: T[], ...restArrays: T[][]): T[] {
+  if (array1.length === 0 || array2.length === 0 || restArrays.some((array) => array.length === 0)) return []
 
-  let intersection: T[] = array1.filter((item) => array2.includes(item))
+  const intersectionSet = new Set(array1)
+  const arrays = [array2, ...restArrays]
 
-  arrays.forEach((arrayN) => {
-    intersection = intersection.filter((item) => arrayN.includes(item))
-  })
+  for (const array of arrays) {
+    for (const item of intersectionSet) {
+      if (!array.includes(item)) {
+        intersectionSet.delete(item)
+      }
+    }
+  }
 
-  return intersection
+  return Array.from(intersectionSet)
 }

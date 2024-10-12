@@ -1,4 +1,8 @@
-export const subtractArrays = <T>(array1: T[], array2: T[]): T[] => {
-  if (array1.length === 0 || array2.length === 0) return array1
-  return array1.filter((item) => !array2.includes(item))
+export function subtractArrays<T>(mainArray: T[], arrayToSubstract: T[], ...restArraysToSubtract: T[][]): T[] {
+  if (mainArray.length === 0) return []
+  if (arrayToSubstract.length === 0) return [...mainArray]
+
+  const arraysToSubtract = [arrayToSubstract, ...restArraysToSubtract]
+  const setToSubtract = new Set(arraysToSubtract.flat())
+  return mainArray.filter((item) => !setToSubtract.has(item))
 }

@@ -23,6 +23,13 @@ describe('arraysIntersection', () => {
     expect(result).toEqual([])
   })
 
+  it('should return empty array if first or second array is empty', () => {
+    const array1 = [1, 2, 3, 4]
+    const array3 = [5, 6, 7, 8]
+    const result = arraysIntersection(array1, [], array3)
+    expect(result).toEqual([])
+  })
+
   it('should return empty array if at least one of arrays is empty', () => {
     const array1 = [1, 2, 3, 4]
     const array2 = [5, 6, 7, 8]
