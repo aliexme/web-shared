@@ -1,4 +1,3 @@
-import { fixupPluginRules } from '@eslint/compat'
 // @ts-expect-error Could not find a declaration file for module 'eslint-plugin-react/configs/recommended.js'
 import eslintPluginReactRecommended from 'eslint-plugin-react/configs/recommended.js'
 // @ts-expect-error Could not find a declaration file for module 'eslint-plugin-react/configs/jsx-runtime.js'
@@ -42,7 +41,7 @@ export default [
   },
   {
     plugins: {
-      'react-hooks': fixupPluginRules(eslintPluginReactHooks),
+      'react-hooks': eslintPluginReactHooks,
     },
     rules: {
       ...eslintPluginReactHooks.configs.recommended.rules,
