@@ -26,6 +26,7 @@ export default [
       '@stylistic/jsx-newline': 'off',
       '@stylistic/jsx-one-expression-per-line': 'off',
       '@stylistic/jsx-props-no-multi-spaces': 'off',
+      '@stylistic/jsx-quotes': 'off',
       '@stylistic/jsx-tag-spacing': 'off',
       '@stylistic/jsx-wrap-multilines': 'off',
       '@stylistic/key-spacing': 'off',
