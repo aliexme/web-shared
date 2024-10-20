@@ -1,6 +1,6 @@
 {
   "name": "@aliexme/react-utils",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "React utilities",
   "private": false,
   "author": "Alexander Smirnov <al.smirnov996@gmail.com>",
@@ -33,7 +33,7 @@
     "ts:check": "tsc --noEmit"
   },
   "dependencies": {
-    "@aliexme/js-utils": "workspace:^2.1.2"
+    "@aliexme/js-utils": "workspace:^2.1.3"
   },
   "devDependencies": {
     "@types/react": "18.3.11",
