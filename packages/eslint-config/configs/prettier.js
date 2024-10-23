@@ -34,6 +34,7 @@ export default [
       '@stylistic/lines-around-comment': 'off',
       '@stylistic/max-len': 'off',
       '@stylistic/member-delimiter-style': 'off',
+      '@stylistic/multiline-ternary': 'off',
       '@stylistic/no-extra-parens': 'off',
       '@stylistic/no-extra-semi': 'off',
       '@stylistic/object-curly-spacing': 'off',
