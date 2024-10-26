@@ -31,3 +31,16 @@ export type ValueOf<T> = T[keyof T]
  * Create a tuple of T of a given length
  */
 export type Tuple<T, N, R extends T[] = []> = R['length'] extends N ? R : Tuple<T, N, [...R, T]>
+
+/**
+ * Convert a union type into an intersection type
+ */
+export type Intersect<T> = (T extends never ? never : (_: T) => never) extends (_: infer R) => void ? R : never
+
+/**
+ * Convert a union type into a tuple
+ */
+export type UnionTuple<T> =
+  Intersect<T extends never ? never : (_: T) => T> extends (_: never) => infer R
+    ? [...UnionTuple<Exclude<T, R>>, R]
+    : []
