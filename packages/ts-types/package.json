@@ -1,6 +1,6 @@
 {
   "name": "@aliexme/ts-types",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "Common TypeScript utility types",
   "private": false,
   "author": "Alexander Smirnov <al.smirnov996@gmail.com>",
