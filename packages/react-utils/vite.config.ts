@@ -1,3 +1,5 @@
+import react from '@vitejs/plugin-react'
+
 import { defineLibConfig } from '../../vite-lib.config'
 
 export default defineLibConfig({
@@ -7,4 +9,5 @@ export default defineLibConfig({
       entry: './src/index.ts',
     },
   },
+  plugins: [react()],
 })
