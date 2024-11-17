@@ -1,6 +1,7 @@
 export * from './useIsomorphicLayoutEffect'
 export * from './useDidMount'
 export * from './useWillUnmount'
+export * from './useIsMounted'
 export * from './useValueRef'
 export * from './usePrevious'
 export * from './useDerivedState'
