@@ -13,6 +13,7 @@ export default [
       '@stylistic/func-call-spacing': 'off',
       '@stylistic/function-paren-newline': 'off',
       '@stylistic/indent': 'off',
+      '@stylistic/indent-binary-ops': 'off',
       '@stylistic/jsx-child-element-spacing': 'off',
       '@stylistic/jsx-closing-bracket-location': 'off',
       '@stylistic/jsx-closing-tag-location': 'off',
