@@ -110,7 +110,7 @@ export default [
           exceptionPatterns: ['[x-z]'],
         },
       ],
-      'new-cap': 'error',
+      'new-cap': ['error', { newIsCap: true, capIsNew: false }],
       'no-restricted-globals': [
         'error',
         {
