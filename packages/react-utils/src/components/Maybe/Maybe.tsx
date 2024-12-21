@@ -2,8 +2,8 @@ import { cloneElement, type FC, Fragment, type PropsWithChildren, type ReactElem
 
 export type MaybeProps = PropsWithChildren<{
   when: boolean
-  component: ReactElement
-  orElse?: ReactElement
+  component: ReactElement<PropsWithChildren>
+  orElse?: ReactElement<PropsWithChildren>
 }>
 
 export const Maybe: FC<MaybeProps> = (props) => {
