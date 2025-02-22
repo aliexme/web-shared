@@ -8,7 +8,7 @@ export interface ComponentSize {
 }
 
 export interface UseComponentSizeOptions<T extends HTMLElement = HTMLElement> {
-  ref?: RefObject<T>
+  ref?: RefObject<T | null>
   enabled?: boolean
   manual?: boolean
   onResize?(size: ComponentSize, entry: ResizeObserverEntry): void
