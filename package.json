@@ -55,12 +55,5 @@
     "vite": "6.1.1",
     "vite-plugin-dts": "4.5.0",
     "vite-plugin-externalize-deps": "0.9.0"
-  },
-  "pnpm": {
-    "onlyBuiltDependencies": [
-      "esbuild",
-      "lefthook",
-      "nx"
-    ]
   }
 }
