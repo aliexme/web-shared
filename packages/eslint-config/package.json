@@ -37,21 +37,21 @@
     "access": "public"
   },
   "dependencies": {
-    "@eslint/compat": "^1.2.4",
-    "@eslint/eslintrc": "^3.2.0",
-    "@eslint/js": "^9.17.0",
-    "@stylistic/eslint-plugin": "^2.12.1",
+    "@eslint/compat": "^1.2.7",
+    "@eslint/eslintrc": "^3.3.0",
+    "@eslint/js": "^9.21.0",
+    "@stylistic/eslint-plugin": "^4.0.1",
     "eslint-plugin-import": "^2.31.0",
-    "globals": "^15.14.0",
-    "typescript-eslint": "^8.18.1"
+    "globals": "^16.0.0",
+    "typescript-eslint": "^8.24.1"
   },
   "peerDependencies": {
     "eslint": "^9.0.0",
-    "eslint-config-prettier": "^9.0.0",
+    "eslint-config-prettier": "^10.0.0",
     "eslint-plugin-prettier": "^5.0.0",
     "eslint-plugin-react": "^7.0.0",
     "eslint-plugin-react-hooks": "^5.0.0",
-    "eslint-plugin-react-native": "^4.0.0",
+    "eslint-plugin-react-native": "^5.0.0",
     "eslint-plugin-vue": "^9.0.0",
     "prettier": "^3.0.0"
   },

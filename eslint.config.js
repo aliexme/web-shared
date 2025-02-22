@@ -1,7 +1,6 @@
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { includeIgnoreFile } from '@eslint/compat'
-// @ts-expect-error Could not find a declaration file for module '@stylistic/eslint-plugin-migrate'
 import stylisticMigratePlugin from '@stylistic/eslint-plugin-migrate'
 
 import eslintConfigRecommended from '@aliexme/eslint-config'
@@ -14,7 +13,7 @@ const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 const gitignorePath = path.resolve(__dirname, '.gitignore')
 
-/** @type {import('eslint').Linter.Config[]} */
+/** @type {import('typescript-eslint').ConfigArray} */
 export default [
   includeIgnoreFile(gitignorePath),
   ...eslintConfigRecommended,

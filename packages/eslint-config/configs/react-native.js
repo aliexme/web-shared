@@ -1,4 +1,3 @@
-import { fixupPluginRules } from '@eslint/compat'
 // @ts-expect-error Could not find a declaration file for module 'eslint-plugin-react-native'
 import eslintPluginReactNative from 'eslint-plugin-react-native'
 
@@ -6,7 +5,7 @@ import eslintPluginReactNative from 'eslint-plugin-react-native'
 export default [
   {
     plugins: {
-      'react-native': fixupPluginRules(eslintPluginReactNative),
+      'react-native': eslintPluginReactNative,
     },
     rules: {
       'react-native/no-unused-styles': 'error',

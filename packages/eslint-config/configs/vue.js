@@ -1,4 +1,3 @@
-// @ts-expect-error Could not find a declaration file for module 'eslint-plugin-vue'
 import eslintPluginVue from 'eslint-plugin-vue'
 
 /** @type {import('eslint').Linter.Config[]} */
