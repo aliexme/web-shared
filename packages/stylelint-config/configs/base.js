@@ -2,7 +2,7 @@
 module.exports = {
   extends: ['stylelint-config-standard', './common'],
   rules: {
-    'import-notation': [true, 'string'],
+    'import-notation': 'string',
     'at-rule-no-unknown': [
       true,
       {
