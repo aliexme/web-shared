@@ -3,6 +3,7 @@ module.exports = {
   extends: ['stylelint-config-standard', './common'],
   rules: {
     'import-notation': 'string',
+    'hue-degree-notation': 'number',
     'at-rule-no-unknown': [
       true,
       {
