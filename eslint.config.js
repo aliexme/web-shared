@@ -27,7 +27,7 @@ export default defineConfig([
       '@stylistic/migrate': stylisticMigratePlugin,
     },
     rules: {
-      '@stylistic/migrate/migrate': 'off',
+      '@stylistic/migrate/migrate': 'error',
     },
   },
 ])

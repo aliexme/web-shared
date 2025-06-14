@@ -18,13 +18,6 @@ export default /** @type {import('eslint').Linter.Config[]} */ (
         },
       ],
       '@typescript-eslint/no-unused-vars': ['error', { argsIgnorePattern: '^_' }],
-      '@typescript-eslint/member-delimiter-style': [
-        'error',
-        {
-          multiline: { delimiter: 'none' },
-          singleline: { delimiter: 'semi' },
-        },
-      ],
       '@typescript-eslint/no-empty-object-type': [
         'error',
         {
@@ -35,7 +28,6 @@ export default /** @type {import('eslint').Linter.Config[]} */ (
         'error',
         { prefer: 'type-imports', fixStyle: 'inline-type-imports' },
       ],
-      '@typescript-eslint/type-annotation-spacing': 'error',
     },
   })
 )
