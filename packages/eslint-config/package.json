@@ -30,6 +30,7 @@
     "./react-native": "./configs/react-native.js",
     "./vue": "./configs/vue.js"
   },
+  "types": "./index.d.ts",
   "files": [
     "index.js",
     "configs"
