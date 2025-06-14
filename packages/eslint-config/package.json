@@ -33,6 +33,7 @@
   "types": "./index.d.ts",
   "files": [
     "index.js",
+    "index.d.ts",
     "configs"
   ],
   "dependencies": {
