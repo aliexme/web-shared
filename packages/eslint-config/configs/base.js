@@ -1,11 +1,11 @@
-import eslintJs from '@eslint/js'
+import { defineConfig } from 'eslint/config'
+import eslint from '@eslint/js'
 import globals from 'globals'
 
-/** @type {import('eslint').Linter.Config[]} */
-export default [
-  eslintJs.configs.recommended,
+export default defineConfig([
+  eslint.configs.recommended,
   {
-    name: '@aliexme/eslint-config-base',
+    name: '@aliexme/eslint-config/base',
     languageOptions: {
       ecmaVersion: 'latest',
       sourceType: 'module',
@@ -132,4 +132,4 @@ export default [
       'no-console': 'warn',
     },
   },
-]
+])

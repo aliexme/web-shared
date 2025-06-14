@@ -1,4 +1,5 @@
-import recommendedConfigArray from './configs/recommended.js'
+import { defineConfig } from 'eslint/config'
 
-/** @type {import('eslint').Linter.Config[]} */
-export default recommendedConfigArray
+import recommendedConfig from './configs/recommended.js'
+
+export default defineConfig(recommendedConfig)

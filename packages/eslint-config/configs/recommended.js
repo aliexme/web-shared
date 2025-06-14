@@ -1,7 +1,8 @@
-import baseConfigArray from './base.js'
-import typescriptConfigArray from './typescript.js'
-import stylisticConfigArray from './stylistic.js'
-import importConfigArray from './import.js'
+import { defineConfig } from 'eslint/config'
 
-/** @type {import('eslint').Linter.Config[]} */
-export default [...baseConfigArray, ...typescriptConfigArray, ...stylisticConfigArray, ...importConfigArray]
+import baseConfig from './base.js'
+import typescriptConfig from './typescript.js'
+import stylisticConfig from './stylistic.js'
+import importConfig from './import.js'
+
+export default defineConfig([baseConfig, typescriptConfig, stylisticConfig, importConfig])

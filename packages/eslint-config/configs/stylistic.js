@@ -1,7 +1,7 @@
+import { defineConfig } from 'eslint/config'
 import stylistic from '@stylistic/eslint-plugin'
 
-/** @type {import('eslint').Linter.Config[]} */
-export default [
+export default defineConfig([
   stylistic.configs.customize({
     jsx: true,
     arrowParens: true,
@@ -14,6 +14,7 @@ export default [
     semi: false,
   }),
   {
+    name: '@aliexme/eslint-config/stylistic',
     rules: {
       '@stylistic/array-bracket-newline': ['error', { multiline: true }],
       '@stylistic/array-element-newline': [
@@ -64,4 +65,4 @@ export default [
       ],
     },
   },
-]
+])

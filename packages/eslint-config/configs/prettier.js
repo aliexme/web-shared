@@ -1,7 +1,7 @@
+import { defineConfig } from 'eslint/config'
 import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended'
 
-/** @type {import('eslint').Linter.Config[]} */
-export default [
+export default defineConfig([
   eslintPluginPrettierRecommended,
   {
     rules: {
@@ -48,4 +48,4 @@ export default [
       '@stylistic/type-annotation-spacing': 'off',
     },
   },
-]
+])

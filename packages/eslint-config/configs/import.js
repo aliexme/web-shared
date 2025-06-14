@@ -1,24 +1,20 @@
-import { FlatCompat } from '@eslint/eslintrc'
-import { fixupPluginRules } from '@eslint/compat'
+import { defineConfig } from 'eslint/config'
 // @ts-expect-error Could not find a declaration file for module 'eslint-plugin-import'
-import eslintPluginImport from 'eslint-plugin-import'
+import importPlugin from 'eslint-plugin-import'
 
-const compat = new FlatCompat()
-
-/** @type {import('eslint').Linter.Config[]} */
-export default [
-  ...compat.extends('plugin:import/typescript'),
+export default defineConfig([
+  importPlugin.flatConfigs.recommended,
+  importPlugin.flatConfigs.typescript,
   {
-    plugins: {
-      import: fixupPluginRules(eslintPluginImport),
-    },
+    name: '@aliexme/eslint-config/import',
     settings: {
       'import/resolver': {
         node: {
-          extensions: ['.js', '.cjs', '.mjs', '.jsx', '.ts', '.tsx', '.vue'],
           moduleDirectory: ['src/', 'node_modules'],
         },
+        typescript: {},
       },
+      'import/extensions': ['.js', '.cjs', '.mjs', '.jsx', '.ts', '.tsx', '.vue', '.astro'],
       'import/ignore': ['node_modules'],
     },
     rules: {
@@ -26,28 +22,21 @@ export default [
       'import/order': [
         'error',
         {
-          groups: [['builtin', 'external'], 'internal', ['parent', 'sibling'], 'index', 'object'],
+          groups: ['builtin', 'external', 'internal', ['parent', 'sibling'], 'index', 'object'],
           pathGroups: [
-            {
-              pattern: '@aliexme/**',
-              group: 'external',
-              position: 'after',
-            },
-            {
-              // Nuxt imports
-              pattern: '#{app,components,imports}',
-              group: 'external',
-              position: 'after',
-            },
-            {
-              pattern: './{styles,*.styles,*.css,*.scss}',
-              group: 'internal',
-              position: 'before',
-            },
+            { pattern: '{react*,vue*,astro*}', group: 'external', position: 'before' },
+            { pattern: '{next*,nuxt*}', group: 'external', position: 'before' },
+            { pattern: '@aliexme/**', group: 'external', position: 'after' },
+            { pattern: '#*', group: 'external', position: 'after' },
+            { pattern: './**/{styles,*.styles,*.css,*.scss}', group: 'internal', position: 'before' },
+            { pattern: '../**/{styles,*.styles,*.css,*.scss}', group: 'internal', position: 'before' },
+            { pattern: '@/**', group: 'internal', position: 'before' },
+            { pattern: '~/**', group: 'internal', position: 'before' },
           ],
-          pathGroupsExcludedImportTypes: ['@aliexme'],
+          pathGroupsExcludedImportTypes: ['builtin'],
           'newlines-between': 'always',
           warnOnUnassignedImports: true,
+          distinctGroup: false,
         },
       ],
       'import/no-duplicates': ['error', { 'prefer-inline': true }],
@@ -58,4 +47,4 @@ export default [
       'import/namespace': 'off',
     },
   },
-]
+])

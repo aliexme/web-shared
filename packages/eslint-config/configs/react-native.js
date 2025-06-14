@@ -1,8 +1,8 @@
+import { defineConfig } from 'eslint/config'
 // @ts-expect-error Could not find a declaration file for module 'eslint-plugin-react-native'
 import eslintPluginReactNative from 'eslint-plugin-react-native'
 
-/** @type {import('eslint').Linter.Config[]} */
-export default [
+export default defineConfig([
   {
     plugins: {
       'react-native': eslintPluginReactNative,
@@ -14,4 +14,4 @@ export default [
       'react-native/no-single-element-style-arrays': 'error',
     },
   },
-]
+])

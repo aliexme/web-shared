@@ -22,15 +22,15 @@
   ],
   "exports": {
     ".": "./index.js",
+    "./recommended": "./configs/recommended.js",
     "./base": "./configs/base.js",
     "./typescript": "./configs/typescript.js",
     "./stylistic": "./configs/stylistic.js",
     "./import": "./configs/import.js",
+    "./prettier": "./configs/prettier.js",
     "./react": "./configs/react.js",
     "./react-native": "./configs/react-native.js",
-    "./vue": "./configs/vue.js",
-    "./prettier": "./configs/prettier.js",
-    "./recommended": "./configs/recommended.js"
+    "./vue": "./configs/vue.js"
   },
   "sideEffects": false,
   "publishConfig": {
@@ -41,6 +41,7 @@
     "@eslint/eslintrc": "^3.3.1",
     "@eslint/js": "^9.29.0",
     "@stylistic/eslint-plugin": "^4.4.1",
+    "eslint-import-resolver-typescript": "^4.4.3",
     "eslint-plugin-import": "^2.31.0",
     "globals": "^16.2.0",
     "typescript-eslint": "^8.34.0"
