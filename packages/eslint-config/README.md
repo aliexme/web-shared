@@ -77,6 +77,25 @@ export default defineConfig([
 ])
 ```
 
+### Astro
+
+Install additional packages:
+
+```sh
+npm i --save-dev eslint-plugin-astro
+```
+
+And add the following lines to your ESLint config file:
+
+```js
+import eslintConfigAstro from '@aliexme/eslint-config/astro'
+
+export default defineConfig([
+  eslintConfigRecommended,
+  eslintConfigAstro, // <--
+])
+```
+
 ### Prettier
 
 Install additional packages:
