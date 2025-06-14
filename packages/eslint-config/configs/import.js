@@ -13,7 +13,19 @@ export default /** @type {import('eslint').Linter.Config[]} */ (
           createNodeResolver({ modules: ['src/', 'node_modules'] }),
           createTypeScriptImportResolver(),
         ],
-        'import-x/extensions': ['.js', '.cjs', '.mjs', '.jsx', '.ts', '.tsx', '.vue', '.astro'],
+        'import-x/extensions': [
+          '.js',
+          '.cjs',
+          '.mjs',
+          '.jsx',
+          '.ts',
+          '.cts',
+          '.mts',
+          '.tsx',
+          '.vue',
+          '.svelte',
+          '.astro',
+        ],
         'import-x/ignore': ['node_modules'],
       },
       rules: {
@@ -22,7 +34,7 @@ export default /** @type {import('eslint').Linter.Config[]} */ (
           {
             groups: ['builtin', 'external', 'internal', ['parent', 'sibling'], 'index', 'object'],
             pathGroups: [
-              { pattern: '{react*,vue*,astro*}', group: 'external', position: 'before' },
+              { pattern: '{react*,vue*,svelte*,astro*}', group: 'external', position: 'before' },
               { pattern: '{next*,nuxt*}', group: 'external', position: 'before' },
               { pattern: '@aliexme/**', group: 'external', position: 'after' },
               { pattern: '#*', group: 'external', position: 'after' },

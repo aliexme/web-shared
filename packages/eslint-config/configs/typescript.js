@@ -3,6 +3,7 @@ import tseslint from 'typescript-eslint'
 export default /** @type {import('eslint').Linter.Config[]} */ (
   tseslint.config(tseslint.configs.strict, tseslint.configs.stylistic, {
     name: '@aliexme/eslint-config/typescript',
+    files: ['**/*.ts', '**/*.cts', '**/*.mts', '**/*.tsx', '**/*.vue', '**/*.svelte', '**/*.astro'],
     languageOptions: {
       parserOptions: {
         parser: tseslint.parser,

@@ -1,14 +1,15 @@
 {
   "name": "@aliexme/web-shared",
-  "description": "A set of packages for web development",
+  "version": "1.0.0",
   "private": true,
-  "author": "Alexander Smirnov <al.smirnov996@gmail.com>",
+  "description": "A set of packages for web development",
   "homepage": "https://github.com/aliexme/web-shared",
   "repository": {
     "type": "git",
     "url": "https://github.com/aliexme/web-shared"
   },
   "license": "MIT",
+  "author": "Alexander Smirnov <al.smirnov996@gmail.com>",
   "type": "module",
   "scripts": {
     "lerna:build": "lerna run build",

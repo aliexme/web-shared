@@ -1,9 +1,12 @@
 {
   "name": "@aliexme/stylelint-config",
   "version": "2.0.0",
-  "description": "A set of rules for Stylelint",
   "private": false,
-  "author": "Alexander Smirnov <al.smirnov996@gmail.com>",
+  "description": "A set of rules for Stylelint",
+  "keywords": [
+    "stylelint",
+    "stylelint-config"
+  ],
   "homepage": "https://github.com/aliexme/web-shared/tree/main/packages/stylelint-config",
   "repository": {
     "type": "git",
@@ -11,25 +14,20 @@
     "directory": "packages/stylelint-config"
   },
   "license": "MIT",
-  "keywords": [
-    "stylelint",
-    "stylelint-config"
-  ],
+  "author": "Alexander Smirnov <al.smirnov996@gmail.com>",
+  "type": "module",
+  "exports": {
+    ".": "./index.js",
+    "./recommended": "./configs/recommended.js",
+    "./common": "./configs/common.js",
+    "./base": "./configs/base.js",
+    "./scss": "./configs/scss.js",
+    "./prettier": "./configs/prettier.js"
+  },
   "files": [
     "./index.js",
     "./configs/**"
   ],
-  "exports": {
-    ".": "./index.js",
-    "./common": "./configs/common.js",
-    "./base": "./configs/base.js",
-    "./scss": "./configs/scss.js",
-    "./prettier": "./configs/prettier.js",
-    "./recommended": "./configs/recommended.js"
-  },
-  "publishConfig": {
-    "access": "public"
-  },
   "dependencies": {
     "stylelint-config-standard": "^38.0.0"
   },
@@ -45,5 +43,8 @@
     "stylelint-prettier": {
       "optional": true
     }
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
