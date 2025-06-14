@@ -15,9 +15,9 @@ Extend your ESLint config file:
 ```js
 import eslintConfigRecommended from '@aliexme/eslint-config'
 
-export default [
-  ...eslintConfigRecommended, // <--
-]
+export default defineConfig([
+  eslintConfigRecommended, // <--
+])
 ```
 
 ### React
@@ -33,10 +33,10 @@ And add the following lines to your ESLint config file:
 ```js
 import eslintConfigReact from '@aliexme/eslint-config/react'
 
-export default [
-  ...eslintConfigRecommended,
-  ...eslintConfigReact, // <--
-]
+export default defineConfig([
+  eslintConfigRecommended,
+  eslintConfigReact, // <--
+])
 ```
 
 ### React Native
@@ -52,10 +52,10 @@ And add the following lines to your ESLint config file:
 ```js
 import eslintConfigReactNative from '@aliexme/eslint-config/react-native'
 
-export default [
-  ...eslintConfigRecommended,
-  ...eslintConfigReactNative, // <--
-]
+export default defineConfig([
+  eslintConfigRecommended,
+  eslintConfigReactNative, // <--
+])
 ```
 
 ### Vue
@@ -71,10 +71,10 @@ And add the following lines to your ESLint config file:
 ```js
 import eslintConfigVue from '@aliexme/eslint-config/vue'
 
-export default [
-  ...eslintConfigRecommended,
-  ...eslintConfigVue, // <--
-]
+export default defineConfig([
+  eslintConfigRecommended,
+  eslintConfigVue, // <--
+])
 ```
 
 ### Prettier
@@ -90,8 +90,8 @@ And add the following lines to your ESLint config file:
 ```js
 import eslintConfigPrettier from '@aliexme/eslint-config/prettier'
 
-export default [
-  ...eslintConfigRecommended,
-  ...eslintConfigPrettier, // <--
-]
+export default defineConfig([
+  eslintConfigRecommended,
+  eslintConfigPrettier, // <--
+])
 ```
