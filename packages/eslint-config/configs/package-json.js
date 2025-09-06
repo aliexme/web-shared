@@ -7,6 +7,7 @@ export default defineConfig([
     files: ['**/package.json'],
     rules: {
       'package-json/sort-collections': ['error', ['dependencies', 'devDependencies', 'peerDependencies', 'overrides']],
+      'package-json/no-redundant-files': 'off',
     },
   },
 ])
