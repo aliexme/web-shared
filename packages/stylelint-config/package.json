@@ -1,6 +1,6 @@
 {
   "name": "@aliexme/stylelint-config",
-  "version": "2.1.1",
+  "version": "2.2.0",
   "private": false,
   "description": "A set of rules for Stylelint",
   "keywords": [

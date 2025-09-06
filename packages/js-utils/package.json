@@ -1,6 +1,6 @@
 {
   "name": "@aliexme/js-utils",
-  "version": "2.3.1",
+  "version": "2.4.0",
   "private": false,
   "description": "Common JavaScript utilities",
   "homepage": "https://github.com/aliexme/web-shared/tree/main/packages/js-utils",
