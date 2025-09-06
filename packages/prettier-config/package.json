@@ -20,9 +20,6 @@
     ".": "./index.js"
   },
   "main": "./index.js",
-  "files": [
-    "./index.js"
-  ],
   "peerDependencies": {
     "prettier": "^3.0.0"
   },

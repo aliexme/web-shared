@@ -13,10 +13,10 @@ describe('asyncify', () => {
     const asyncFunc = asyncify(func)
 
     asyncFunc()
-    expect(func).toBeCalledTimes(0)
+    expect(func).toHaveBeenCalledTimes(0)
 
     jest.advanceTimersByTime(100)
-    expect(func).toBeCalledTimes(1)
+    expect(func).toHaveBeenCalledTimes(1)
   })
 
   it('should make void function async', async () => {

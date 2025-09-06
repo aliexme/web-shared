@@ -14,9 +14,6 @@
   "type": "module",
   "main": "index.d.ts",
   "types": "index.d.ts",
-  "files": [
-    "index.d.ts"
-  ],
   "scripts": {
     "ts:check": "tsc --noEmit"
   },
