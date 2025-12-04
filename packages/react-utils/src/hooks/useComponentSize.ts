@@ -28,6 +28,7 @@ export const useComponentSize = <T extends HTMLElement = HTMLElement>(options: U
   const targetRef = propTargetRef ?? innerTargetRef
   const onResizeRef = useValueRef(onResize)
 
+  // eslint-disable-next-line react-hooks/refs
   const [size, setSize] = useState(() => getComponentSize(targetRef.current))
 
   const handleResize = useCallback(

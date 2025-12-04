@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/refs */
 import { useRef } from 'react'
 
 export const usePrevious = <T>(value: T): T => {

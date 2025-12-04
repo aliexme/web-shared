@@ -33,7 +33,7 @@
   },
   "peerDependencies": {
     "stylelint": "^16.0.0",
-    "stylelint-config-standard-scss": "^15.0.0",
+    "stylelint-config-standard-scss": "^16.0.0",
     "stylelint-prettier": "^5.0.0"
   },
   "peerDependenciesMeta": {

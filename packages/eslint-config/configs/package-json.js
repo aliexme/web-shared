@@ -8,6 +8,7 @@ export default defineConfig([
     rules: {
       'package-json/sort-collections': ['error', ['dependencies', 'devDependencies', 'peerDependencies', 'overrides']],
       'package-json/no-redundant-files': 'off',
+      'package-json/specify-peers-locally': 'off',
     },
   },
 ])
