@@ -15,6 +15,7 @@ export const useDerivedState = <T>(params: UseDerivedStateParams<T>) => {
   const propOnChangeRef = useValueRef(propOnChange)
   const value = propValue !== undefined ? propValue : stateValue
 
+  // biome-ignore lint/correctness/useExhaustiveDependencies: ignore
   const onChange = useCallback((newValue: T) => {
     propOnChangeRef.current?.(newValue)
     setStateValue(newValue)

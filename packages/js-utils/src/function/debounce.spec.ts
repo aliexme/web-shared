@@ -1,5 +1,5 @@
-import { noop } from './noop'
 import { debounce } from './debounce'
+import { noop } from './noop'
 
 describe('debounce', () => {
   afterEach(() => {

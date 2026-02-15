@@ -1,0 +1,32 @@
+{
+  "name": "@aliexme/biome-config",
+  "version": "0.0.0",
+  "private": false,
+  "description": "Shared Biome configuration",
+  "keywords": [
+    "biome",
+    "biome-config"
+  ],
+  "homepage": "https://github.com/aliexme/web-shared/tree/main/packages/biome-config",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aliexme/web-shared",
+    "directory": "packages/biome-config"
+  },
+  "license": "MIT",
+  "author": "Alexander Smirnov <al.smirnov996@gmail.com>",
+  "type": "module",
+  "exports": {
+    ".": "./biome-config.json"
+  },
+  "main": "./biome-config.json",
+  "files": [
+    "./biome-config.json"
+  ],
+  "peerDependencies": {
+    "@biomejs/biome": "^2.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

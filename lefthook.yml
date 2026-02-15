@@ -2,13 +2,8 @@ pre-commit:
   parallel: true
   commands:
     typescript:
-      glob: '*.{ts,tsx,vue}'
+      glob: '*.{ts,tsx}'
       run: pnpm run ts:check
-    eslint:
-      glob: '*.{js,jsx,cjs,mjs,ts,tsx,vue}'
-      run: pnpm run eslint:check --fix {staged_files}
-      stage_fixed: true
-    stylelint:
-      glob: '*.{css,scss}'
-      run: pnpm run stylelint:check --fix {staged_files}
+    biome:
+      run: npx @biomejs/biome check --write --no-errors-on-unmatched --files-ignore-unknown=true --colors=off {staged_files}
       stage_fixed: true

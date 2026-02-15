@@ -1,4 +1,4 @@
-import { setImmediate } from 'timers'
+import { setImmediate } from 'node:timers'
 
 import { noop } from '../function'
 import { sleep } from './sleep'

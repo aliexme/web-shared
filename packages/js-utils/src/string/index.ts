@@ -1,3 +1,3 @@
 export * from './capitalize'
-export * from './secureString'
 export * from './randomString'
+export * from './secureString'

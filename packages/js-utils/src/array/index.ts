@@ -1,5 +1,5 @@
-export * from './uniquify'
-export * from './subtractArrays'
 export * from './arraysIntersection'
 export * from './groupArrayItems'
 export * from './randomArrayItem'
+export * from './subtractArrays'
+export * from './uniquify'

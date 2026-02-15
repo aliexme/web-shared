@@ -1,6 +1,6 @@
-import tseslint from 'typescript-eslint'
-import { createNodeResolver, importX } from 'eslint-plugin-import-x'
 import { createTypeScriptImportResolver } from 'eslint-import-resolver-typescript'
+import { createNodeResolver, importX } from 'eslint-plugin-import-x'
+import tseslint from 'typescript-eslint'
 
 export default /** @type {import('eslint').Linter.Config[]} */ (
   tseslint.config([
@@ -32,7 +32,7 @@ export default /** @type {import('eslint').Linter.Config[]} */ (
         'import-x/order': [
           'error',
           {
-            groups: ['builtin', 'external', 'internal', ['parent', 'sibling'], 'index', 'object'],
+            groups: [['builtin', 'external'], 'internal', ['parent', 'sibling'], 'index', 'object'],
             pathGroups: [
               { pattern: '{react*,vue*,svelte*,astro*}', group: 'external', position: 'before' },
               { pattern: '{next*,nuxt*}', group: 'external', position: 'before' },

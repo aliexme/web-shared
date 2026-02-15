@@ -1,8 +1,8 @@
 import { defineConfig } from 'eslint/config'
-// @ts-expect-error Could not find a declaration file for module 'eslint-plugin-react/configs/recommended.js'
-import eslintPluginReactRecommended from 'eslint-plugin-react/configs/recommended.js'
 // @ts-expect-error Could not find a declaration file for module 'eslint-plugin-react/configs/jsx-runtime.js'
 import eslintPluginReactJsxRuntime from 'eslint-plugin-react/configs/jsx-runtime.js'
+// @ts-expect-error Could not find a declaration file for module 'eslint-plugin-react/configs/recommended.js'
+import eslintPluginReactRecommended from 'eslint-plugin-react/configs/recommended.js'
 import eslintPluginReactHooks from 'eslint-plugin-react-hooks'
 
 export default defineConfig([

@@ -12,6 +12,7 @@ export const useEventListener = (
 ) => {
   const { enabled = true, ...listenerOptions } = options
 
+  // biome-ignore lint/correctness/useExhaustiveDependencies: ignore
   useEffect(() => {
     if (!enabled) {
       return

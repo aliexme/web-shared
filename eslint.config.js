@@ -1,15 +1,14 @@
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
-
-import { defineConfig } from 'eslint/config'
 import { includeIgnoreFile } from '@eslint/compat'
 import stylisticMigratePlugin from '@stylistic/eslint-plugin-migrate'
+import { defineConfig } from 'eslint/config'
 import eslintConfigRecommended from '@aliexme/eslint-config'
+import eslintConfigAstro from '@aliexme/eslint-config/astro'
+import eslintConfigPrettier from '@aliexme/eslint-config/prettier'
 import eslintConfigReact from '@aliexme/eslint-config/react'
 import eslintConfigReactNative from '@aliexme/eslint-config/react-native'
 import eslintConfigVue from '@aliexme/eslint-config/vue'
-import eslintConfigAstro from '@aliexme/eslint-config/astro'
-import eslintConfigPrettier from '@aliexme/eslint-config/prettier'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)

@@ -1,5 +1,5 @@
-import { throttle } from './throttle'
 import { noop } from './noop'
+import { throttle } from './throttle'
 
 describe('throttle', () => {
   afterEach(() => {
