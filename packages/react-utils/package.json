@@ -1,6 +1,6 @@
 {
   "name": "@aliexme/react-utils",
-  "version": "3.2.1",
+  "version": "3.2.2",
   "private": false,
   "description": "React utilities",
   "homepage": "https://github.com/aliexme/web-shared/tree/main/packages/react-utils",
@@ -30,7 +30,7 @@
     "ts:check": "tsc --noEmit"
   },
   "dependencies": {
-    "@aliexme/js-utils": "workspace:^2.4.0"
+    "@aliexme/js-utils": "workspace:^2.4.1"
   },
   "devDependencies": {
     "@types/react": "19.2.14",
