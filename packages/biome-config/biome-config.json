@@ -35,6 +35,7 @@
               "@aliexme/**",
               ":BLANK_LINE:",
               ":ALIAS:",
+              ":BLANK_LINE:",
               ":PATH:"
             ]
           }
