@@ -3,6 +3,7 @@ import packageJson from 'eslint-plugin-package-json'
 
 export default defineConfig([
   packageJson.configs.recommended,
+  packageJson.configs.stylistic,
   {
     files: ['**/package.json'],
     rules: {

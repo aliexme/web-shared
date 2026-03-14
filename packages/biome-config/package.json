@@ -15,6 +15,7 @@
   },
   "license": "MIT",
   "author": "Alexander Smirnov <al.smirnov996@gmail.com>",
+  "sideEffects": false,
   "type": "module",
   "exports": {
     ".": "./biome-config.json"

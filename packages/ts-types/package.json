@@ -11,7 +11,11 @@
   },
   "license": "MIT",
   "author": "Alexander Smirnov <al.smirnov996@gmail.com>",
+  "sideEffects": false,
   "type": "module",
+  "exports": {
+    ".": "./index.d.ts"
+  },
   "main": "index.d.ts",
   "types": "index.d.ts",
   "files": [
