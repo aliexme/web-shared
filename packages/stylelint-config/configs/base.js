@@ -4,6 +4,7 @@ export default {
   rules: {
     'import-notation': 'string',
     'hue-degree-notation': 'number',
+    'lightness-notation': 'number',
     'at-rule-no-unknown': [
       true,
       {
