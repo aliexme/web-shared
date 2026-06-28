@@ -39,25 +39,6 @@ export default defineConfig([
 ])
 ```
 
-### React Native
-
-Install additional packages:
-
-```sh
-npm i --save-dev eslint-plugin-react-native
-```
-
-And add the following lines to your ESLint config file:
-
-```js
-import eslintConfigReactNative from '@aliexme/eslint-config/react-native'
-
-export default defineConfig([
-  eslintConfigRecommended,
-  eslintConfigReactNative, // <--
-])
-```
-
 ### Vue
 
 Install additional packages:

@@ -27,7 +27,6 @@
     "./package-json": "./configs/package-json.js",
     "./prettier": "./configs/prettier.js",
     "./react": "./configs/react.js",
-    "./react-native": "./configs/react-native.js",
     "./vue": "./configs/vue.js",
     "./astro": "./configs/astro.js"
   },
@@ -38,24 +37,23 @@
     "configs"
   ],
   "dependencies": {
-    "@eslint/compat": "^2.0.3",
+    "@eslint/compat": "^2.1.0",
     "@eslint/eslintrc": "^3.3.5",
-    "@eslint/js": "^9.39.4",
+    "@eslint/js": "^10.0.1",
     "@stylistic/eslint-plugin": "^5.10.0",
-    "eslint-import-resolver-typescript": "^4.4.4",
+    "eslint-import-resolver-typescript": "^4.4.5",
     "eslint-plugin-import-x": "^4.16.2",
-    "eslint-plugin-package-json": "^0.91.0",
-    "globals": "^17.4.0",
-    "typescript-eslint": "^8.57.0"
+    "eslint-plugin-package-json": "^1.5.0",
+    "globals": "^17.7.0",
+    "typescript-eslint": "^8.62.0"
   },
   "peerDependencies": {
-    "eslint": "^9.0.0",
+    "eslint": "^10.0.0",
     "eslint-config-prettier": "^10.0.0",
-    "eslint-plugin-astro": "^1.0.0",
+    "eslint-plugin-astro": "^2.0.0",
     "eslint-plugin-prettier": "^5.0.0",
     "eslint-plugin-react": "^7.0.0",
     "eslint-plugin-react-hooks": "^7.0.0",
-    "eslint-plugin-react-native": "^5.0.0",
     "eslint-plugin-vue": "^10.0.0",
     "prettier": "^3.0.0"
   },
@@ -73,9 +71,6 @@
       "optional": true
     },
     "eslint-plugin-react-hooks": {
-      "optional": true
-    },
-    "eslint-plugin-react-native": {
       "optional": true
     },
     "eslint-plugin-vue": {

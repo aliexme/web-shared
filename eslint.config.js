@@ -7,7 +7,6 @@ import eslintConfigRecommended from '@aliexme/eslint-config'
 import eslintConfigAstro from '@aliexme/eslint-config/astro'
 import eslintConfigPrettier from '@aliexme/eslint-config/prettier'
 import eslintConfigReact from '@aliexme/eslint-config/react'
-import eslintConfigReactNative from '@aliexme/eslint-config/react-native'
 import eslintConfigVue from '@aliexme/eslint-config/vue'
 
 const __filename = fileURLToPath(import.meta.url)
@@ -18,7 +17,6 @@ export default defineConfig([
   includeIgnoreFile(gitignorePath),
   eslintConfigRecommended,
   eslintConfigReact,
-  eslintConfigReactNative,
   eslintConfigVue,
   eslintConfigAstro,
   eslintConfigPrettier,
