@@ -1,6 +1,6 @@
 {
   "name": "@aliexme/ts-types",
-  "version": "1.1.2",
+  "version": "1.1.3",
   "private": false,
   "description": "Common TypeScript utility types",
   "homepage": "https://github.com/aliexme/web-shared/tree/main/packages/ts-types",
