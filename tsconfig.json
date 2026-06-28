@@ -2,6 +2,7 @@
   "compilerOptions": {
     "target": "esnext",
     "lib": ["esnext", "dom", "dom.iterable"],
+    "types": ["jest"],
     "allowJs": true,
     "checkJs": true,
     "jsx": "preserve",
@@ -19,6 +20,7 @@
     "forceConsistentCasingInFileNames": true,
     "skipLibCheck": true,
     "noEmit": true,
+    "rootDir": ".",
     "paths": {
       "@aliexme/eslint-config": ["./packages/eslint-config/src"],
       "@aliexme/js-utils": ["./packages/js-utils/src"],

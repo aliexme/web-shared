@@ -12,7 +12,7 @@ const defaultLibConfig = defineConfig({
         return `${entryName}.${extension}`
       },
     },
-    rollupOptions: {
+    rolldownOptions: {
       output: {
         preserveModules: true,
         preserveModulesRoot: './src',
