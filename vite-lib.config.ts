@@ -6,10 +6,9 @@ const defaultLibConfig = defineConfig({
   build: {
     lib: {
       entry: './src/index.ts',
-      formats: ['es', 'cjs'],
-      fileName(format, entryName) {
-        const extension = format === 'cjs' ? 'cjs' : 'js'
-        return `${entryName}.${extension}`
+      formats: ['es'],
+      fileName(_format, entryName) {
+        return `${entryName}.js`
       },
     },
     rolldownOptions: {
