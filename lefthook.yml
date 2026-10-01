@@ -1,9 +1,24 @@
 pre-commit:
-  parallel: true
-  commands:
-    typescript:
-      glob: '*.{ts,tsx}'
-      run: pnpm run ts:check
-    biome:
-      run: npx @biomejs/biome check --write --no-errors-on-unmatched --files-ignore-unknown=true --colors=off {staged_files}
-      stage_fixed: true
+  jobs:
+    - name: format
+      group:
+        jobs:
+          - name: biome
+            run: pnpm exec biome check --write --no-errors-on-unmatched --files-ignore-unknown=true --colors=off {staged_files}
+            stage_fixed: true
+
+    - name: lint
+      group:
+        parallel: true
+        jobs:
+          - name: typescript
+            glob: '*.{ts,tsx}'
+            run: pnpm run check:ts
+          - name: eslint
+            glob: '*.{js,jsx,cjs,mjs,ts,tsx}'
+            run: pnpm exec eslint --fix {staged_files}
+            stage_fixed: true
+          - name: stylelint
+            glob: '*.{css,scss}'
+            run: pnpm exec stylelint --fix {staged_files}
+            stage_fixed: true

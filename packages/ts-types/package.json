@@ -22,7 +22,7 @@
     "index.d.ts"
   ],
   "scripts": {
-    "ts:check": "tsc --noEmit"
+    "check:ts": "tsc --noEmit"
   },
   "peerDependencies": {
     "typescript": "^6.0.0"

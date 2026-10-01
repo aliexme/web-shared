@@ -24,7 +24,7 @@
   ],
   "scripts": {
     "build": "vite build",
-    "ts:check": "tsc --noEmit"
+    "check:ts": "tsc --noEmit"
   },
   "publishConfig": {
     "access": "public"
