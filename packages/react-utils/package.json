@@ -30,9 +30,9 @@
     "@aliexme/js-utils": "workspace:^3.0.0"
   },
   "devDependencies": {
-    "@types/react": "19.2.17",
-    "@vitejs/plugin-react": "6.0.3",
-    "react": "19.2.7"
+    "@types/react": "^19.3.0",
+    "@vitejs/plugin-react": "^6.1.1",
+    "react": "^19.3.0"
   },
   "peerDependencies": {
     "react": "^19.0.0"

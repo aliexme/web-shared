@@ -1,8 +1,11 @@
 packages:
   - packages/*
 
+minimumReleaseAge: 4320
+
 allowBuilds:
-  esbuild: true
-  lefthook: true
-  nx: true
-  unrs-resolver: true
+  '@parcel/watcher': false
+  esbuild: false
+  lefthook: false
+  nx: false
+  unrs-resolver: false
