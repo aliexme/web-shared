@@ -9,10 +9,13 @@ interface ProbeProps {
   listener: EventListenerOrEventListenerObject
   enabled?: boolean
   capture?: boolean
+  once?: boolean
+  passive?: boolean
+  signal?: AbortSignal
 }
 
-const Probe = ({ target, listener, enabled, capture }: ProbeProps) => {
-  const options = { enabled, capture }
+const Probe = ({ target, listener, enabled, capture, once, passive, signal }: ProbeProps) => {
+  const options = { enabled, capture, once, passive, signal }
 
   useEventListener(target, 'click', listener, options)
 
@@ -87,6 +90,36 @@ describe('useEventListener', () => {
 
     expect(addSpy).toHaveBeenCalledTimes(2)
     expect(addSpy.mock.calls[1][2]).toMatchObject({ capture: true })
+  })
+
+  it('should pass listener options through', () => {
+    const { target, addSpy } = createTarget()
+    const listener = vi.fn<EventListener>()
+    const { signal } = new AbortController()
+
+    const { rerender } = render(<Probe target={target} listener={listener} once passive signal={signal} />)
+
+    expect(addSpy).toHaveBeenCalledTimes(1)
+    expect(addSpy.mock.calls[0][2]).toMatchObject({ once: true, passive: true, signal })
+
+    rerender(<Probe target={target} listener={listener} once passive signal={signal} capture={true} />)
+
+    expect(addSpy).toHaveBeenCalledTimes(2)
+    expect(addSpy.mock.calls[1][2]).toMatchObject({ once: true, passive: true, signal, capture: true })
+  })
+
+  it('should invoke a once listener only once', () => {
+    const { target } = createTarget()
+    const listener = vi.fn<EventListener>()
+
+    render(<Probe target={target} listener={listener} once />)
+
+    act(() => {
+      target.dispatchEvent(new Event('click'))
+      target.dispatchEvent(new Event('click'))
+    })
+
+    expect(listener).toHaveBeenCalledTimes(1)
   })
 
   it('should support object listeners', () => {

@@ -75,4 +75,38 @@ describe('useWindowSize', () => {
 
     expect(getSize()).toEqual({ width: '1300', height: '900' })
   })
+
+  it('should cancel the pending trailing update on unmount', () => {
+    vi.useFakeTimers()
+    const removeSpy = vi.spyOn(window, 'removeEventListener')
+
+    const { unmount } = render(<Probe throttleDelay={100} />)
+
+    setWindowSize(1200, 800)
+    fireResize()
+
+    setWindowSize(1300, 900)
+    fireResize()
+
+    unmount()
+
+    expect(removeSpy).toHaveBeenCalledWith('resize', expect.any(Function))
+
+    act(() => {
+      vi.advanceTimersByTime(200)
+    })
+  })
+
+  it('should re-subscribe when throttleDelay changes', () => {
+    vi.useFakeTimers()
+    const addSpy = vi.spyOn(window, 'addEventListener')
+    const removeSpy = vi.spyOn(window, 'removeEventListener')
+
+    const { rerender } = render(<Probe throttleDelay={100} />)
+
+    rerender(<Probe throttleDelay={200} />)
+
+    expect(removeSpy).toHaveBeenCalledTimes(1)
+    expect(addSpy).toHaveBeenCalledTimes(2)
+  })
 })
