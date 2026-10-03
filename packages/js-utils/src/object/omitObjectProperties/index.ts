@@ -1,0 +1,1 @@
+export { omitObjectProperties } from './omitObjectProperties'

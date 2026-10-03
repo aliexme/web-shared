@@ -1,0 +1,1 @@
+export { secureString } from './secureString'

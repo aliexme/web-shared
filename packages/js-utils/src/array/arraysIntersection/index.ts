@@ -1,0 +1,1 @@
+export { arraysIntersection } from './arraysIntersection'

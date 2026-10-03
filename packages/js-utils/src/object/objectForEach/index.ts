@@ -1,0 +1,1 @@
+export { objectForEach } from './objectForEach'
