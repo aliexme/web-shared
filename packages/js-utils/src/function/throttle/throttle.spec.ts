@@ -60,6 +60,18 @@ describe('throttle', () => {
     expect(func).toHaveBeenCalledWith('test', 2)
   })
 
+  it('should cancel throttled function before first call', () => {
+    jest.useFakeTimers()
+
+    const func = jest.fn(noop)
+    const throttledFunc = throttle(func, 1000)
+
+    throttledFunc.cancel()
+
+    jest.advanceTimersByTime(2000)
+    expect(func).toHaveBeenCalledTimes(0)
+  })
+
   it('should cancel throttled function', () => {
     jest.useFakeTimers()
 
