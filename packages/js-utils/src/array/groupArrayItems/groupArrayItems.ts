@@ -1,3 +1,7 @@
+/**
+ * @deprecated Superseded by the native `Object.groupBy` (ES2024).
+ * Use `Object.groupBy(array, (item) => item[key])` instead
+ */
 export const groupArrayItems = <T extends Record<string, unknown>, K extends keyof T>(
   array: T[],
   key: K,
