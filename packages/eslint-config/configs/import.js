@@ -34,8 +34,6 @@ export default /** @type {import('eslint').Linter.Config[]} */ (
           {
             groups: [['builtin', 'external'], 'internal', ['parent', 'sibling'], 'index', 'object'],
             pathGroups: [
-              { pattern: '{react*,vue*,svelte*,astro*}', group: 'external', position: 'before' },
-              { pattern: '{next*,nuxt*}', group: 'external', position: 'before' },
               { pattern: '@aliexme/**', group: 'external', position: 'after' },
               { pattern: '#*', group: 'external', position: 'after' },
               { pattern: './**/{styles,*.styles,*.css,*.scss}', group: 'internal', position: 'before' },
