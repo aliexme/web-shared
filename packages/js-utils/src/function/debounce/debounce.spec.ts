@@ -74,6 +74,20 @@ describe('debounce', () => {
     expect(func).toHaveBeenCalledTimes(3)
   })
 
+  it('should accept function with typed parameters', () => {
+    jest.useFakeTimers()
+
+    const func = jest.fn((name: string, count: number) => `${name}-${count}`)
+    const debouncedFunc = debounce(func, 1000)
+
+    debouncedFunc('test', 2)
+    expect(func).toHaveBeenCalledTimes(0)
+
+    jest.advanceTimersByTime(1000)
+    expect(func).toHaveBeenCalledTimes(1)
+    expect(func).toHaveBeenCalledWith('test', 2)
+  })
+
   it('should cancel debounced function', () => {
     jest.useFakeTimers()
 

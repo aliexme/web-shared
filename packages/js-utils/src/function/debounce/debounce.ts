@@ -1,6 +1,6 @@
 import { clamp } from '../../number/clamp'
 
-export interface DebouncedFunc<T extends (...args: unknown[]) => unknown> {
+export interface DebouncedFunc<T extends (...args: never[]) => unknown> {
   (...args: Parameters<T>): void
   cancel(): void
 }
@@ -10,7 +10,7 @@ export interface DebounceOptions {
   withLeading?: boolean
 }
 
-export const debounce = <T extends (...args: unknown[]) => unknown>(
+export const debounce = <T extends (...args: never[]) => unknown>(
   func: T,
   delay: number,
   options: DebounceOptions = {},

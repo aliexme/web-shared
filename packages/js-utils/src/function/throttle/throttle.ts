@@ -1,4 +1,4 @@
-export interface ThrottledFunc<T extends (...args: unknown[]) => unknown> {
+export interface ThrottledFunc<T extends (...args: never[]) => unknown> {
   (...args: Parameters<T>): void
   cancel(): void
 }
@@ -7,7 +7,7 @@ export interface ThrottleOptions {
   withTrailing?: boolean
 }
 
-export const throttle = <T extends (...args: unknown[]) => unknown>(
+export const throttle = <T extends (...args: never[]) => unknown>(
   func: T,
   delay: number,
   options: ThrottleOptions = {},

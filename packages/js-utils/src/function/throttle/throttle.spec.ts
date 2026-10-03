@@ -49,6 +49,17 @@ describe('throttle', () => {
     expect(func).toHaveBeenCalledTimes(2)
   })
 
+  it('should accept function with typed parameters', () => {
+    jest.useFakeTimers()
+
+    const func = jest.fn((name: string, count: number) => `${name}-${count}`)
+    const throttledFunc = throttle(func, 1000)
+
+    throttledFunc('test', 2)
+    expect(func).toHaveBeenCalledTimes(1)
+    expect(func).toHaveBeenCalledWith('test', 2)
+  })
+
   it('should cancel throttled function', () => {
     jest.useFakeTimers()
 
