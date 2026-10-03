@@ -36,4 +36,14 @@ describe('arraysIntersection', () => {
     const result = arraysIntersection(array1, array2, [])
     expect(result).toEqual([])
   })
+
+  it('should deduplicate items from the first array', () => {
+    const result = arraysIntersection([1, 2, 2, 3, 3], [2, 3, 4])
+    expect(result).toEqual([2, 3])
+  })
+
+  it('should preserve order of the first array', () => {
+    const result = arraysIntersection([4, 1, 3, 2], [2, 3, 4, 5])
+    expect(result).toEqual([4, 3, 2])
+  })
 })
