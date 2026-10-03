@@ -4,6 +4,7 @@ export default defineConfig({
   oxc: { jsx: { runtime: 'automatic' } },
   test: {
     include: ['**/*.test.ts', '**/*.test.tsx'],
+    globals: true,
     isolate: false,
     coverage: {
       provider: 'v8',

@@ -1,14 +1,13 @@
 /* eslint-disable react-hooks/refs */
-import { useRef } from 'react'
+import { useEffect, useRef } from 'react'
 
 export const usePrevious = <T>(value: T): T => {
-  const currentRef = useRef<T>(value)
-  const prevRef = useRef<T>(value)
+  const valueRef = useRef(value)
+  const previous = valueRef.current
 
-  if (currentRef.current !== value) {
-    prevRef.current = currentRef.current
-    currentRef.current = value
-  }
+  useEffect(() => {
+    valueRef.current = value
+  }, [value])
 
-  return prevRef.current
+  return previous
 }
