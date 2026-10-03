@@ -1,26 +1,28 @@
-import { floor } from './floor'
+import { describe, expect, it } from 'vitest'
 
-describe('floor', () => {
+import { round } from './round'
+
+describe('round', () => {
   it('should return number without fractional part', () => {
     const value = 1.2645
-    const result = floor(value)
+    const result = round(value)
     expect(result).toBe(1)
   })
 
   it('should return number with one decimal place', () => {
     const value = 1.2645
-    const result = floor(value, 1)
-    expect(result).toBe(1.2)
+    const result = round(value, 1)
+    expect(result).toBe(1.3)
   })
 
   it('should return same number', () => {
     const value = 1.2645
-    const result = floor(value, 10)
+    const result = round(value, 10)
     expect(result).toBe(value)
   })
 
-  it('should floor with binary floating point error for 1.005', () => {
-    const result = floor(1.005, 2)
+  it('should round with binary floating point error for 1.005', () => {
+    const result = round(1.005, 2)
     expect(result).toBe(1)
   })
 })

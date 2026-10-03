@@ -1,15 +1,17 @@
+import { afterEach, describe, expect, it, vi } from 'vitest'
+
 import { noop } from '../noop'
 import { throttle } from './throttle'
 
 describe('throttle', () => {
   afterEach(() => {
-    jest.useRealTimers()
+    vi.useRealTimers()
   })
 
   it('should throttle function', () => {
-    jest.useFakeTimers()
+    vi.useFakeTimers()
 
-    const func = jest.fn(noop)
+    const func = vi.fn(noop)
     const throttledFunc = throttle(func, 1000)
 
     throttledFunc()
@@ -17,23 +19,23 @@ describe('throttle', () => {
     throttledFunc()
     expect(func).toHaveBeenCalledTimes(1)
 
-    jest.advanceTimersByTime(600)
+    vi.advanceTimersByTime(600)
     throttledFunc()
     expect(func).toHaveBeenCalledTimes(1)
 
-    jest.advanceTimersByTime(600)
+    vi.advanceTimersByTime(600)
     expect(func).toHaveBeenCalledTimes(1)
     throttledFunc()
     expect(func).toHaveBeenCalledTimes(2)
 
-    jest.advanceTimersByTime(1200)
+    vi.advanceTimersByTime(1200)
     expect(func).toHaveBeenCalledTimes(2)
   })
 
   it('should throttle function with trailing', () => {
-    jest.useFakeTimers()
+    vi.useFakeTimers()
 
-    const func = jest.fn(noop)
+    const func = vi.fn(noop)
     const throttledFunc = throttle(func, 1000, { withTrailing: true })
 
     throttledFunc()
@@ -41,18 +43,18 @@ describe('throttle', () => {
     throttledFunc()
     expect(func).toHaveBeenCalledTimes(1)
 
-    jest.advanceTimersByTime(600)
+    vi.advanceTimersByTime(600)
     throttledFunc()
     expect(func).toHaveBeenCalledTimes(1)
 
-    jest.advanceTimersByTime(1200)
+    vi.advanceTimersByTime(1200)
     expect(func).toHaveBeenCalledTimes(2)
   })
 
   it('should accept function with typed parameters', () => {
-    jest.useFakeTimers()
+    vi.useFakeTimers()
 
-    const func = jest.fn((name: string, count: number) => `${name}-${count}`)
+    const func = vi.fn((name: string, count: number) => `${name}-${count}`)
     const throttledFunc = throttle(func, 1000)
 
     throttledFunc('test', 2)
@@ -61,21 +63,21 @@ describe('throttle', () => {
   })
 
   it('should cancel throttled function before first call', () => {
-    jest.useFakeTimers()
+    vi.useFakeTimers()
 
-    const func = jest.fn(noop)
+    const func = vi.fn(noop)
     const throttledFunc = throttle(func, 1000)
 
     throttledFunc.cancel()
 
-    jest.advanceTimersByTime(2000)
+    vi.advanceTimersByTime(2000)
     expect(func).toHaveBeenCalledTimes(0)
   })
 
   it('should cancel throttled function', () => {
-    jest.useFakeTimers()
+    vi.useFakeTimers()
 
-    const func = jest.fn(noop)
+    const func = vi.fn(noop)
     const throttledFunc = throttle(func, 1000, { withTrailing: true })
 
     throttledFunc()

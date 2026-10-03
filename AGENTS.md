@@ -6,9 +6,9 @@ pnpm workspace monorepo publishing the `@aliexme/*` package family to npm. Versi
 
 - `pnpm check` — all checks in parallel: `check:ts` + `check:eslint` + `check:stylelint` + `check:biome`
 - `pnpm fix` — autofix eslint + stylelint + biome (there is no TS autofix)
-- `pnpm test` — all tests (Jest)
-- `pnpm jest packages/js-utils/src/string/capitalize.spec.ts` — single test file
-- `pnpm jest -t '<test name>'` — single test case
+- `pnpm test` — all tests (Vitest)
+- `pnpm vitest run packages/js-utils/src/string/capitalize/capitalize.test.ts` — single test file
+- `pnpm vitest run -t '<test name>'` — single test case
 - `pnpm test:coverage` — coverage
 - `pnpm build` — `lerna run build`
 - `pnpm publish` — Lerna publish, `main` branch only
@@ -17,15 +17,15 @@ Run `pnpm check && pnpm test` before finishing any change. Pre-commit runs the f
 
 ## Testing
 
-- Jest config lives at the repo root and matches only `packages/js-utils/**/*.spec.ts` — that is the only package with tests.
-- Specs are colocated with sources as `*.spec.ts`.
-- Tests involving randomness mock `Math.random` for deterministic assertions: a single call per test → `jest.spyOn(Math, 'random').mockReturnValue(0.5)`; multiple calls → `mockImplementation(seededRandom())` via `seededRandom` from `@aliexme/js-utils` — see `packages/js-utils/src/random/randomArrayItem.spec.ts` and `packages/js-utils/src/random/randomString.spec.ts`.
+- Vitest config lives at the repo root and matches `**/*.test.ts` across the repo (default excludes cover `node_modules`, `dist`, and config files) — currently `js-utils` is the only package with tests.
+- Tests are colocated with sources as `*.test.ts`.
+- Tests involving randomness mock `Math.random` for deterministic assertions: a single call per test → `vi.spyOn(Math, 'random').mockReturnValue(0.5)`; multiple calls → `mockImplementation(seededRandom())` via `seededRandom` from `@aliexme/js-utils` — see `packages/js-utils/src/random/randomArrayItem/randomArrayItem.test.ts` and `packages/js-utils/src/random/randomString/randomString.test.ts`.
 
 ## Package layout
 
 Two kinds of packages, handled differently:
 
-- Built TS libraries: `js-utils`, `react-utils` — Vite library builds through the shared root `vite-lib.config.ts` (ESM only, `preserveModules`, `.d.ts` via `vite-plugin-dts`). `tsconfig.build.json` excludes specs from declarations.
+- Built TS libraries: `js-utils`, `react-utils` — Vite library builds through the shared root `vite-lib.config.ts` (ESM only, `preserveModules`, `.d.ts` via `vite-plugin-dts`). `tsconfig.build.json` excludes test files from declarations.
 - No-build packages shipped as-is: `eslint-config`, `stylelint-config`, `prettier-config` (raw JS with multi-entry exports), `biome-config` (single JSON), `ts-types` (single `index.d.ts`).
 
 Workspace cross-dependencies use `workspace:*` / `workspace:^`. The root `tsconfig.json` maps `@aliexme/js-utils` and `@aliexme/react-utils` to their `src/` via `paths`, so the root typecheck sees package sources, not `dist/`.

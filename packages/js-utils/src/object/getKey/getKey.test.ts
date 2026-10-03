@@ -1,3 +1,5 @@
+import { describe, expect, it } from 'vitest'
+
 import { getKey } from './getKey'
 
 describe('getKey', () => {

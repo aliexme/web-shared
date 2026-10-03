@@ -1,34 +1,35 @@
 import { getEventListeners } from 'node:events'
 import { setImmediate } from 'node:timers'
+import { afterEach, describe, expect, it, vi } from 'vitest'
 
 import { noop } from '../../function/noop'
 import { sleep } from './sleep'
 
 describe('sleep', () => {
   afterEach(() => {
-    jest.useRealTimers()
+    vi.useRealTimers()
   })
 
   it('should wait "ms" millisecond', async () => {
-    jest.useFakeTimers()
+    vi.useFakeTimers()
 
-    const callback = jest.fn(noop)
+    const callback = vi.fn(noop)
 
     sleep(1000).then(callback)
 
     expect(callback).toHaveBeenCalledTimes(0)
 
-    jest.advanceTimersByTime(600)
+    vi.advanceTimersByTime(600)
     await new Promise(setImmediate)
     expect(callback).toHaveBeenCalledTimes(0)
 
-    jest.advanceTimersByTime(600)
+    vi.advanceTimersByTime(600)
     await new Promise(setImmediate)
     expect(callback).toHaveBeenCalledTimes(1)
   })
 
   it('should reject immediately if signal is already aborted', async () => {
-    jest.useFakeTimers()
+    vi.useFakeTimers()
 
     const controller = new AbortController()
     controller.abort()
@@ -36,43 +37,43 @@ describe('sleep', () => {
     const promise = sleep(1000, { signal: controller.signal })
 
     await expect(promise).rejects.toBe(controller.signal.reason)
-    jest.advanceTimersByTime(1000)
+    vi.advanceTimersByTime(1000)
   })
 
   it('should reject with abort reason if aborted during sleep', async () => {
-    jest.useFakeTimers()
+    vi.useFakeTimers()
 
     const controller = new AbortController()
     const promise = sleep(1000, { signal: controller.signal })
 
-    jest.advanceTimersByTime(500)
+    vi.advanceTimersByTime(500)
     controller.abort()
 
     await expect(promise).rejects.toBe(controller.signal.reason)
   })
 
   it('should resolve if not aborted during sleep', async () => {
-    jest.useFakeTimers()
+    vi.useFakeTimers()
 
     const controller = new AbortController()
-    const callback = jest.fn(noop)
+    const callback = vi.fn(noop)
 
     sleep(1000, { signal: controller.signal }).then(callback)
 
-    jest.advanceTimersByTime(1000)
+    vi.advanceTimersByTime(1000)
     await new Promise(setImmediate)
     expect(callback).toHaveBeenCalledTimes(1)
   })
 
   it('should remove abort listener after resolve', async () => {
-    jest.useFakeTimers()
+    vi.useFakeTimers()
 
     const controller = new AbortController()
-    const callback = jest.fn(noop)
+    const callback = vi.fn(noop)
 
     sleep(1000, { signal: controller.signal }).then(callback)
 
-    jest.advanceTimersByTime(1000)
+    vi.advanceTimersByTime(1000)
     await new Promise(setImmediate)
     expect(callback).toHaveBeenCalledTimes(1)
     expect(getEventListeners(controller.signal, 'abort')).toHaveLength(0)
