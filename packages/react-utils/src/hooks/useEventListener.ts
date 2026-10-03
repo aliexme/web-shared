@@ -1,5 +1,7 @@
 import { useEffect } from 'react'
 
+import { useValueRef } from './useValueRef'
+
 export interface UseEventListenerOptions extends AddEventListenerOptions {
   enabled?: boolean
 }
@@ -10,19 +12,28 @@ export const useEventListener = (
   listener: EventListenerOrEventListenerObject,
   options: UseEventListenerOptions = {},
 ) => {
-  const { enabled = true, ...listenerOptions } = options
+  const { enabled = true, capture, passive, once, signal } = options
+  const listenerRef = useValueRef(listener)
 
-  // biome-ignore lint/correctness/useExhaustiveDependencies: ignore
   useEffect(() => {
     if (!enabled) {
       return
     }
 
-    target.addEventListener(type, listener, listenerOptions)
+    const stableListener: EventListener = (event) => {
+      const currentListener = listenerRef.current
+
+      if (typeof currentListener === 'function') {
+        currentListener(event)
+      } else {
+        currentListener.handleEvent(event)
+      }
+    }
+
+    target.addEventListener(type, stableListener, { capture, passive, once, signal })
 
     return () => {
-      target.removeEventListener(type, listener, listenerOptions)
+      target.removeEventListener(type, stableListener, { capture })
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [target, type, listener, enabled])
+  }, [target, type, enabled, capture, passive, once, signal, listenerRef])
 }
