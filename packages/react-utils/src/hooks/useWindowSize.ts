@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useCallback, useSyncExternalStore } from 'react'
 import { throttle } from '@aliexme/js-utils'
 
 export interface WindowSize {
@@ -10,40 +10,37 @@ export interface UseWindowSizeOptions {
   throttleDelay?: number
 }
 
+let snapshot: WindowSize | undefined
+
+const getSnapshot = (): WindowSize => {
+  const width = window.innerWidth
+  const height = window.innerHeight
+
+  if (!snapshot || snapshot.width !== width || snapshot.height !== height) {
+    snapshot = { width, height }
+  }
+
+  return snapshot
+}
+
+const getServerSnapshot = (): WindowSize => ({ width: 0, height: 0 })
+
 export const useWindowSize = (options: UseWindowSizeOptions = {}) => {
   const { throttleDelay = 100 } = options
 
-  const [windowSize, setWindowSize] = useState<WindowSize>({
-    width: typeof window !== 'undefined' ? window.innerWidth : 0,
-    height: typeof window !== 'undefined' ? window.innerHeight : 0,
-  })
+  const subscribe = useCallback(
+    (onStoreChange: () => void) => {
+      const handleWindowResize = throttle(onStoreChange, throttleDelay, { withTrailing: true })
 
-  useEffect(() => {
-    if (typeof window === 'undefined') {
-      return
-    }
+      window.addEventListener('resize', handleWindowResize)
 
-    const handleWindowResize = throttle(
-      () => {
-        setWindowSize((prevWindowSize) =>
-          prevWindowSize.width === window.innerWidth && prevWindowSize.height === window.innerHeight
-            ? prevWindowSize
-            : {
-                width: window.innerWidth,
-                height: window.innerHeight,
-              },
-        )
-      },
-      throttleDelay,
-      { withTrailing: true },
-    )
+      return () => {
+        handleWindowResize.cancel()
+        window.removeEventListener('resize', handleWindowResize)
+      }
+    },
+    [throttleDelay],
+  )
 
-    window.addEventListener('resize', handleWindowResize)
-
-    return () => {
-      window.removeEventListener('resize', handleWindowResize)
-    }
-  }, [throttleDelay])
-
-  return windowSize
+  return useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot)
 }
