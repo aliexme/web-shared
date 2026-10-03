@@ -1,3 +1,4 @@
+import { getEventListeners } from 'node:events'
 import { setImmediate } from 'node:timers'
 
 import { noop } from '../../function/noop'
@@ -61,5 +62,21 @@ describe('sleep', () => {
     jest.advanceTimersByTime(1000)
     await new Promise(setImmediate)
     expect(callback).toHaveBeenCalledTimes(1)
+  })
+
+  it('should remove abort listener after resolve', async () => {
+    jest.useFakeTimers()
+
+    const controller = new AbortController()
+    const callback = jest.fn(noop)
+
+    sleep(1000, { signal: controller.signal }).then(callback)
+
+    jest.advanceTimersByTime(1000)
+    await new Promise(setImmediate)
+    expect(callback).toHaveBeenCalledTimes(1)
+    expect(getEventListeners(controller.signal, 'abort')).toHaveLength(0)
+
+    controller.abort()
   })
 })

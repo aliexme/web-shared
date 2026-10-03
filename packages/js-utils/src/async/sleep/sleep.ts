@@ -6,20 +6,26 @@ export const sleep = (ms: number, options: SleepOptions = {}): Promise<void> => 
   const { signal } = options
 
   return new Promise((resolve, reject) => {
-    if (signal?.aborted) {
+    if (!signal) {
+      setTimeout(resolve, ms)
+      return
+    }
+
+    if (signal.aborted) {
       reject(signal.reason)
       return
     }
 
-    const timerId = setTimeout(resolve, ms)
+    const onAbort = () => {
+      clearTimeout(timerId)
+      reject(signal.reason)
+    }
 
-    signal?.addEventListener(
-      'abort',
-      () => {
-        clearTimeout(timerId)
-        reject(signal.reason)
-      },
-      { once: true },
-    )
+    const timerId = setTimeout(() => {
+      signal.removeEventListener('abort', onAbort)
+      resolve()
+    }, ms)
+
+    signal.addEventListener('abort', onAbort, { once: true })
   })
 }
