@@ -1,7 +1,20 @@
+/** Options for the sleep function */
 export interface SleepOptions {
+  /** Signal that rejects the sleep promise early */
   signal?: AbortSignal
 }
 
+/**
+ * Returns a promise that resolves after the given delay, or rejects
+ * when the abort signal fires.
+ *
+ * @param ms - Delay in milliseconds
+ * @param options - Sleep options
+ * @returns Promise that resolves after the delay
+ *
+ * @example
+ * await sleep(1000)
+ */
 export const sleep = (ms: number, options: SleepOptions = {}): Promise<void> => {
   const { signal } = options
 

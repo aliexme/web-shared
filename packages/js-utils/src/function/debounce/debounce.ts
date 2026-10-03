@@ -1,15 +1,31 @@
 import { clamp } from '../../number/clamp'
 
+/** Debounced function with a method to cancel pending invocation */
 export interface DebouncedFunc<T extends (...args: never[]) => unknown> {
   (...args: Parameters<T>): void
   cancel(): void
 }
 
+/** Options for the debounce function */
 export interface DebounceOptions {
+  /** Maximum time in milliseconds the function is allowed to be delayed */
   maxWait?: number
+  /** Invoke the function on the leading edge instead of the trailing edge */
   withLeading?: boolean
 }
 
+/**
+ * Creates a debounced function that delays invoking `func` until `delay`
+ * milliseconds have passed since the last call.
+ *
+ * @param func - Function to debounce
+ * @param delay - Delay in milliseconds
+ * @param options - Debounce options
+ * @returns Debounced function with a `cancel` method
+ *
+ * @example
+ * const debounced = debounce(() => save(input), 300)
+ */
 export const debounce = <T extends (...args: never[]) => unknown>(
   func: T,
   delay: number,

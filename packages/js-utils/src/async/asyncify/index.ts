@@ -1,1 +1,0 @@
-export { asyncify } from './asyncify'

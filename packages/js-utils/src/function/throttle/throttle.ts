@@ -1,12 +1,27 @@
+/** Throttled function with a method to cancel pending invocation */
 export interface ThrottledFunc<T extends (...args: never[]) => unknown> {
   (...args: Parameters<T>): void
   cancel(): void
 }
 
+/** Options for the throttle function */
 export interface ThrottleOptions {
+  /** Invoke the function with the last received args after the cooldown ends */
   withTrailing?: boolean
 }
 
+/**
+ * Creates a throttled function that invokes `func` at most once per `delay`
+ * milliseconds.
+ *
+ * @param func - Function to throttle
+ * @param delay - Cooldown in milliseconds
+ * @param options - Throttle options
+ * @returns Throttled function with a `cancel` method
+ *
+ * @example
+ * const throttled = throttle(() => onScroll(event), 100)
+ */
 export const throttle = <T extends (...args: never[]) => unknown>(
   func: T,
   delay: number,
