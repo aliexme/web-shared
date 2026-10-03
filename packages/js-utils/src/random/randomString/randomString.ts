@@ -14,23 +14,16 @@ const digits = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
 // biome-ignore format: ignore
 const symbols = ['!', '#', '@', '~', '$', '^', '.', ',', '-', '+', '%', '?', '*', '=']
 
-const charGroupsMap = {
-  1: lowercase,
-  2: uppercase,
-  3: digits,
-  4: symbols,
-}
+const charGroups = [lowercase, uppercase, digits, symbols]
 
 export const randomString = (options: { length?: number } = {}): string => {
   const { length = 16 } = options
   let result = ''
 
   for (let i = 0; i < length; i++) {
-    const charGroupIndex = randomInt(1, 4)
-    const charGroup = charGroupsMap[charGroupIndex as keyof typeof charGroupsMap]
-    const char = randomArrayItem(charGroup)
+    const charGroup = charGroups[randomInt(0, charGroups.length - 1)]
 
-    result += char
+    result += randomArrayItem(charGroup)
   }
 
   return result
