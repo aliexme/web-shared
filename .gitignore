@@ -178,5 +178,6 @@ dist
 
 .nx/cache
 .nx/workspace-data
+.codegraph
 .cursor/rules/nx-rules.mdc
 .github/instructions/nx.instructions.md
