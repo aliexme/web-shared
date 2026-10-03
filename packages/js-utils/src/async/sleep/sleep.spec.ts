@@ -25,4 +25,41 @@ describe('sleep', () => {
     await new Promise(setImmediate)
     expect(callback).toHaveBeenCalledTimes(1)
   })
+
+  it('should reject immediately if signal is already aborted', async () => {
+    jest.useFakeTimers()
+
+    const controller = new AbortController()
+    controller.abort()
+
+    const promise = sleep(1000, { signal: controller.signal })
+
+    await expect(promise).rejects.toBe(controller.signal.reason)
+    jest.advanceTimersByTime(1000)
+  })
+
+  it('should reject with abort reason if aborted during sleep', async () => {
+    jest.useFakeTimers()
+
+    const controller = new AbortController()
+    const promise = sleep(1000, { signal: controller.signal })
+
+    jest.advanceTimersByTime(500)
+    controller.abort()
+
+    await expect(promise).rejects.toBe(controller.signal.reason)
+  })
+
+  it('should resolve if not aborted during sleep', async () => {
+    jest.useFakeTimers()
+
+    const controller = new AbortController()
+    const callback = jest.fn(noop)
+
+    sleep(1000, { signal: controller.signal }).then(callback)
+
+    jest.advanceTimersByTime(1000)
+    await new Promise(setImmediate)
+    expect(callback).toHaveBeenCalledTimes(1)
+  })
 })

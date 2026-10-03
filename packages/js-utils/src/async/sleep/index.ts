@@ -1,1 +1,1 @@
-export { sleep } from './sleep'
+export { type SleepOptions, sleep } from './sleep'
