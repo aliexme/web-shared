@@ -18,4 +18,9 @@ describe('floor', () => {
     const result = floor(value, 10)
     expect(result).toBe(value)
   })
+
+  it('should floor with binary floating point error for 1.005', () => {
+    const result = floor(1.005, 2)
+    expect(result).toBe(1)
+  })
 })

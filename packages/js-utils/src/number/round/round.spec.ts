@@ -18,4 +18,9 @@ describe('round', () => {
     const result = round(value, 10)
     expect(result).toBe(value)
   })
+
+  it('should round with binary floating point error for 1.005', () => {
+    const result = round(1.005, 2)
+    expect(result).toBe(1)
+  })
 })
