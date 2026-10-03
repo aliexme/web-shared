@@ -1,5 +1,3 @@
-import seedrandom from 'seedrandom'
-
 import { randomArrayItem } from './randomArrayItem'
 
 describe('randomArrayItem', () => {
@@ -8,9 +6,9 @@ describe('randomArrayItem', () => {
   })
 
   it('should return random item', () => {
-    jest.spyOn(Math, 'random').mockImplementation(seedrandom(''))
+    jest.spyOn(Math, 'random').mockReturnValue(0.5)
 
     const result = randomArrayItem([1, 2, 3, 4])
-    expect(result).toBe(1)
+    expect(result).toBe(3)
   })
 })

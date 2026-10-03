@@ -1,4 +1,4 @@
-import { floor } from './floor'
+import { floor } from '../number/floor'
 
 export interface RandomNumberOptions {
   precision?: number

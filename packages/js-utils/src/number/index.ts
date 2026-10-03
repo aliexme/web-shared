@@ -1,6 +1,4 @@
 export * from './clamp'
 export * from './floor'
 export * from './lerp'
-export * from './randomInt'
-export * from './randomNumber'
 export * from './round'

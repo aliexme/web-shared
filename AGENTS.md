@@ -19,7 +19,7 @@ Run `pnpm check && pnpm test` before finishing any change. Pre-commit runs the f
 
 - Jest config lives at the repo root and matches only `packages/js-utils/**/*.spec.ts` — that is the only package with tests.
 - Specs are colocated with sources as `*.spec.ts`.
-- Tests involving randomness mock `Math.random` with `seedrandom('')` (root devDependency) for deterministic assertions — see `packages/js-utils/src/array/randomArrayItem.spec.ts`.
+- Tests involving randomness mock `Math.random` for deterministic assertions: a single call per test → `jest.spyOn(Math, 'random').mockReturnValue(0.5)`; multiple calls → `mockImplementation(seededRandom())` via `seededRandom` from `@aliexme/js-utils` — see `packages/js-utils/src/random/randomArrayItem.spec.ts` and `packages/js-utils/src/random/randomString.spec.ts`.
 
 ## Package layout
 

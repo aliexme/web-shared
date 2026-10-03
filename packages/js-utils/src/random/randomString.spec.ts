@@ -1,6 +1,5 @@
-import seedrandom from 'seedrandom'
-
 import { randomString } from './randomString'
+import { seededRandom } from './seededRandom'
 
 describe('randomString', () => {
   afterEach(() => {
@@ -8,16 +7,16 @@ describe('randomString', () => {
   })
 
   it('should return random string', () => {
-    jest.spyOn(Math, 'random').mockImplementation(seedrandom(''))
+    jest.spyOn(Math, 'random').mockImplementation(seededRandom())
 
     const result = randomString()
-    expect(result).toBe('h^q@.s99Ruu$.0Ch')
+    expect(result).toBe('AdO6Pc^6-1vC*4C,')
   })
 
   it('should return random string of given length', () => {
-    jest.spyOn(Math, 'random').mockImplementation(seedrandom(''))
+    jest.spyOn(Math, 'random').mockImplementation(seededRandom())
 
     const result = randomString({ length: 5 })
-    expect(result).toBe('h^q@.')
+    expect(result).toBe('AdO6P')
   })
 })

@@ -1,5 +1,5 @@
-import { randomArrayItem } from '../array/randomArrayItem'
-import { randomInt } from '../number/randomInt'
+import { randomArrayItem } from './randomArrayItem'
+import { randomInt } from './randomInt'
 
 // prettier-ignore
 // biome-ignore format: ignore
