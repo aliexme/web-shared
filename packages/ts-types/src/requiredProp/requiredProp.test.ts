@@ -4,11 +4,11 @@ import type { RequiredProp } from './requiredProp'
 
 describe('RequiredProp', () => {
   it('should make only the specified properties required', () => {
-    expectTypeOf<RequiredProp<{ a?: 1; b?: 2 }, 'a'>>().toEqualTypeOf<{ b?: 2 } & { a: 1 }>()
+    expectTypeOf<RequiredProp<{ a?: 1; b?: 2 }, 'a'>>().toEqualTypeOf<{ a: 1; b?: 2 }>()
   })
 
   it('should keep already required properties intact', () => {
-    expectTypeOf<RequiredProp<{ a: 1; b?: 2 }, 'a'>>().toEqualTypeOf<{ b?: 2 } & { a: 1 }>()
+    expectTypeOf<RequiredProp<{ a: 1; b?: 2 }, 'a'>>().toEqualTypeOf<{ a: 1; b?: 2 }>()
   })
 
   it('should reject keys not present in T', () => {
