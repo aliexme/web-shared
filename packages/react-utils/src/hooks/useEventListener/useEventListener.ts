@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 
-import { useValueRef } from './useValueRef'
+import { useValueRef } from '../useValueRef'
 
 /** Options for the useEventListener hook; extends AddEventListenerOptions */
 export interface UseEventListenerOptions extends AddEventListenerOptions {

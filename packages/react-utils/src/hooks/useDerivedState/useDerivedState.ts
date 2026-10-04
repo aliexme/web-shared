@@ -1,6 +1,6 @@
 import { useCallback, useState } from 'react'
 
-import { useValueRef } from './useValueRef'
+import { useValueRef } from '../useValueRef'
 
 /** Params for the useDerivedState hook */
 export interface UseDerivedStateParams<T> {
