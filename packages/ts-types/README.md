@@ -76,14 +76,6 @@ Tuple<T, N extends number>
 
 Creates a tuple of `T` of a given length, fixed at compile time. A non-literal `number` length falls back to `T[]`.
 
-### UnionTuple
-
-```ts
-UnionTuple<T>
-```
-
-Converts a union type into a tuple containing each of its members. Works for literal, primitive and object unions; `never` yields an empty tuple. The member order is deterministic but not part of the contract.
-
 ### ValueOf
 
 ```ts
