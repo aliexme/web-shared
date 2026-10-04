@@ -8,6 +8,7 @@ export default defineConfig({
     isolate: false,
     coverage: {
       provider: 'v8',
+      exclude: ['**/dist/**'],
     },
   },
 })
