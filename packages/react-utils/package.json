@@ -2,7 +2,7 @@
   "name": "@aliexme/react-utils",
   "version": "5.0.1",
   "private": false,
-  "description": "React utilities",
+  "description": "React hooks and utilities",
   "homepage": "https://github.com/aliexme/web-shared/tree/main/packages/react-utils",
   "repository": {
     "type": "git",

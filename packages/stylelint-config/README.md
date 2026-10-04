@@ -20,6 +20,16 @@ Extend your Stylelint config file:
 }
 ```
 
+## Available configs
+
+| Export | Description |
+| --- | --- |
+| `@aliexme/stylelint-config` (or `/recommended`) | Extends `/base` |
+| `@aliexme/stylelint-config/base` | `stylelint-config-standard` + `/common` + notation rules + Tailwind CSS at-rules |
+| `@aliexme/stylelint-config/common` | Shared rule tweaks: class and layer naming patterns, `:global` pseudo-class |
+| `@aliexme/stylelint-config/scss` | SCSS support via `stylelint-config-standard-scss` |
+| `@aliexme/stylelint-config/prettier` | Runs Prettier through Stylelint |
+
 ### SCSS
 
 Install additional packages:
@@ -57,3 +67,7 @@ And add the following lines to your Stylelint config file:
   ],
 }
 ```
+
+## License
+
+MIT

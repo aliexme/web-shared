@@ -2,7 +2,7 @@
   "name": "@aliexme/eslint-config",
   "version": "4.1.1",
   "private": false,
-  "description": "Set of configs for ESLint",
+  "description": "Rule set for ESLint",
   "keywords": [
     "eslint",
     "eslintconfig"

@@ -1,6 +1,6 @@
 # @aliexme/react-utils
 
-React 19 hooks and utilities
+React hooks and utilities
 
 ## Installation
 
@@ -8,7 +8,15 @@ React 19 hooks and utilities
 npm i @aliexme/react-utils
 ```
 
-Requires `react@^19.0.0` as a peer dependency.
+Requires `react` as a peer dependency.
+
+## Usage
+
+All hooks and types are named ESM exports:
+
+```ts
+import { useDidMount, useWindowSize } from '@aliexme/react-utils'
+```
 
 ## Hooks
 

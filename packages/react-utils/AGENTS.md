@@ -1,6 +1,6 @@
 # @aliexme/react-utils
 
-React hooks and components. React 19 is a peerDependency — never move it into `dependencies`.
+React hooks and components. React is a peerDependency — never move it into `dependencies`.
 
 - Tests are colocated as `*.test.tsx` and run by the root Vitest config: hooks declare `// @vitest-environment happy-dom` directly above the first import; server-only behavior goes into `*.server.test.ts` files with `// @vitest-environment node`. Verification is `pnpm check` + `pnpm test` from the root (the root `tsconfig.json` paths cover this package).
 - Depends on `@aliexme/js-utils` via `workspace:^`. The root typecheck resolves it to `packages/js-utils/src`, so js-utils changes surface here without rebuilding.

@@ -2,7 +2,7 @@
   "name": "@aliexme/js-utils",
   "version": "3.0.0",
   "private": false,
-  "description": "Common JavaScript utilities",
+  "description": "Tree-shakable JavaScript utilities",
   "homepage": "https://github.com/aliexme/web-shared/tree/main/packages/js-utils",
   "repository": {
     "type": "git",
