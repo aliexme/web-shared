@@ -1,5 +1,4 @@
 // @vitest-environment happy-dom
-
 import { act, render } from '@testing-library/react'
 import { useEffect } from 'react'
 import { describe, expect, it, vi } from 'vitest'

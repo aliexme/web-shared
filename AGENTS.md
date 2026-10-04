@@ -17,8 +17,10 @@ Run `pnpm check && pnpm test` before finishing any change. Pre-commit runs the f
 
 ## Testing
 
-- Vitest config lives at the repo root and matches `**/*.test.ts` across the repo (default excludes cover `node_modules`, `dist`, and config files) — currently `js-utils` is the only package with tests.
-- Tests are colocated with sources as `*.test.ts`.
+- Vitest config lives at the repo root and matches `**/*.test.{ts,tsx}` across the repo (default excludes cover `node_modules`, `dist`, and config files) — both `js-utils` and `react-utils` have tests.
+- Tests are colocated with sources as `*.test.{ts,tsx}`.
+- Coverage is enforced at 100% (statements, branches, functions, lines) via `coverage.thresholds` in the root Vitest config — run `pnpm test:coverage`.
+- Browser-facing tests declare `// @vitest-environment happy-dom` directly above the first import (no blank line between); server-only paths get a dedicated `*.server.test.ts` with `// @vitest-environment node`.
 - Tests involving randomness mock `Math.random` for deterministic assertions: a single call per test → `vi.spyOn(Math, 'random').mockReturnValue(0.5)`; multiple calls → `mockImplementation(seededRandom())` via `seededRandom` from `@aliexme/js-utils` — see `packages/js-utils/src/random/randomArrayItem/randomArrayItem.test.ts` and `packages/js-utils/src/random/randomString/randomString.test.ts`.
 
 ## Package layout

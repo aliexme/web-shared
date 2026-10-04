@@ -1,5 +1,6 @@
 // @vitest-environment happy-dom
 import { act, render } from '@testing-library/react'
+import { renderToString } from 'react-dom/server'
 import { afterEach, describe, expect, it, vi } from 'vitest'
 
 import { useWindowSize } from './useWindowSize'
@@ -108,5 +109,11 @@ describe('useWindowSize', () => {
 
     expect(removeSpy).toHaveBeenCalledTimes(1)
     expect(addSpy).toHaveBeenCalledTimes(2)
+  })
+
+  it('should render the zero-size server snapshot during SSR', () => {
+    const html = renderToString(<Probe />)
+
+    expect(html).toBe('<div><span data-testid="width">0</span><span data-testid="height">0</span></div>')
   })
 })
