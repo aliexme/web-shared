@@ -26,9 +26,6 @@
     "build": "vite build",
     "check:ts": "tsc --noEmit"
   },
-  "dependencies": {
-    "@aliexme/ts-types": "workspace:^1.0.0"
-  },
   "publishConfig": {
     "access": "public"
   }

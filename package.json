@@ -37,7 +37,6 @@
     "@aliexme/prettier-config": "workspace:*",
     "@aliexme/react-utils": "workspace:*",
     "@aliexme/stylelint-config": "workspace:*",
-    "@aliexme/ts-types": "workspace:*",
     "@biomejs/biome": "2.5.14",
     "@eslint/compat": "2.1.1",
     "@stylistic/eslint-plugin-migrate": "4.4.1",
