@@ -20,29 +20,21 @@ import type { OmitStrict, ValueOf } from '@aliexme/ts-types'
 
 ## Types
 
+### Intersect
+
+```ts
+Intersect<T>
+```
+
+Converts a union type into an intersection of its members.
+
 ### OmitStrict
 
 ```ts
 OmitStrict<T, K extends keyof T>
 ```
 
-Same as `Omit`, but `K` must be extended from `keyof T`.
-
-### PartialProp
-
-```ts
-PartialProp<T, K extends keyof T>
-```
-
-Makes specific properties in `T` optional.
-
-### RequiredProp
-
-```ts
-RequiredProp<T, K extends keyof T>
-```
-
-Makes specific properties in `T` required.
+Same as `Omit`, but `K` must be a key of `T` — a typo in the key fails at compile time.
 
 ### Override
 
@@ -50,31 +42,39 @@ Makes specific properties in `T` required.
 Override<T, U>
 ```
 
-Combines `T` and `U` and overwrites properties from `T` with properties from `U`.
+Combines `T` and `U`, overwriting matching properties of `T` with the ones from `U`. The result is a flat object type.
 
-### ValueOf
+### PartialProp
 
 ```ts
-ValueOf<T>
+PartialProp<T, K extends keyof T>
 ```
 
-Extracts values from `T`.
+Makes specific properties in `T` optional, leaving the rest untouched. The result is a flat object type.
+
+### RequiredProp
+
+```ts
+RequiredProp<T, K extends keyof T>
+```
+
+Makes specific properties in `T` required, leaving the rest untouched. The result is a flat object type.
+
+### Simplify
+
+```ts
+Simplify<T>
+```
+
+Flattens an intersection into a single object type. Preserves `readonly` and optional modifiers.
 
 ### Tuple
 
 ```ts
-Tuple<T, N>
+Tuple<T, N extends number>
 ```
 
-Creates a tuple of `T` of a given length.
-
-### Intersect
-
-```ts
-Intersect<T>
-```
-
-Converts a union type into an intersection type.
+Creates a tuple of `T` of a given length, fixed at compile time. A non-literal `number` length falls back to `T[]`.
 
 ### UnionTuple
 
@@ -82,7 +82,15 @@ Converts a union type into an intersection type.
 UnionTuple<T>
 ```
 
-Converts a union type into a tuple.
+Converts a union type into a tuple containing each of its members. Works for literal, primitive and object unions; `never` yields an empty tuple. The member order is deterministic but not part of the contract.
+
+### ValueOf
+
+```ts
+ValueOf<T>
+```
+
+Union of value types of an object type.
 
 ## License
 
