@@ -44,11 +44,15 @@
       }
     }
   },
+  "css": {
+    "formatter": {
+      "quoteStyle": "single"
+    }
+  },
   "javascript": {
     "formatter": {
       "semicolons": "asNeeded",
-      "quoteStyle": "single",
-      "operatorLinebreak": "before"
+      "quoteStyle": "single"
     }
   }
 }
