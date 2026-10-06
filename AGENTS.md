@@ -38,6 +38,7 @@ Workspace cross-dependencies use `workspace:*` / `workspace:^`. The root `tsconf
 - Root config files (`eslint.config.js`, `biome.json`, `stylelint.config.js`, `prettier.config.js`) consume the workspace config packages — they double as the real-world smoke test for those packages, so update them alongside config changes.
 - ESLint enforces the `@stylistic/migrate` rule; `pnpm fix:eslint` rewrites deprecated stylistic rules.
 - `deps:*` scripts run taze interactively via `pnx` (pnpm's built-in alias for `pnpm dlx`).
+- Root `package.json` dependencies are pinned to exact versions (no `^`/`~` ranges) — add new ones with `pnpm add -Dw --save-exact <pkg>`.
 - pnpm enforces `minimumReleaseAge: 4320` (3 days): freshly published npm versions won't resolve until they age. `allowBuilds` blocks install scripts of several tools.
 
 ## Commits & releases

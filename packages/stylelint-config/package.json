@@ -20,7 +20,6 @@
   "exports": {
     ".": "./index.js",
     "./recommended": "./configs/recommended.js",
-    "./common": "./configs/common.js",
     "./base": "./configs/base.js",
     "./scss": "./configs/scss.js",
     "./prettier": "./configs/prettier.js"

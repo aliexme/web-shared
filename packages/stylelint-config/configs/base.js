@@ -1,27 +1,10 @@
+import { tailwindAtRules } from './tailwind.js'
+
 /** @type {import('stylelint').Config} */
 export default {
   extends: ['stylelint-config-standard', './common'],
   rules: {
-    'import-notation': 'string',
-    'hue-degree-notation': 'number',
-    'lightness-notation': 'number',
-    'at-rule-no-unknown': [
-      true,
-      {
-        ignoreAtRules: [
-          'tailwind',
-          'theme',
-          'source',
-          'utility',
-          'variant',
-          'custom-variant',
-          'apply',
-          'reference',
-          'config',
-          'plugin',
-        ],
-      },
-    ],
-    'at-rule-no-deprecated': [true, { ignoreAtRules: ['apply'] }],
+    'at-rule-no-unknown': [true, { ignoreAtRules: tailwindAtRules }],
+    'at-rule-prelude-no-invalid': [true, { ignoreAtRules: ['media', 'apply'] }],
   },
 }
