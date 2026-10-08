@@ -5,6 +5,7 @@ export default defineConfig([
   packageJson.configs.recommended,
   packageJson.configs.stylistic,
   {
+    name: '@aliexme/eslint-config/package-json',
     files: ['**/package.json'],
     rules: {
       'package-json/sort-collections': ['error', ['dependencies', 'devDependencies', 'peerDependencies', 'overrides']],

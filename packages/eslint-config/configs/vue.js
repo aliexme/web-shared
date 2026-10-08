@@ -1,9 +1,10 @@
+import { defineConfig } from 'eslint/config'
 import eslintPluginVue from 'eslint-plugin-vue'
 
-/** @type {import('eslint').Linter.Config[]} */
-export default [
+export default defineConfig([
   ...eslintPluginVue.configs['flat/recommended'],
   {
+    name: '@aliexme/eslint-config/vue',
     languageOptions: {
       parserOptions: {
         extraFileExtensions: ['.vue'],
@@ -15,4 +16,4 @@ export default [
       'vue/no-reserved-props': 'off',
     },
   },
-]
+])
