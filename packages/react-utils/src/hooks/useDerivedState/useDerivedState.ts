@@ -9,7 +9,7 @@ export interface UseDerivedStateParams<T> {
   /** Initial value used while uncontrolled */
   initialValue: T
   /** Called with the new value whenever the returned change handler is invoked */
-  onChange?(value: T): void
+  onChange?: (value: T) => void
 }
 
 /**

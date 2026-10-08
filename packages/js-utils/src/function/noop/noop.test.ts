@@ -4,7 +4,7 @@ import { noop } from './noop'
 
 describe('noop', () => {
   it('should return void', () => {
-    const result = noop()
-    expect(result).toBeUndefined()
+    // eslint-disable-next-line @typescript-eslint/no-confusing-void-expression -- asserting the void return value
+    expect(noop()).toBeUndefined()
   })
 })

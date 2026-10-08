@@ -15,7 +15,7 @@ describe('sleep', () => {
 
     const callback = vi.fn(noop)
 
-    sleep(1000).then(callback)
+    void sleep(1000).then(callback)
 
     expect(callback).toHaveBeenCalledTimes(0)
 
@@ -58,7 +58,7 @@ describe('sleep', () => {
     const controller = new AbortController()
     const callback = vi.fn(noop)
 
-    sleep(1000, { signal: controller.signal }).then(callback)
+    void sleep(1000, { signal: controller.signal }).then(callback)
 
     vi.advanceTimersByTime(1000)
     await new Promise(setImmediate)
@@ -71,7 +71,7 @@ describe('sleep', () => {
     const controller = new AbortController()
     const callback = vi.fn(noop)
 
-    sleep(1000, { signal: controller.signal }).then(callback)
+    void sleep(1000, { signal: controller.signal }).then(callback)
 
     vi.advanceTimersByTime(1000)
     await new Promise(setImmediate)

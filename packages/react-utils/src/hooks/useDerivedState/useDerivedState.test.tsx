@@ -24,7 +24,11 @@ const Probe = ({ value, onChange }: ProbeProps) => {
 
 const getValue = () => document.querySelector('[data-testid="value"]')?.textContent
 
-const changeValue = (value: string) => act(() => capturedHandler.current?.(value))
+const changeValue = (value: string) => {
+  act(() => {
+    capturedHandler.current?.(value)
+  })
+}
 
 describe('useDerivedState', () => {
   it('should use the initial value when uncontrolled', () => {
