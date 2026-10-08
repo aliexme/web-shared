@@ -18,17 +18,46 @@
   "sideEffects": false,
   "type": "module",
   "exports": {
-    ".": "./index.js",
-    "./recommended": "./configs/recommended.js",
-    "./base": "./configs/base.js",
-    "./typescript": "./configs/typescript.js",
-    "./stylistic": "./configs/stylistic.js",
-    "./import": "./configs/import.js",
-    "./package-json": "./configs/package-json.js",
-    "./prettier": "./configs/prettier.js",
-    "./react": "./configs/react.js",
-    "./vue": "./configs/vue.js",
-    "./astro": "./configs/astro.js"
+    ".": {
+      "types": "./index.d.ts",
+      "default": "./index.js"
+    },
+    "./recommended": {
+      "types": "./index.d.ts",
+      "default": "./configs/recommended.js"
+    },
+    "./base": {
+      "types": "./index.d.ts",
+      "default": "./configs/base.js"
+    },
+    "./typescript": {
+      "types": "./index.d.ts",
+      "default": "./configs/typescript.js"
+    },
+    "./stylistic": {
+      "types": "./index.d.ts",
+      "default": "./configs/stylistic.js"
+    },
+    "./import": {
+      "types": "./index.d.ts",
+      "default": "./configs/import.js"
+    },
+    "./package-json": {
+      "types": "./index.d.ts",
+      "default": "./configs/package-json.js"
+    },
+    "./react": {
+      "types": "./index.d.ts",
+      "default": "./configs/react.js"
+    },
+    "./vue": {
+      "types": "./index.d.ts",
+      "default": "./configs/vue.js"
+    },
+    "./astro": {
+      "types": "./index.d.ts",
+      "default": "./configs/astro.js"
+    }
   },
   "types": "./index.d.ts",
   "files": [
@@ -47,22 +76,13 @@
   },
   "peerDependencies": {
     "eslint": "^10.0.0",
-    "eslint-config-prettier": "^10.0.0",
     "eslint-plugin-astro": "^3.0.0",
-    "eslint-plugin-prettier": "^5.0.0",
     "eslint-plugin-react": "^7.0.0",
     "eslint-plugin-react-hooks": "^7.0.0",
-    "eslint-plugin-vue": "^10.0.0",
-    "prettier": "^3.0.0"
+    "eslint-plugin-vue": "^10.0.0"
   },
   "peerDependenciesMeta": {
-    "eslint-config-prettier": {
-      "optional": true
-    },
     "eslint-plugin-astro": {
-      "optional": true
-    },
-    "eslint-plugin-prettier": {
       "optional": true
     },
     "eslint-plugin-react": {
@@ -72,9 +92,6 @@
       "optional": true
     },
     "eslint-plugin-vue": {
-      "optional": true
-    },
-    "prettier": {
       "optional": true
     }
   },

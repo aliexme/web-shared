@@ -2,9 +2,9 @@ import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 import stylisticMigratePlugin from '@stylistic/eslint-plugin-migrate'
 import { defineConfig, includeIgnoreFile } from 'eslint/config'
+import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended'
 import eslintConfigRecommended from '@aliexme/eslint-config'
 import eslintConfigAstro from '@aliexme/eslint-config/astro'
-import eslintConfigPrettier from '@aliexme/eslint-config/prettier'
 import eslintConfigReact from '@aliexme/eslint-config/react'
 import eslintConfigVue from '@aliexme/eslint-config/vue'
 
@@ -18,7 +18,7 @@ export default defineConfig([
   eslintConfigReact,
   eslintConfigVue,
   eslintConfigAstro,
-  eslintConfigPrettier,
+  eslintPluginPrettierRecommended,
   {
     plugins: {
       // @ts-expect-error stylisticMigratePlugin is not assignable to type 'Plugin'
