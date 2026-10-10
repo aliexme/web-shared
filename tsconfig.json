@@ -9,6 +9,8 @@
     "moduleResolution": "Bundler",
     "resolveJsonModule": true,
     "isolatedModules": true,
+    "verbatimModuleSyntax": true,
+    "noUncheckedSideEffectImports": true,
     "esModuleInterop": true,
     "incremental": true,
     "strict": true,
@@ -16,13 +18,11 @@
     "noUnusedParameters": true,
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
-    "forceConsistentCasingInFileNames": true,
     "stableTypeOrdering": true,
     "skipLibCheck": true,
     "noEmit": true,
     "rootDir": ".",
     "paths": {
-      "@aliexme/eslint-config": ["./packages/eslint-config/src"],
       "@aliexme/js-utils": ["./packages/js-utils/src"],
       "@aliexme/react-utils": ["./packages/react-utils/src"]
     }
