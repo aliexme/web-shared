@@ -3,6 +3,9 @@ pre-commit:
     - name: format
       group:
         jobs:
+          - name: prettier
+            run: pnpm exec prettier --write --ignore-unknown --log-level warn {staged_files}
+            stage_fixed: true
           - name: biome
             run: pnpm exec biome check --write --no-errors-on-unmatched --files-ignore-unknown=true --colors=off {staged_files}
             stage_fixed: true

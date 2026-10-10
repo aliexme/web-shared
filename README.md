@@ -4,15 +4,15 @@ A set of packages for web development
 
 ## Packages
 
-| Package | Description |
-| --- | --- |
-| [@aliexme/js-utils](packages/js-utils) | Tree-shakable JavaScript utilities |
-| [@aliexme/react-utils](packages/react-utils) | React hooks and utilities |
-| [@aliexme/ts-types](packages/ts-types) | Common TypeScript utility types |
-| [@aliexme/eslint-config](packages/eslint-config) | Rule set for ESLint |
-| [@aliexme/stylelint-config](packages/stylelint-config) | A set of rules for Stylelint |
-| [@aliexme/prettier-config](packages/prettier-config) | Shared Prettier configuration |
-| [@aliexme/biome-config](packages/biome-config) | Shared Biome configuration |
+| Package                                                | Description                        |
+| ------------------------------------------------------ | ---------------------------------- |
+| [@aliexme/js-utils](packages/js-utils)                 | Tree-shakable JavaScript utilities |
+| [@aliexme/react-utils](packages/react-utils)           | React hooks and utilities          |
+| [@aliexme/ts-types](packages/ts-types)                 | Common TypeScript utility types    |
+| [@aliexme/eslint-config](packages/eslint-config)       | Rule set for ESLint                |
+| [@aliexme/stylelint-config](packages/stylelint-config) | A set of rules for Stylelint       |
+| [@aliexme/prettier-config](packages/prettier-config)   | Shared Prettier configuration      |
+| [@aliexme/biome-config](packages/biome-config)         | Shared Biome configuration         |
 
 ## Development
 

@@ -23,17 +23,17 @@ export default defineConfig([
 
 ## Available configs
 
-| Export | Description |
-| --- | --- |
-| `@aliexme/eslint-config` (or `/recommended`) | base + typescript + import + package-json |
-| `@aliexme/eslint-config/base` | `@eslint/js` recommended plus language modernization rules |
-| `@aliexme/eslint-config/typescript` | typescript-eslint strictTypeChecked (type-aware) and TS stylistic rules |
-| `@aliexme/eslint-config/stylistic` | `@stylistic` formatting rules (single quotes, no semicolons, width 120) |
-| `@aliexme/eslint-config/import` | `eslint-plugin-import-x` rules with import ordering |
-| `@aliexme/eslint-config/package-json` | `eslint-plugin-package-json` rules |
-| `@aliexme/eslint-config/react` | React and React Hooks rules |
-| `@aliexme/eslint-config/vue` | Vue rules |
-| `@aliexme/eslint-config/astro` | Astro rules |
+| Export                                       | Description                                                             |
+| -------------------------------------------- | ----------------------------------------------------------------------- |
+| `@aliexme/eslint-config` (or `/recommended`) | base + typescript + import + package-json                               |
+| `@aliexme/eslint-config/base`                | `@eslint/js` recommended plus language modernization rules              |
+| `@aliexme/eslint-config/typescript`          | typescript-eslint strictTypeChecked (type-aware) and TS stylistic rules |
+| `@aliexme/eslint-config/stylistic`           | `@stylistic` formatting rules (single quotes, no semicolons, width 120) |
+| `@aliexme/eslint-config/import`              | `eslint-plugin-import-x` rules with import ordering                     |
+| `@aliexme/eslint-config/package-json`        | `eslint-plugin-package-json` rules                                      |
+| `@aliexme/eslint-config/react`               | React and React Hooks rules                                             |
+| `@aliexme/eslint-config/vue`                 | Vue rules                                                               |
+| `@aliexme/eslint-config/astro`               | Astro rules                                                             |
 
 Individual configs can be composed instead of the recommended one:
 
@@ -65,9 +65,8 @@ export default defineConfig([
 ])
 ```
 
-Note: if you run Prettier through ESLint (`eslint-plugin-prettier/recommended`),
-its bundled `eslint-config-prettier` disables all `@stylistic` rules, so the
-two are mutually exclusive.
+Note: if you use Prettier, `eslint-config-prettier/flat` disables all
+`@stylistic` rules, so the two are mutually exclusive.
 
 ## Type-aware linting
 

@@ -14,11 +14,11 @@ Requires `prettier@^3.0.0` as a peer dependency.
 
 Everything not listed here follows the Prettier defaults. The deliberate overrides:
 
-| Option | Value | Prettier default |
-| --- | --- | --- |
-| `printWidth` | `120` | `80` |
-| `semi` | `false` | `true` |
-| `singleQuote` | `true` | `false` |
+| Option        | Value   | Prettier default |
+| ------------- | ------- | ---------------- |
+| `printWidth`  | `120`   | `80`             |
+| `semi`        | `false` | `true`           |
+| `singleQuote` | `true`  | `false`          |
 
 ## Usage
 

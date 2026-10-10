@@ -4,8 +4,8 @@ pnpm workspace monorepo publishing the `@aliexme/*` package family to npm. Versi
 
 ## Commands
 
-- `pnpm check` — all checks in parallel: `check:ts` + `check:eslint` + `check:stylelint` + `check:biome`
-- `pnpm fix` — autofix eslint + stylelint + biome (there is no TS autofix)
+- `pnpm check` — all checks in parallel: `check:ts` + `check:eslint` + `check:stylelint` + `check:biome` + `check:prettier`
+- `pnpm fix` — autofix eslint + stylelint + biome + prettier (there is no TS autofix)
 - `pnpm test` — all tests (Vitest)
 - `pnpm vitest run packages/js-utils/src/string/capitalize/capitalize.test.ts` — single test file
 - `pnpm vitest run -t '<test name>'` — single test case
@@ -13,7 +13,7 @@ pnpm workspace monorepo publishing the `@aliexme/*` package family to npm. Versi
 - `pnpm build` — `lerna run build`
 - `pnpm publish` — Lerna publish, `main` branch only
 
-Run `pnpm check && pnpm test` before finishing any change. Pre-commit runs the full typecheck plus eslint/stylelint/biome on staged files; autofixes are re-staged automatically.
+Run `pnpm check && pnpm test` before finishing any change. Pre-commit runs the full typecheck plus eslint/stylelint on staged files, formats them with Biome and Prettier, and re-stages autofixes automatically.
 
 ## Testing
 
@@ -34,7 +34,7 @@ Workspace cross-dependencies use `workspace:*` / `workspace:^`. The root `tsconf
 
 ## Tooling conventions
 
-- Biome is the primary formatter/import organizer: single quotes, no semicolons, width 120, sorted import groups (with `@aliexme/**` in its own group), sorted object keys. Prettier runs only through the ESLint/Stylelint plugins.
+- Biome formats JS/TS/JSON/CSS and organizes imports: single quotes, no semicolons, width 120, sorted import groups (with `@aliexme/**` in its own group), sorted object keys. Standalone Prettier (`check:prettier`/`fix:prettier`) formats everything Biome cannot — Markdown, YAML, etc. ESLint disables formatting rules via `eslint-config-prettier`; Stylelint presets contain no formatting rules.
 - Root config files (`eslint.config.js`, `biome.json`, `stylelint.config.js`, `prettier.config.js`) consume the workspace config packages — they double as the real-world smoke test for those packages, so update them alongside config changes.
 - ESLint enforces the `@stylistic/migrate` rule; `pnpm fix:eslint` rewrites deprecated stylistic rules.
 - `deps:*` scripts run taze interactively via `pnx` (pnpm's built-in alias for `pnpm dlx`).
