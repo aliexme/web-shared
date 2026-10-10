@@ -27,7 +27,7 @@ Run `pnpm check && pnpm test` before finishing any change. Pre-commit runs the f
 
 Two kinds of packages, handled differently:
 
-- Built TS libraries: `js-utils`, `react-utils` — Vite library builds through the shared root `vite-lib.config.ts` (ESM only, `preserveModules`, `.d.ts` via `vite-plugin-dts`). `tsconfig.build.json` excludes test files from declarations.
+- Built TS libraries: `js-utils`, `react-utils` — built with tsdown via a per-package `tsdown.config.ts` (ESM only, `unbundle: true` preserves module structure, built-in `.d.ts` generation, sourcemaps). `exports: true` regenerates the `exports` field in `package.json` on build. Tests stay out of declarations because tsdown follows the entry module graph.
 - No-build packages shipped as-is: `eslint-config`, `stylelint-config`, `prettier-config` (raw JS with multi-entry exports), `biome-config` (single JSON), `ts-types` (`.d.ts` sources, one folder per type, single-entry barrel).
 
 Workspace cross-dependencies use `workspace:*` / `workspace:^`. The root `tsconfig.json` maps `@aliexme/js-utils` and `@aliexme/react-utils` to their `src/` via `paths`, so the root typecheck sees package sources, not `dist/`.
