@@ -13,6 +13,7 @@
   "assist": {
     "actions": {
       "source": {
+        "useSortedProperties": "on",
         "organizeImports": {
           "level": "on",
           "options": {
@@ -27,8 +28,7 @@
               ":PATH:"
             ]
           }
-        },
-        "useSortedProperties": "on"
+        }
       }
     }
   },
