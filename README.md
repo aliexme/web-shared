@@ -13,16 +13,17 @@ A set of packages for web development
 | [@aliexme/stylelint-config](packages/stylelint-config) | A set of rules for Stylelint       |
 | [@aliexme/prettier-config](packages/prettier-config)   | Shared Prettier configuration      |
 | [@aliexme/biome-config](packages/biome-config)         | Shared Biome configuration         |
+| [@aliexme/oxfmt-config](packages/oxfmt-config)         | Shared oxfmt configuration         |
 
 ## Development
 
 The repo is a pnpm workspace. Useful commands:
 
 ```sh
-pnpm check            # typecheck + eslint + stylelint + biome
+pnpm check            # typecheck + eslint + stylelint + biome + oxfmt
 pnpm test             # run all tests (Vitest)
 pnpm test:coverage    # run all tests with coverage
-pnpm fix              # autofix eslint + stylelint + biome
+pnpm fix              # autofix eslint + stylelint + biome + oxfmt
 pnpm build            # build all packages (Lerna)
 ```
 
