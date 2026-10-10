@@ -17,6 +17,7 @@
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
     "forceConsistentCasingInFileNames": true,
+    "stableTypeOrdering": true,
     "skipLibCheck": true,
     "noEmit": true,
     "rootDir": ".",
