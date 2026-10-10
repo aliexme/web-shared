@@ -81,8 +81,13 @@ so a `tsconfig.json` at the package root is required for type-aware rules.
 Install additional packages:
 
 ```sh
-npm i --save-dev eslint-plugin-react eslint-plugin-react-hooks
+npm i --save-dev @eslint-react/eslint-plugin eslint-plugin-react-hooks
 ```
+
+The React preset uses the
+[`recommended-type-checked`](https://eslint-react.xyz/docs/presets) preset of
+ESLint React, so it requires ESLint `>=10.3.0` and type-aware linting (the
+`typescript` config's project service).
 
 And add the following lines to your ESLint config file:
 
