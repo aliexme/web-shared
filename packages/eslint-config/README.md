@@ -23,30 +23,13 @@ export default defineConfig([
 
 ## Available configs
 
-| Export                                       | Description                                                                    |
-| -------------------------------------------- | ------------------------------------------------------------------------------ |
-| `@aliexme/eslint-config` (or `/recommended`) | base + typescript + import + package-json                                      |
-| `@aliexme/eslint-config/base`                | `@eslint/js` recommended plus language modernization rules                     |
-| `@aliexme/eslint-config/typescript`          | typescript-eslint strictTypeChecked (type-aware) and TS stylistic rules        |
-| `@aliexme/eslint-config/stylistic`           | `@stylistic` formatting rules (single quotes, no semicolons, width 120)        |
-| `@aliexme/eslint-config/import`              | `eslint-plugin-import-x` rules with import ordering                            |
-| `@aliexme/eslint-config/package-json`        | `eslint-plugin-package-json` validation rules (key sorting left to formatters) |
-| `@aliexme/eslint-config/react`               | React and React Hooks rules                                                    |
-| `@aliexme/eslint-config/vue`                 | Vue rules                                                                      |
-| `@aliexme/eslint-config/astro`               | Astro rules                                                                    |
-
-Individual configs can be composed instead of the recommended one:
-
-```js
-import { defineConfig } from 'eslint/config'
-import eslintConfigBase from '@aliexme/eslint-config/base'
-import eslintConfigTypescript from '@aliexme/eslint-config/typescript'
-
-export default defineConfig([
-  eslintConfigBase,
-  eslintConfigTypescript, // <--
-])
-```
+| Export                             | Description                                                                                         |
+| ---------------------------------- | --------------------------------------------------------------------------------------------------- |
+| `@aliexme/eslint-config`           | recommended: base + typescript + import + package-json presets                                      |
+| `@aliexme/eslint-config/stylistic` | `@stylistic` formatting rules (single quotes, no semicolons, width 120) plus `package.json` sorting |
+| `@aliexme/eslint-config/react`     | React and React Hooks rules                                                                         |
+| `@aliexme/eslint-config/vue`       | Vue rules                                                                                           |
+| `@aliexme/eslint-config/astro`     | Astro rules                                                                                         |
 
 ## Formatting
 
@@ -70,7 +53,7 @@ Note: if you use Prettier, `eslint-config-prettier/flat` disables all
 
 ## Type-aware linting
 
-The `typescript` config uses `strictTypeChecked` rules with the
+`recommended` uses `strictTypeChecked` rules with the
 [project service](https://typescript-eslint.io/packages/parser#project-service),
 so a `tsconfig.json` at the package root is required for type-aware rules.
 
@@ -86,8 +69,8 @@ npm i --save-dev @eslint-react/eslint-plugin eslint-plugin-react-hooks
 
 The React preset uses the
 [`recommended-type-checked`](https://eslint-react.xyz/docs/presets) preset of
-ESLint React, so it requires ESLint `>=10.3.0` and type-aware linting (the
-`typescript` config's project service).
+ESLint React, so it requires ESLint `>=10.3.0` and type-aware linting (the `typescript`
+preset's project service).
 
 And add the following lines to your ESLint config file:
 

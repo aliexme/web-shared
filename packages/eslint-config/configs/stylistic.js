@@ -1,5 +1,6 @@
 import stylistic from '@stylistic/eslint-plugin'
 import { defineConfig } from 'eslint/config'
+import packageJson from 'eslint-plugin-package-json'
 
 export default defineConfig([
   stylistic.configs.customize({
@@ -92,6 +93,14 @@ export default defineConfig([
         },
       ],
       '@stylistic/jsx-curly-brace-presence': ['error', 'never'],
+    },
+  },
+  packageJson.configs.stylistic,
+  {
+    name: '@aliexme/eslint-config/stylistic/package-json',
+    files: ['**/package.json'],
+    rules: {
+      'package-json/sort-collections': ['error', ['dependencies', 'devDependencies', 'peerDependencies', 'overrides']],
     },
   },
 ])
