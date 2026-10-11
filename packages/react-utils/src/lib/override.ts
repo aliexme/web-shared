@@ -1,14 +1,13 @@
 import type { ComponentPropsWithRef, ElementType, ReactNode } from 'react'
 
 /**
- * Component type whose rendered element can be overridden through the
- * `as` prop.
+ * Component type whose rendered element can be overridden through the `as` prop.
  *
  * @example
- * const Button: OverridableComponent<ButtonProps, 'button'> = (props) => {
- *   return <button {...props} />
- * }
- * // <Button as="a" href="/docs">Docs</Button> renders an anchor with button props
+ *   const Button: OverridableComponent<ButtonProps, 'button'> = (props) => {
+ *     return <button {...props} />
+ *   }
+ *   // <Button as="a" href="/docs">Docs</Button> renders an anchor with button props
  */
 export interface OverridableComponent<P, D extends ElementType> {
   <C extends ElementType = D>(props: { as: C } & OverrideProps<C, P>): ReactNode

@@ -13,24 +13,23 @@ export interface UseDerivedStateParams<T> {
 }
 
 /**
- * State that follows a controlled prop while it is defined and falls back
- * to internal state otherwise — the controlled/uncontrolled pattern behind
- * native inputs (`value` with `defaultValue`).
+ * State that follows a controlled prop while it is defined and falls back to internal state otherwise —
+ * the controlled/uncontrolled pattern behind native inputs (`value` with `defaultValue`).
  *
- * When `value` is `undefined`, the internal state is used: it starts at
- * `initialValue` and changes through the returned change handler. When
- * `value` is defined, it always wins. The change handler is stable and
- * always calls the latest `onChange` prop.
+ * When `value` is `undefined`, the internal state is used:
+ * it starts at `initialValue` and changes through the returned change handler.
+ * When `value` is defined, it always wins.
+ * The change handler is stable and always calls the latest `onChange` prop.
+ *
+ * @example
+ *   const [value, setValue] = useDerivedState({
+ *     value: props.value,
+ *     initialValue: 'initial',
+ *     onChange: props.onChange,
+ *   })
  *
  * @param params - Controlled state params
  * @returns Tuple of the current value and its stable change handler
- *
- * @example
- * const [value, setValue] = useDerivedState({
- *   value: props.value,
- *   initialValue: 'initial',
- *   onChange: props.onChange,
- * })
  */
 export const useDerivedState = <T>(params: UseDerivedStateParams<T>) => {
   const { value: propValue, initialValue, onChange: propOnChange } = params

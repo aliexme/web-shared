@@ -15,11 +15,12 @@ Requires `oxfmt@^0.72.0` as a peer dependency.
 Everything not listed here follows the oxfmt defaults, which mostly match Prettier's. The deliberate
 overrides:
 
-| Option        | Value   | oxfmt default |
-| ------------- | ------- | ------------- |
-| `printWidth`  | `120`   | `100`         |
-| `semi`        | `false` | `true`        |
-| `singleQuote` | `true`  | `false`       |
+| Option        | Value                              | oxfmt default |
+| ------------- | ---------------------------------- | ------------- |
+| `printWidth`  | `120`                              | `100`         |
+| `semi`        | `false`                            | `true`        |
+| `singleQuote` | `true`                             | `false`       |
+| `jsdoc`       | `{ lineWrappingStyle: 'balance' }` | disabled      |
 
 ## Usage
 

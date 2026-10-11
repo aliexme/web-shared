@@ -9,22 +9,20 @@ export interface UseEventListenerOptions extends AddEventListenerOptions {
 }
 
 /**
- * Subscribes to an event on an arbitrary EventTarget and unsubscribes on
- * cleanup.
+ * Subscribes to an event on an arbitrary EventTarget and unsubscribes on cleanup.
  *
- * The listener is held in a ref: inline listeners do not cause
- * re-subscription on every render, and the latest listener is always
- * invoked. Changing `target`, `type`, `enabled` or any of the listener
- * options (`capture`, `passive`, `once`, `signal`) re-subscribes with the
- * new settings.
+ * The listener is held in a ref:
+ * inline listeners do not cause re-subscription on every render, and the latest listener is always invoked.
+ * Changing `target`, `type`, `enabled` or any of the listener options
+ * (`capture`, `passive`, `once`, `signal`) re-subscribes with the new settings.
+ *
+ * @example
+ *   useEventListener(window, 'resize', () => recalculateLayout())
  *
  * @param target - EventTarget to subscribe to (e.g. window, document, element)
  * @param type - Event type to listen for
  * @param listener - Listener function or an object with handleEvent
  * @param options - Subscription options
- *
- * @example
- * useEventListener(window, 'resize', () => recalculateLayout())
  */
 export const useEventListener = (
   target: EventTarget,

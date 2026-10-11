@@ -1,16 +1,16 @@
 import { type EffectCallback, useEffect } from 'react'
 
 /**
- * Runs an effect once after the component mounts — a mount-only wrapper
- * around `useEffect` with an empty dependency list.
- *
- * @param effect - Effect callback; may return a cleanup function that
- * runs on unmount
+ * Runs an effect once after the component mounts —
+ * a mount-only wrapper around `useEffect` with an empty dependency list.
  *
  * @example
- * useDidMount(() => {
- *   Analytics.sendPageView()
- * })
+ *   useDidMount(() => {
+ *     Analytics.sendPageView()
+ *   })
+ *
+ * @param effect - Effect callback; may return a cleanup function that
+ *   runs on unmount
  */
 export const useDidMount = (effect: EffectCallback) => {
   // biome-ignore-start lint/correctness/useExhaustiveDependencies: ignore

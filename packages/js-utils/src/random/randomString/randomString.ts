@@ -17,15 +17,14 @@ const symbols = ['!', '#', '@', '~', '$', '^', '.', ',', '-', '+', '%', '?', '*'
 const charGroups = [lowercase, uppercase, digits, symbols]
 
 /**
- * Returns a random string of the given length composed of lowercase letters,
- * uppercase letters, digits and symbols.
+ * Returns a random string of the given length composed of lowercase letters, uppercase letters, digits and symbols.
+ *
+ * @example
+ *   randomString({ length: 8 }) // e.g. 'aB3$xY9!'
  *
  * @param options - Random string options
  * @param options.length - Length of the generated string (default 16)
  * @returns Random string
- *
- * @example
- * randomString({ length: 8 }) // e.g. 'aB3$xY9!'
  */
 export const randomString = (options: { length?: number } = {}): string => {
   const { length = 16 } = options

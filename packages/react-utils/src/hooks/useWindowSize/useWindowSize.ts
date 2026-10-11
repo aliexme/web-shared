@@ -33,15 +33,14 @@ const getServerSnapshot = (): WindowSize => ({ width: 0, height: 0 })
 /**
  * Tracks the browser window size through `useSyncExternalStore`.
  *
- * The server snapshot is `{ width: 0, height: 0 }`, so server-rendered
- * markup hydrates without mismatches and switches to the real size on
- * the client.
+ * The server snapshot is `{ width: 0, height: 0 }`,
+ * so server-rendered markup hydrates without mismatches and switches to the real size on the client.
+ *
+ * @example
+ *   const { width, height } = useWindowSize({ throttleDelay: 200 })
  *
  * @param options - Window size options
  * @returns Current window size
- *
- * @example
- * const { width, height } = useWindowSize({ throttleDelay: 200 })
  */
 export const useWindowSize = (options: UseWindowSizeOptions = {}) => {
   const { throttleDelay = 100 } = options

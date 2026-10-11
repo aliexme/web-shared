@@ -3,10 +3,11 @@
  *
  * A non-literal `number` length falls back to `T[]`.
  *
+ * @example
+ *   type Result = Tuple<string, 3> // [string, string, string]
+ *
  * @template T - Element type.
  * @template N - Literal tuple length.
- * @example
- * type Result = Tuple<string, 3> // [string, string, string]
  */
 export type Tuple<T, N extends number, R extends T[] = []> = number extends N
   ? T[]

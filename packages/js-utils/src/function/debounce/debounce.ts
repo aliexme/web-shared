@@ -15,16 +15,15 @@ export interface DebounceOptions {
 }
 
 /**
- * Creates a debounced function that delays invoking `func` until `delay`
- * milliseconds have passed since the last call.
+ * Creates a debounced function that delays invoking `func` until `delay` milliseconds have passed since the last call.
+ *
+ * @example
+ *   const debounced = debounce(() => save(input), 300)
  *
  * @param func - Function to debounce
  * @param delay - Delay in milliseconds
  * @param options - Debounce options
  * @returns Debounced function with a `cancel` method
- *
- * @example
- * const debounced = debounce(() => save(input), 300)
  */
 export const debounce = <T extends (...args: never[]) => unknown>(
   func: T,

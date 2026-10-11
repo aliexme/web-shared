@@ -11,16 +11,15 @@ export interface ThrottleOptions {
 }
 
 /**
- * Creates a throttled function that invokes `func` at most once per `delay`
- * milliseconds.
+ * Creates a throttled function that invokes `func` at most once per `delay` milliseconds.
+ *
+ * @example
+ *   const throttled = throttle(() => onScroll(event), 100)
  *
  * @param func - Function to throttle
  * @param delay - Cooldown in milliseconds
  * @param options - Throttle options
  * @returns Throttled function with a `cancel` method
- *
- * @example
- * const throttled = throttle(() => onScroll(event), 100)
  */
 export const throttle = <T extends (...args: never[]) => unknown>(
   func: T,

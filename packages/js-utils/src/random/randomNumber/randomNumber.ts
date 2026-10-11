@@ -9,13 +9,13 @@ export interface RandomNumberOptions {
 /**
  * Returns a random number in the inclusive range from `min` to `max`.
  *
+ * @example
+ *   randomNumber(0, 1) // e.g. 0.42
+ *
  * @param min - Lower bound (inclusive, default 0)
  * @param max - Upper bound (inclusive, default 999999)
  * @param options - Random number options
  * @returns Random number
- *
- * @example
- * randomNumber(0, 1) // e.g. 0.42
  */
 export const randomNumber = (min = 0, max = 999_999, options: RandomNumberOptions = {}): number => {
   const { precision = 2 } = options
