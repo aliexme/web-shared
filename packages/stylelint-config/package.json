@@ -8,25 +8,28 @@
     "stylelint-config"
   ],
   "homepage": "https://github.com/aliexme/web-shared/tree/main/packages/stylelint-config",
+  "license": "MIT",
+  "author": "Alexander Smirnov <al.smirnov996@gmail.com>",
   "repository": {
     "type": "git",
     "url": "https://github.com/aliexme/web-shared",
     "directory": "packages/stylelint-config"
   },
-  "license": "MIT",
-  "author": "Alexander Smirnov <al.smirnov996@gmail.com>",
-  "sideEffects": false,
+  "files": [
+    "./index.js",
+    "./configs/**"
+  ],
   "type": "module",
+  "sideEffects": false,
   "exports": {
     ".": "./index.js",
     "./recommended": "./configs/recommended.js",
     "./base": "./configs/base.js",
     "./scss": "./configs/scss.js"
   },
-  "files": [
-    "./index.js",
-    "./configs/**"
-  ],
+  "publishConfig": {
+    "access": "public"
+  },
   "dependencies": {
     "stylelint-config-standard": "^40.0.0"
   },
@@ -38,8 +41,5 @@
     "stylelint-config-standard-scss": {
       "optional": true
     }
-  },
-  "publishConfig": {
-    "access": "public"
   }
 }

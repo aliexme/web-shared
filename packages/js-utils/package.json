@@ -4,31 +4,31 @@
   "private": false,
   "description": "Tree-shakable JavaScript utilities",
   "homepage": "https://github.com/aliexme/web-shared/tree/main/packages/js-utils",
+  "license": "MIT",
+  "author": "Alexander Smirnov <al.smirnov996@gmail.com>",
   "repository": {
     "type": "git",
     "url": "https://github.com/aliexme/web-shared",
     "directory": "packages/js-utils"
   },
-  "license": "MIT",
-  "author": "Alexander Smirnov <al.smirnov996@gmail.com>",
-  "sideEffects": false,
+  "files": [
+    "dist"
+  ],
   "type": "module",
+  "sideEffects": false,
+  "types": "./dist/index.d.ts",
   "exports": {
     ".": "./dist/index.js",
     "./package.json": "./package.json"
   },
-  "types": "./dist/index.d.ts",
-  "files": [
-    "dist"
-  ],
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "build": "tsdown",
     "check:ts": "tsc --noEmit"
   },
   "devDependencies": {
     "@types/node": "26.6.3"
-  },
-  "publishConfig": {
-    "access": "public"
   }
 }

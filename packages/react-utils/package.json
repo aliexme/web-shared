@@ -4,23 +4,26 @@
   "private": false,
   "description": "React hooks and utilities",
   "homepage": "https://github.com/aliexme/web-shared/tree/main/packages/react-utils",
+  "license": "MIT",
+  "author": "Alexander Smirnov <al.smirnov996@gmail.com>",
   "repository": {
     "type": "git",
     "url": "https://github.com/aliexme/web-shared",
     "directory": "packages/react-utils"
   },
-  "license": "MIT",
-  "author": "Alexander Smirnov <al.smirnov996@gmail.com>",
-  "sideEffects": false,
+  "files": [
+    "dist"
+  ],
   "type": "module",
+  "sideEffects": false,
+  "types": "./dist/index.d.ts",
   "exports": {
     ".": "./dist/index.js",
     "./package.json": "./package.json"
   },
-  "types": "./dist/index.d.ts",
-  "files": [
-    "dist"
-  ],
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "build": "tsdown",
     "check:ts": "tsc --noEmit"
@@ -38,8 +41,5 @@
   },
   "peerDependencies": {
     "react": "^19.0.0"
-  },
-  "publishConfig": {
-    "access": "public"
   }
 }

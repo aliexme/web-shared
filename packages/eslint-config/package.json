@@ -8,15 +8,21 @@
     "eslintconfig"
   ],
   "homepage": "https://github.com/aliexme/web-shared/tree/main/packages/eslint-config",
+  "license": "MIT",
+  "author": "Alexander Smirnov <al.smirnov996@gmail.com>",
   "repository": {
     "type": "git",
     "url": "https://github.com/aliexme/web-shared",
     "directory": "packages/eslint-config"
   },
-  "license": "MIT",
-  "author": "Alexander Smirnov <al.smirnov996@gmail.com>",
-  "sideEffects": false,
+  "files": [
+    "index.js",
+    "index.d.ts",
+    "configs"
+  ],
   "type": "module",
+  "sideEffects": false,
+  "types": "./index.d.ts",
   "exports": {
     ".": {
       "types": "./index.d.ts",
@@ -59,12 +65,9 @@
       "default": "./configs/astro.js"
     }
   },
-  "types": "./index.d.ts",
-  "files": [
-    "index.js",
-    "index.d.ts",
-    "configs"
-  ],
+  "publishConfig": {
+    "access": "public"
+  },
   "dependencies": {
     "@eslint/js": "^10.0.1",
     "@stylistic/eslint-plugin": "^5.10.0",
@@ -94,8 +97,5 @@
     "eslint-plugin-vue": {
       "optional": true
     }
-  },
-  "publishConfig": {
-    "access": "public"
   }
 }
