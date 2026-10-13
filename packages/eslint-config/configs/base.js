@@ -19,7 +19,7 @@ export default defineConfig([
       'no-useless-rename': 'error',
       'no-var': 'error',
       'prefer-const': 'error',
-      'no-new-object': 'error',
+      'no-object-constructor': 'error',
       'object-shorthand': 'error',
       'prefer-object-spread': 'error',
       'no-array-constructor': 'error',
