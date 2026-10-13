@@ -14,16 +14,17 @@ A set of packages for web development
 | [@aliexme/prettier-config](packages/prettier-config)   | Shared Prettier configuration      |
 | [@aliexme/biome-config](packages/biome-config)         | Shared Biome configuration         |
 | [@aliexme/oxfmt-config](packages/oxfmt-config)         | Shared oxfmt configuration         |
+| [@aliexme/oxlint-config](packages/oxlint-config)       | Shared oxlint configuration        |
 
 ## Development
 
 The repo is a pnpm workspace. Useful commands:
 
 ```sh
-pnpm check            # typecheck + eslint + stylelint + biome + oxfmt
+pnpm check            # typecheck + eslint + stylelint + biome + oxfmt + oxlint
 pnpm test             # run all tests (Vitest)
 pnpm test:coverage    # run all tests with coverage
-pnpm fix              # autofix eslint + stylelint + biome + oxfmt
+pnpm fix              # autofix eslint + stylelint + biome + oxfmt + oxlint
 pnpm build            # build all packages (Lerna)
 ```
 

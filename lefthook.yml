@@ -17,6 +17,10 @@ pre-commit:
           - name: typescript
             glob: '*.{ts,tsx}'
             run: pnpm run check:ts
+          - name: oxlint
+            glob: '*.{js,jsx,cjs,mjs,ts,tsx}'
+            run: pnpm exec oxlint --fix {staged_files}
+            stage_fixed: true
           - name: eslint
             glob: '*.{js,jsx,cjs,mjs,ts,tsx}'
             run: pnpm exec eslint --fix {staged_files}

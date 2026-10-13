@@ -1,7 +1,8 @@
-/** @type {import('oxfmt').Oxfmtrc} */
-export default {
+import { defineConfig } from 'oxfmt'
+
+export default defineConfig({
   printWidth: 120,
   semi: false,
   singleQuote: true,
   jsdoc: { lineWrappingStyle: 'balance' },
-}
+})
