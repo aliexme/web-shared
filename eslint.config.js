@@ -8,9 +8,9 @@ import eslintConfigAstro from '@aliexme/eslint-config/astro'
 import eslintConfigReact from '@aliexme/eslint-config/react'
 import eslintConfigVue from '@aliexme/eslint-config/vue'
 
-const __filename = fileURLToPath(import.meta.url)
-const __dirname = path.dirname(__filename)
-const gitignorePath = path.resolve(__dirname, '.gitignore')
+const filename = fileURLToPath(import.meta.url)
+const dirname = path.dirname(filename)
+const gitignorePath = path.resolve(dirname, '.gitignore')
 
 export default defineConfig([
   includeIgnoreFile(gitignorePath),

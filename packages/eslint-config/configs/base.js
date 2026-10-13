@@ -16,7 +16,6 @@ export default defineConfig([
       },
     },
     rules: {
-      'no-constant-condition': ['error', { checkLoops: false }],
       'no-useless-rename': 'error',
       'no-var': 'error',
       'prefer-const': 'error',
