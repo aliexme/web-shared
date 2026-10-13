@@ -11,7 +11,7 @@ describe('randomInt', () => {
     vi.spyOn(Math, 'random').mockReturnValue(0.5)
 
     const result = randomInt()
-    expect(result).toBe(500000)
+    expect(result).toBe(500_000)
   })
 
   it('should return random int in [from,to] range', () => {

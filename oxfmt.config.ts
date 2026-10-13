@@ -1,3 +1,1 @@
-import oxfmtConfig from '@aliexme/oxfmt-config'
-
-export default oxfmtConfig
+export { default } from '@aliexme/oxfmt-config'

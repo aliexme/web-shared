@@ -3,7 +3,7 @@ import { clamp } from '../../number/clamp'
 /** Debounced function with a method to cancel pending invocation */
 export interface DebouncedFunc<T extends (...args: never[]) => unknown> {
   (...args: Parameters<T>): void
-  cancel(): void
+  cancel: () => void
 }
 
 /** Options for the debounce function */

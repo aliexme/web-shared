@@ -1,4 +1,1 @@
-import prettierConfig from '@aliexme/prettier-config'
-
-/** @type {import('prettier').Config} */
-export default prettierConfig
+export { default } from '@aliexme/prettier-config'

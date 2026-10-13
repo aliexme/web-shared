@@ -21,6 +21,7 @@ export default defineConfig([
         },
       ],
       '@typescript-eslint/no-confusing-void-expression': ['error', { ignoreVoidOperator: true }],
+      '@typescript-eslint/no-invalid-void-type': ['error', { allowAsThisParameter: true }],
       '@typescript-eslint/no-unused-vars': ['error', { argsIgnorePattern: '^_' }],
       '@typescript-eslint/no-empty-object-type': [
         'error',

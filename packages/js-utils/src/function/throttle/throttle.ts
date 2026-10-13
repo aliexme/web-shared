@@ -1,7 +1,7 @@
 /** Throttled function with a method to cancel pending invocation */
 export interface ThrottledFunc<T extends (...args: never[]) => unknown> {
   (...args: Parameters<T>): void
-  cancel(): void
+  cancel: () => void
 }
 
 /** Options for the throttle function */

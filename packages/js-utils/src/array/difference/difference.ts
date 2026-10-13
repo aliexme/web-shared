@@ -10,8 +10,12 @@
  * @returns Values from the main array not present in the subtracted arrays
  */
 export function difference<T>(mainArray: T[], arrayToSubtract: T[], ...restArraysToSubtract: T[][]): T[] {
-  if (mainArray.length === 0) return []
-  if (arrayToSubtract.length === 0) return [...mainArray]
+  if (mainArray.length === 0) {
+    return []
+  }
+  if (arrayToSubtract.length === 0) {
+    return [...mainArray]
+  }
 
   const arraysToSubtract = [arrayToSubtract, ...restArraysToSubtract]
   const setToSubtract = new Set(arraysToSubtract.flat())
