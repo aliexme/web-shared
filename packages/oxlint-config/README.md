@@ -15,11 +15,11 @@ Requires `oxlint@^1.87.0` as a peer dependency.
 Everything not listed here follows the oxlint defaults: only the `correctness` category is enabled.
 The deliberate overrides:
 
-| Option                    | Value                                    | oxlint default  |
-| ------------------------- | ---------------------------------------- | --------------- |
-| `categories.correctness`  | `'error'`                                | `'warn'`        |
-| `env`                     | `{ browser: true, node: true }`          | none            |
-| `rules['no-unused-vars']` | `['error', { argsIgnorePattern: '^_' }]` | default options |
+| Option                    | Value                                    | oxlint default      |
+| ------------------------- | ---------------------------------------- | ------------------- |
+| `categories.correctness`  | `'error'`                                | `'warn'`            |
+| `env`                     | `{ browser: true, node: true }`          | `{ builtin: true }` |
+| `rules['no-unused-vars']` | `['error', { argsIgnorePattern: '^_' }]` | default options     |
 
 `no-unused-vars` is kept in lockstep with `@aliexme/eslint-config` (`@typescript-eslint/no-unused-vars`
 with `argsIgnorePattern: '^_'`).
