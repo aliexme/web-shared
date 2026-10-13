@@ -1,5 +1,4 @@
 import path from 'node:path'
-import { fileURLToPath } from 'node:url'
 import stylisticMigratePlugin from '@stylistic/eslint-plugin-migrate'
 import { defineConfig, includeIgnoreFile } from 'eslint/config'
 import eslintConfigPrettier from 'eslint-config-prettier/flat'
@@ -8,9 +7,7 @@ import eslintConfigAstro from '@aliexme/eslint-config/astro'
 import eslintConfigReact from '@aliexme/eslint-config/react'
 import eslintConfigVue from '@aliexme/eslint-config/vue'
 
-const filename = fileURLToPath(import.meta.url)
-const dirname = path.dirname(filename)
-const gitignorePath = path.resolve(dirname, '.gitignore')
+const gitignorePath = path.resolve(import.meta.dirname, '.gitignore')
 
 export default defineConfig([
   includeIgnoreFile(gitignorePath),
