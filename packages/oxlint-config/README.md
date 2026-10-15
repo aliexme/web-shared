@@ -5,10 +5,11 @@ Shared oxlint configuration
 ## Installation
 
 ```sh
-npm i --save-dev oxlint @aliexme/oxlint-config
+npm i --save-dev oxlint oxlint-tsgolint @aliexme/oxlint-config
 ```
 
-Requires `oxlint@^1.87.0` as a peer dependency.
+Requires `oxlint@^1.87.0` and `oxlint-tsgolint@^7.0.2004` as (optional) peer dependencies — the latter is needed
+because the config enables type-aware linting; see [Options](#options) for the escape hatch.
 
 ## Options
 
@@ -16,6 +17,10 @@ The plugins are pinned to the oxlint defaults plus the `import` plugin. The `cor
 `style` and `perf` categories are enabled, raised to `error`. The `restriction` category is disabled — its rules are adopted
 explicitly in `rules`, keeping only the ones that earn their place. Import rules follow the same approach: the rules
 enforcing the default-export style are off, the rest are on. Everything else follows the oxlint defaults.
+
+Type-aware linting is enabled via `options.typeAware` and requires the `oxlint-tsgolint` optional peer dependency
+(`^7.0.2004`): install it yourself, or override `options.typeAware` to `false` in your own config — without the package
+oxlint fails hard.
 
 ## Usage
 

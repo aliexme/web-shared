@@ -28,6 +28,12 @@
     "access": "public"
   },
   "peerDependencies": {
-    "oxlint": "^1.87.0"
+    "oxlint": "^1.87.0",
+    "oxlint-tsgolint": "^7.0.2004"
+  },
+  "peerDependenciesMeta": {
+    "oxlint-tsgolint": {
+      "optional": true
+    }
   }
 }

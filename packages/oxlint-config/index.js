@@ -2,6 +2,9 @@ import { defineConfig } from 'oxlint'
 
 export default defineConfig({
   plugins: ['eslint', 'typescript', 'unicorn', 'oxc', 'import'],
+  options: {
+    typeAware: true,
+  },
   categories: {
     correctness: 'error',
     suspicious: 'error',
@@ -12,8 +15,15 @@ export default defineConfig({
   },
   rules: {
     /* pedantic */
+    'typescript/prefer-nullish-coalescing': ['error', { ignoreTernaryTests: true }],
+    'typescript/prefer-promise-reject-errors': ['error', { allowThrowingAny: true, allowThrowingUnknown: true }],
+    'consistent-return': 'off',
     'max-lines-per-function': 'off',
     'no-negated-condition': 'off',
+    'typescript/no-unsafe-type-assertion': 'off',
+    'typescript/prefer-readonly-parameter-types': 'off',
+    'typescript/strict-boolean-expressions': 'off',
+    'typescript/strict-void-return': 'off',
     'unicorn/no-negated-condition': 'off',
     'unicorn/prefer-math-trunc': 'off',
 
