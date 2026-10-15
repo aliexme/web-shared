@@ -7,6 +7,7 @@ export default defineConfig({
     suspicious: 'error',
     pedantic: 'error',
     style: 'error',
+    perf: 'error',
     restriction: 'off',
   },
   rules: {

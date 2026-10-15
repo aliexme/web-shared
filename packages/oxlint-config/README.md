@@ -12,8 +12,8 @@ Requires `oxlint@^1.87.0` as a peer dependency.
 
 ## Options
 
-The plugins are pinned to the oxlint defaults plus the `import` plugin. The `correctness`, `suspicious`, `pedantic`
-and `style` categories are enabled, raised to `error`. The `restriction` category is disabled — its rules are adopted
+The plugins are pinned to the oxlint defaults plus the `import` plugin. The `correctness`, `suspicious`, `pedantic`,
+`style` and `perf` categories are enabled, raised to `error`. The `restriction` category is disabled — its rules are adopted
 explicitly in `rules`, keeping only the ones that earn their place. Import rules follow the same approach: the rules
 enforcing the default-export style are off, the rest are on. Everything else follows the oxlint defaults.
 
