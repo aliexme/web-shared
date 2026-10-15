@@ -1,7 +1,7 @@
 import { defineConfig } from 'oxlint'
 
 export default defineConfig({
-  plugins: ['eslint', 'typescript', 'unicorn', 'oxc'],
+  plugins: ['eslint', 'typescript', 'unicorn', 'oxc', 'import'],
   categories: {
     correctness: 'error',
     suspicious: 'error',
@@ -69,5 +69,20 @@ export default defineConfig({
     'unicorn/prefer-module': 'error',
     'unicorn/prefer-node-protocol': 'error',
     'unicorn/prefer-number-properties': ['error', { checkNaN: false }],
+
+    /* import */
+    'import/consistent-type-specifier-style': ['error', 'prefer-top-level-if-only-type-imports'],
+    'import/no-amd': 'error',
+    'import/no-commonjs': 'error',
+    'import/no-cycle': 'error',
+    'import/no-dynamic-require': 'error',
+    'import/no-webpack-loader-syntax': 'error',
+    'import/exports-last': 'off',
+    'import/group-exports': 'off',
+    'import/no-anonymous-default-export': 'off',
+    'import/no-named-as-default-member': 'off',
+    'import/no-named-export': 'off',
+    'import/no-nodejs-modules': 'off',
+    'import/prefer-default-export': 'off',
   },
 })
