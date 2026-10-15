@@ -31,7 +31,7 @@ export interface UseDerivedStateParams<T> {
  * @param params - Controlled state params
  * @returns Tuple of the current value and its stable change handler
  */
-export const useDerivedState = <T>(params: UseDerivedStateParams<T>) => {
+export const useDerivedState = <T>(params: UseDerivedStateParams<T>): readonly [T, (newValue: T) => void] => {
   const { value: propValue, initialValue, onChange: propOnChange } = params
 
   const [stateValue, setStateValue] = useState(propValue ?? initialValue)

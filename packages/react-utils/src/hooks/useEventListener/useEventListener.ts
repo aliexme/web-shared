@@ -29,7 +29,7 @@ export const useEventListener = (
   type: string,
   listener: EventListenerOrEventListenerObject,
   options: UseEventListenerOptions = {},
-) => {
+): void => {
   const { enabled = true, capture, passive, once, signal } = options
   const listenerRef = useValueRef(listener)
 

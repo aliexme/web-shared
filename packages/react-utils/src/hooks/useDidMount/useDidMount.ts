@@ -12,7 +12,7 @@ import { type EffectCallback, useEffect } from 'react'
  * @param effect - Effect callback; may return a cleanup function that
  *   runs on unmount
  */
-export const useDidMount = (effect: EffectCallback) => {
+export const useDidMount = (effect: EffectCallback): void => {
   // biome-ignore-start lint/correctness/useExhaustiveDependencies: ignore
   // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(effect, [])

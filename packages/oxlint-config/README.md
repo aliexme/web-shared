@@ -12,8 +12,9 @@ Requires `oxlint@^1.87.0` as a peer dependency.
 
 ## Options
 
-The `correctness`, `suspicious`, `pedantic` and `style` categories are enabled, raised to `error`; everything else follows
-the oxlint defaults.
+The `correctness`, `suspicious`, `pedantic` and `style` categories are enabled, raised to `error`. The `restriction`
+category is disabled — its rules are adopted explicitly in `rules`, keeping only the ones that earn their place.
+Everything else follows the oxlint defaults.
 
 ## Usage
 

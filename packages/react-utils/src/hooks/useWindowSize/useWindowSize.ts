@@ -42,7 +42,7 @@ const getServerSnapshot = (): WindowSize => ({ width: 0, height: 0 })
  * @param options - Window size options
  * @returns Current window size
  */
-export const useWindowSize = (options: UseWindowSizeOptions = {}) => {
+export const useWindowSize = (options: UseWindowSizeOptions = {}): WindowSize => {
   const { throttleDelay = 100 } = options
 
   const subscribe = useCallback(
