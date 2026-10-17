@@ -180,7 +180,7 @@ importers:
   packages/react-utils:
     dependencies:
       '@aliexme/js-utils':
-        specifier: workspace:^3.0.0
+        specifier: workspace:^4.0.0
         version: link:../js-utils
     devDependencies:
       '@testing-library/react':

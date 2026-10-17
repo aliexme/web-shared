@@ -1,6 +1,6 @@
 {
   "name": "@aliexme/eslint-config",
-  "version": "4.1.1",
+  "version": "5.0.0",
   "private": false,
   "description": "Rule set for ESLint",
   "keywords": [
