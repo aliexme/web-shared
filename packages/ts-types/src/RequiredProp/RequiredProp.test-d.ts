@@ -1,6 +1,6 @@
 import { describe, expectTypeOf, it } from 'vitest'
 
-import type { RequiredProp } from './requiredProp'
+import type { RequiredProp } from './RequiredProp'
 
 describe('RequiredProp', () => {
   it('should make only the specified properties required', () => {

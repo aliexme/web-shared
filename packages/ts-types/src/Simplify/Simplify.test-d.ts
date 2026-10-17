@@ -1,6 +1,6 @@
 import { describe, expectTypeOf, it } from 'vitest'
 
-import type { Simplify } from './simplify'
+import type { Simplify } from './Simplify'
 
 describe('Simplify', () => {
   it('should flatten an intersection into a single object type', () => {

@@ -1,6 +1,6 @@
 import { describe, expectTypeOf, it } from 'vitest'
 
-import type { PartialProp } from './partialProp'
+import type { PartialProp } from './PartialProp'
 
 describe('PartialProp', () => {
   it('should make only the specified properties optional', () => {

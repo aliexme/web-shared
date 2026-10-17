@@ -1,6 +1,6 @@
 import { describe, expectTypeOf, it } from 'vitest'
 
-import type { Override } from './override'
+import type { Override } from './Override'
 
 describe('Override', () => {
   it('should combine T and U with properties of U taking precedence', () => {

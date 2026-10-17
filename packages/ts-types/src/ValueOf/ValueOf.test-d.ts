@@ -1,6 +1,6 @@
 import { describe, expectTypeOf, it } from 'vitest'
 
-import type { ValueOf } from './valueOf'
+import type { ValueOf } from './ValueOf'
 
 describe('ValueOf', () => {
   it('should extract the union of value types of an object', () => {

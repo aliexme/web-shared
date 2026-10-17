@@ -1,6 +1,6 @@
 import { describe, expectTypeOf, it } from 'vitest'
 
-import type { Intersect } from './intersect'
+import type { Intersect } from './Intersect'
 
 describe('Intersect', () => {
   it('should convert a union of objects into an intersection', () => {

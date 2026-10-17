@@ -1,4 +1,4 @@
-import type { Simplify } from '../simplify'
+import type { Simplify } from '../Simplify'
 
 /**
  * Combine `T` and `U`, overwriting matching properties of `T` with the ones from `U`.

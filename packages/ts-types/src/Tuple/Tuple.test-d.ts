@@ -1,6 +1,6 @@
 import { describe, expectTypeOf, it } from 'vitest'
 
-import type { Tuple } from './tuple'
+import type { Tuple } from './Tuple'
 
 describe('Tuple', () => {
   it('should create a tuple of the given length', () => {

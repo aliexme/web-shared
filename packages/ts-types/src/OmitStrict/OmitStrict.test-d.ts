@@ -1,6 +1,6 @@
 import { describe, expectTypeOf, it } from 'vitest'
 
-import type { OmitStrict } from './omitStrict'
+import type { OmitStrict } from './OmitStrict'
 
 describe('OmitStrict', () => {
   it('should remove only the specified keys', () => {

@@ -1,4 +1,4 @@
-import type { Simplify } from '../simplify'
+import type { Simplify } from '../Simplify'
 
 /**
  * Make specific properties in `T` required, leaving the rest untouched.
