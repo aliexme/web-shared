@@ -39,7 +39,7 @@ const validCss = `@import url('./theme.css');
 
 describe('base preset', () => {
   it('accepts valid CSS with Tailwind v4 at-rules', async () => {
-    await expect(lintCss(validCss)).resolves.toEqual([])
+    await expect(lintCss(validCss)).resolves.toStrictEqual([])
   })
 
   it('rejects unknown at-rules', async () => {

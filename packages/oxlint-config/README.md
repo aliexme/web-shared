@@ -47,6 +47,18 @@ export default defineConfig({
 })
 ```
 
+### Vitest
+
+Projects using Vitest can extend the opt-in preset from `./vitest` alongside the base config:
+
+```ts
+import { defineConfig } from 'oxlint'
+import oxlintConfig from '@aliexme/oxlint-config'
+import oxlintVitestConfig from '@aliexme/oxlint-config/vitest'
+
+export default defineConfig({ extends: [oxlintConfig, oxlintVitestConfig] })
+```
+
 ## License
 
 MIT

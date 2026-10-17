@@ -32,7 +32,7 @@ $gap: 1rem;
 
 describe('scss preset', () => {
   it('accepts valid SCSS with Tailwind v4 at-rules', async () => {
-    await expect(lintScss(validScss)).resolves.toEqual([])
+    await expect(lintScss(validScss)).resolves.toStrictEqual([])
   })
 
   it('rejects unknown at-rules', async () => {

@@ -40,7 +40,7 @@ describe('useWindowSize', () => {
   it('should return the current window size on mount', () => {
     render(<Probe />)
 
-    expect(getSize()).toEqual({
+    expect(getSize()).toStrictEqual({
       width: String(window.innerWidth),
       height: String(window.innerHeight),
     })
@@ -53,7 +53,7 @@ describe('useWindowSize', () => {
     setWindowSize(1200, 800)
     fireResize()
 
-    expect(getSize()).toEqual({ width: '1200', height: '800' })
+    expect(getSize()).toStrictEqual({ width: '1200', height: '800' })
   })
 
   it('should throttle rapid resizes with trailing update', () => {
@@ -63,18 +63,18 @@ describe('useWindowSize', () => {
     setWindowSize(1200, 800)
     fireResize()
 
-    expect(getSize()).toEqual({ width: '1200', height: '800' })
+    expect(getSize()).toStrictEqual({ width: '1200', height: '800' })
 
     setWindowSize(1300, 900)
     fireResize()
 
-    expect(getSize()).toEqual({ width: '1200', height: '800' })
+    expect(getSize()).toStrictEqual({ width: '1200', height: '800' })
 
     act(() => {
       vi.advanceTimersByTime(100)
     })
 
-    expect(getSize()).toEqual({ width: '1300', height: '900' })
+    expect(getSize()).toStrictEqual({ width: '1300', height: '900' })
   })
 
   it('should cancel the pending trailing update on unmount', () => {

@@ -10,7 +10,7 @@ describe('seededRandom', () => {
     const firstSequence = Array.from({ length: 10 }, () => first())
     const secondSequence = Array.from({ length: 10 }, () => second())
 
-    expect(firstSequence).toEqual(secondSequence)
+    expect(firstSequence).toStrictEqual(secondSequence)
   })
 
   it('should return different sequences for different seeds', () => {
@@ -20,7 +20,7 @@ describe('seededRandom', () => {
     const firstSequence = Array.from({ length: 10 }, () => first())
     const secondSequence = Array.from({ length: 10 }, () => second())
 
-    expect(firstSequence).not.toEqual(secondSequence)
+    expect(firstSequence).not.toStrictEqual(secondSequence)
   })
 
   it('should use 0 as default seed', () => {
@@ -30,7 +30,7 @@ describe('seededRandom', () => {
     const defaultSequence = Array.from({ length: 10 }, () => withDefault())
     const explicitSequence = Array.from({ length: 10 }, () => explicit())
 
-    expect(defaultSequence).toEqual(explicitSequence)
+    expect(defaultSequence).toStrictEqual(explicitSequence)
   })
 
   it('should return values in [0, 1) range', () => {

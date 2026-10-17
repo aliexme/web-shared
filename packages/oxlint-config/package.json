@@ -16,13 +16,15 @@
     "directory": "packages/oxlint-config"
   },
   "files": [
-    "./index.js"
+    "./index.js",
+    "./configs"
   ],
   "type": "module",
   "sideEffects": false,
   "main": "./index.js",
   "exports": {
-    ".": "./index.js"
+    ".": "./index.js",
+    "./vitest": "./configs/vitest.js"
   },
   "publishConfig": {
     "access": "public"

@@ -22,7 +22,7 @@ describe('useIsomorphicLayoutEffect', () => {
 
     render(<Probe />)
 
-    expect(order).toEqual(['layout', 'effect'])
+    expect(order).toStrictEqual(['layout', 'effect'])
   })
 
   it('should run cleanup on unmount', () => {

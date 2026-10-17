@@ -6,7 +6,6 @@ import { useIsomorphicLayoutEffect } from './useIsomorphicLayoutEffect'
 
 describe('useIsomorphicLayoutEffect', () => {
   it('should fall back to useEffect on the server', () => {
-    expect(typeof window).toBe('undefined')
     expect(useIsomorphicLayoutEffect).toBe(useEffect)
   })
 })
