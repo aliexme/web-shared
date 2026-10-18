@@ -6,5 +6,6 @@ export default {
   rules: {
     'at-rule-no-unknown': [true, { ignoreAtRules: tailwindAtRules }],
     'at-rule-prelude-no-invalid': [true, { ignoreAtRules: ['media', 'apply'] }],
+    'import-notation': 'string',
   },
 }
