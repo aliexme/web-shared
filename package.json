@@ -13,7 +13,7 @@
   "type": "module",
   "scripts": {
     "build": "lerna run build",
-    "publish": "lerna publish --no-private",
+    "publish": "GH_TOKEN=$(gh auth token) lerna publish --no-private",
     "check": "concurrently 'pnpm:check:ts' 'pnpm:check:eslint' 'pnpm:check:stylelint' 'pnpm:check:biome' 'pnpm:check:oxfmt' 'pnpm:check:oxlint'",
     "check:ts": "tsc --noEmit",
     "check:eslint": "eslint ./",
