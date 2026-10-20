@@ -3,7 +3,7 @@ import { defineConfig } from 'oxlint'
 export default defineConfig({
   plugins: ['eslint', 'typescript', 'unicorn', 'oxc', 'import'],
   options: {
-    typeAware: true,
+    typeAware: false,
   },
   categories: {
     correctness: 'error',
