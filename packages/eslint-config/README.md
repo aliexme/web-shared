@@ -53,9 +53,9 @@ Note: if you use Prettier, `eslint-config-prettier/flat` disables all
 
 ## Type-aware linting
 
-`recommended` uses `strictTypeChecked` rules with the
+`recommended` enables the TypeScript
 [project service](https://typescript-eslint.io/packages/parser#project-service),
-so a `tsconfig.json` at the package root is required for type-aware rules.
+so a `tsconfig.json` at the package root is required.
 
 ## Optional presets
 
@@ -69,7 +69,7 @@ npm i --save-dev @eslint-react/eslint-plugin eslint-plugin-react-hooks
 
 The React preset uses the
 [`recommended-type-checked`](https://eslint-react.xyz/docs/presets) preset of
-ESLint React, so it requires ESLint `>=10.3.0` and type-aware linting (the `typescript`
+ESLint React, so it requires type-aware linting (the `typescript`
 preset's project service).
 
 And add the following lines to your ESLint config file:

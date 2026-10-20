@@ -5,7 +5,7 @@ export default defineConfig([
   {
     name: '@aliexme/eslint-config/typescript',
     files: ['**/*.ts', '**/*.cts', '**/*.mts', '**/*.tsx', '**/*.vue', '**/*.svelte', '**/*.astro'],
-    extends: [tseslint.configs.strictTypeChecked, tseslint.configs.stylistic],
+    extends: [tseslint.configs.strict, tseslint.configs.stylistic],
     languageOptions: {
       parserOptions: {
         parser: tseslint.parser,
