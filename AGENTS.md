@@ -32,6 +32,10 @@ Two kinds of packages, handled differently:
 
 Workspace cross-dependencies use `workspace:*` / `workspace:^`. The root `tsconfig.json` maps `@aliexme/js-utils` and `@aliexme/react-utils` to their `src/` via `paths`, so the root typecheck sees package sources, not `dist/`.
 
+## Documentation
+
+- Package READMEs are published to npm and address consumers: what the package does, how to install and use it. Keep internal implementation details, design decisions, and repo-specific dogfooding notes out — they belong in the package's `AGENTS.md`. Don't duplicate `package.json` data (e.g. peer dependency version ranges) — it goes stale on bumps.
+
 ## Tooling conventions
 
 - Biome formats JS/TS/JSON/CSS and organizes imports: single quotes, no semicolons, width 120, sorted import groups (with `@aliexme/**` in its own group), sorted object keys. oxfmt (`check:oxfmt`/`fix:oxfmt`) formats everything else — Markdown, YAML, etc. — in Prettier-compatible lockstep via `@aliexme/oxfmt-config` (`sortPackageJson` enabled — oxfmt is the sole `package.json` sorter, the ordering rules were dropped from `@aliexme/eslint-config`; `jsdoc` enabled with `lineWrappingStyle: 'balance'`, so JSDoc is written one sentence per line and oxfmt preserves the author wrapping while normalizing tag order and `@example` indentation); ignores come from `.gitignore` (always respected); `.prettierignore` is also read for compat, adding only the tracked `pnpm-lock.yaml`, which oxfmt ignores unconditionally anyway — for repo-specific oxfmt ignores use `ignorePatterns` or a dedicated file via `--ignore-path`. oxfmt replaces Prettier in `pnpm check`/`pnpm fix` and in the pre-commit hook; standalone Prettier stays available via the manual `check:prettier`/`fix:prettier` scripts. ESLint disables formatting rules via `eslint-config-prettier`; Stylelint presets contain no formatting rules.
