@@ -8,7 +8,7 @@ Shared Prettier configuration
 npm i --save-dev prettier @aliexme/prettier-config
 ```
 
-Requires `prettier@^3.0.0` as a peer dependency.
+Requires `prettier` as a peer dependency.
 
 ## Options
 

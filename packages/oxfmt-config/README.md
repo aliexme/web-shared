@@ -8,7 +8,7 @@ Shared oxfmt configuration
 npm i --save-dev oxfmt @aliexme/oxfmt-config
 ```
 
-Requires `oxfmt@^0.72.0` as a peer dependency.
+Requires `oxfmt` as a peer dependency.
 
 ## Options
 

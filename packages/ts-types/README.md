@@ -8,7 +8,7 @@ Common TypeScript utility types
 npm i @aliexme/ts-types
 ```
 
-Requires `typescript@^6.0.0` as a peer dependency.
+Requires `typescript` as a peer dependency.
 
 ## Usage
 

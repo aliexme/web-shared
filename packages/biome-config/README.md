@@ -8,7 +8,7 @@ Shared Biome configuration
 npm i --save-dev @biomejs/biome @aliexme/biome-config
 ```
 
-Requires `@biomejs/biome@^2.0.0` as a peer dependency.
+Requires `@biomejs/biome` as a peer dependency.
 
 ## Usage
 
